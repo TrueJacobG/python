@@ -1,0 +1,38 @@
+<MyGridLayout>
+
+    name:name
+    surname:surname
+    age:age
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Imię"
+                font_size: 30
+            TextInput:
+                id: name
+                multiline: False
+
+            Label:
+                text: "Nazwisko"
+                font_size: 30
+            TextInput:
+                id: surname
+                multiline: False
+
+            Label:
+                text: "Wiek"
+                font_size: 30
+            TextInput:
+                id: age
+                multiline: False
+
+        Button:
+            text: "Wyślij"
+            font_size: 50
+            on_press: root.press()

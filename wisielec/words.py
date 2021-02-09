@@ -1,0 +1,11 @@
+words = ["Sliwki",
+        "Marchewki",
+        "Brokuly",
+        "Pomidory",
+        "Jablka",
+        "Drzewa",
+        "Krzaki",
+        "Liscie",
+        "Trawa",
+        "Owoce",
+        "Warzywa"]
