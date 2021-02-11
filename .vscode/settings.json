@@ -7,7 +7,4 @@
     "python.testing.nosetestsEnabled": false,
     "python.testing.promptToConfigure": false,
     "python.pythonPath": "C:\\Python\\Python39\\python.exe",
-    /*"python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame"
-]*/
 }
