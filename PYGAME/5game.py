@@ -51,9 +51,9 @@ class knifes():
 
     def drawKnife(self, win):
         if self.facing == 1:
-            win.blit(bulletsRight[0], (self.x, self.y))
+            win.blit(bulletsImages[0], (self.x, self.y))
         else:
-            win.blit(bulletsLeft[0], (self.x, self.y))
+            win.blit(bulletsImages[1], (self.x, self.y))
 
 
 def drawGameWindows():
@@ -108,8 +108,7 @@ clock = pygame.time.Clock()
 
 man = player(10, 300, 100, 100)
 bullets = []
-bulletsRight = [pygame.image.load('character/knife.png')]
-bulletsLeft = [pygame.transform.flip(
+bulletsImages = [pygame.image.load('character/knife.png'), pygame.transform.flip(
     pygame.image.load('character/knife.png'), True, False)]
 
 # MAINLOOP
