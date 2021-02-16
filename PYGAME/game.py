@@ -56,6 +56,7 @@ class player():
             pygame.transform.flip(pygame.image.load(
                 'character/10.png'), True, False)
         ]
+        self.hitbox = (self.x+10, self.y+8, 80, 93)
 
     def draw(self, win):
         if self.walkCount >= 30:
@@ -73,6 +74,8 @@ class player():
                 win.blit(self.walkRight[0], (self.x, self.y))
             else:
                 win.blit(self.walkLeft[0], (self.x, self.y))
+        self.hitbox = (self.x+10, self.y+8, 80, 93)
+        pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
 
 
 class enemy():
@@ -121,6 +124,7 @@ class enemy():
             pygame.transform.flip(pygame.image.load(
                 'character/11E.png'), True, False)
         ]
+        self.hitbox = (self.x+10, self.y+8, 80, 93)
 
     def drawEnemy(self, win):
         self.move()
@@ -133,6 +137,8 @@ class enemy():
         else:
             win.blit(self.walkLeft[self.walkCount // 3], (self.x, self.y))
             self.walkCount += 1
+        self.hitbox = (self.x+30, self.y+8, 45, 80)
+        pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
 
     def move(self):
         if self.vel > 0:
@@ -147,6 +153,10 @@ class enemy():
             else:
                 self.vel = self.vel * -1
                 self.walkCount = 0
+
+    def hit(self):
+        print("AUĆ!")
+        pass
 
 
 class knifes():
@@ -183,17 +193,29 @@ clock = pygame.time.Clock()
 
 # MAINLOOP
 man = player(10, 300, 100, 100)
-enemy = enemy(200, 300, 100, 100, 400)
+enemy = enemy(200, 312, 100, 100, 400)
+shootLoop = 0
 bullets = []
 
 run = True
 while run:
     clock.tick(30)
+
+    if shootLoop > 0:
+        shootLoop += 1
+    if shootLoop > 7:
+        shootLoop = 0
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
 
     for bullet in bullets:
+        if bullet.y > enemy.hitbox[1] and bullet.y < enemy.hitbox[1] + enemy.hitbox[3]:
+            if bullet.x + 40 > enemy.hitbox[0] and bullet.x < enemy.hitbox[0] + enemy.hitbox[2]:
+                enemy.hit()
+                bullets.pop(bullets.index(bullet))
+
         if bullet.x < screen_width and bullet.x > 0:
             bullet.x += bullet.vel
         else:
@@ -201,7 +223,7 @@ while run:
 
     keys = pygame.key.get_pressed()
 
-    if keys[pygame.K_SPACE]:
+    if keys[pygame.K_SPACE] and shootLoop == 0:
         if man.left:
             facing = -1
         else:
@@ -209,6 +231,7 @@ while run:
         if len(bullets) < 3:
             bullets.append(knifes(
                 round(man.x + man.character_width//3), round(man.y + man.character_height//2), facing))
+        shootLoop = 1
 
     if keys[pygame.K_LEFT] or keys[pygame.K_a] and man.x > 0:
         man.x -= man.vel
