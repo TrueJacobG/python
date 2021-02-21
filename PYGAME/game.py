@@ -7,7 +7,15 @@ screen_height = 450
 
 win = pygame.display.set_mode((screen_width, screen_height))
 
-# stats
+knifeSound = pygame.mixer.Sound("character/knife.wav")
+hitSound = pygame.mixer.Sound("character/hit.wav")
+hit2Sound = pygame.mixer.Sound("character/hit2.wav")
+jumpSound = pygame.mixer.Sound("character/jump.wav")
+
+music = pygame.mixer.music.load(
+    "character/MUSICadmiralbob77-HighAboveTheDarkness.mp3")
+pygame.mixer.music.play(-1)
+score = 0
 
 
 class player():
@@ -75,7 +83,24 @@ class player():
             else:
                 win.blit(self.walkLeft[0], (self.x, self.y))
         self.hitbox = (self.x+10, self.y+8, 80, 93)
-        pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
+        #pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
+
+    def hit(self):
+        self.x = 10
+        self.y = 300
+        self.walkCount = 0
+        font1 = pygame.font.SysFont('comicsans', 80)
+        text = font1.render('-10', 1, (0, 255, 255))
+        win.blit(text, ((screen_width/2)-(text.get_width()/2), 200))
+        pygame.display.update()
+        i = 0
+        while(i < 70):
+            pygame.time.delay(10)
+            i += 1
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    i = 71
+                    pygame.quit()
 
 
 class enemy():
@@ -125,20 +150,28 @@ class enemy():
                 'character/11E.png'), True, False)
         ]
         self.hitbox = (self.x+10, self.y+8, 80, 93)
+        self.health = 100
+        self.visibility = True
 
     def drawEnemy(self, win):
         self.move()
-        if self.walkCount >= 33:
-            self.walkCount = 0
+        if self.visibility:
+            if self.walkCount >= 33:
+                self.walkCount = 0
 
-        if self.vel > 0:
-            win.blit(self.walkRight[self.walkCount // 3], (self.x, self.y))
-            self.walkCount += 1
-        else:
-            win.blit(self.walkLeft[self.walkCount // 3], (self.x, self.y))
-            self.walkCount += 1
-        self.hitbox = (self.x+30, self.y+8, 45, 80)
-        pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
+            if self.vel > 0:
+                win.blit(self.walkRight[self.walkCount // 3], (self.x, self.y))
+                self.walkCount += 1
+            else:
+                win.blit(self.walkLeft[self.walkCount // 3], (self.x, self.y))
+                self.walkCount += 1
+
+            pygame.draw.rect(win, (255, 0, 0),
+                             (self.hitbox[0], self.hitbox[1]-30, 50, 10))
+            pygame.draw.rect(win, (0, 128, 0),
+                             (self.hitbox[0], self.hitbox[1]-30, 50-(5 * (10-(self.health/10))), 10))
+            self.hitbox = (self.x+30, self.y+8, 45, 80)
+            #pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
 
     def move(self):
         if self.vel > 0:
@@ -155,8 +188,10 @@ class enemy():
                 self.walkCount = 0
 
     def hit(self):
-        print("AUĆ!")
-        pass
+        if self.health > 0:
+            self.health -= 10
+        else:
+            self.visibility = False
 
 
 class knifes():
@@ -177,6 +212,8 @@ class knifes():
 
 def drawGameWindows():
     win.blit(bg, (0, 0))
+    text = font.render("Score: " + str(score), 1, (0, 0, 0))
+    win.blit(text, (640, 418))
     man.draw(win)
     enemy.drawEnemy(win)
     for bullet in bullets:
@@ -196,6 +233,7 @@ man = player(10, 300, 100, 100)
 enemy = enemy(200, 312, 100, 100, 400)
 shootLoop = 0
 bullets = []
+font = pygame.font.SysFont('comicsans', 50)
 
 run = True
 while run:
@@ -210,10 +248,20 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
+    # colision -> enemy | character
+    if man.hitbox[1] < enemy.hitbox[1] + enemy.hitbox[3] and man.hitbox[1] + man.hitbox[3] > enemy.hitbox[1] + enemy.hitbox[3]:
+        if man.hitbox[0] + man.hitbox[2] > enemy.hitbox[0] and man.hitbox[0] < enemy.hitbox[0] + enemy.hitbox[2]:
+            hit2Sound.play()
+            man.hit()
+            score -= 10
+
+    # colision -> knife | enemy
     for bullet in bullets:
         if bullet.y > enemy.hitbox[1] and bullet.y < enemy.hitbox[1] + enemy.hitbox[3]:
             if bullet.x + 40 > enemy.hitbox[0] and bullet.x < enemy.hitbox[0] + enemy.hitbox[2]:
+                hitSound.play()
                 enemy.hit()
+                score += 1
                 bullets.pop(bullets.index(bullet))
 
         if bullet.x < screen_width and bullet.x > 0:
@@ -224,6 +272,7 @@ while run:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_SPACE] and shootLoop == 0:
+        knifeSound.play()
         if man.left:
             facing = -1
         else:
@@ -249,6 +298,7 @@ while run:
 
     if not man.isJump:
         if keys[pygame.K_UP] or keys[pygame.K_w]:
+            jumpSound.play()
             man.isJump = True
             helpy = man.y
             man.left = False

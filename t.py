@@ -1,7 +1,10 @@
-string = "I mogę dziś umierać, barman znowu mi polewa \n \
-Czystą proszę, nic nie wlewaj, lodu mam od jubilera \n \
-Ciągle w jupiterach, każdy patrzy na mnie teraz \n \
-Mogę wszystko, spójrz w ridera"
-
+string = "odwiedzam punkt apteczny\n\
+proszę o paczkę prezesów\n\
+widok dostateczny\n\
+podchodzę do shona bez stresu\n\
+piję sobie colę\n\
+ona zapodaję głowę\n\
+codziennie ją pierdolę\n\
+nazywam się shonlover"
 
 print(string.upper())
