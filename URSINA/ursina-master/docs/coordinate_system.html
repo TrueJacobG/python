@@ -1,0 +1,120 @@
+
+<!--generated with sswg-->
+<style>
+    html {max-width: 100%; margin: auto; color: #333333;}
+    a.button {padding: 15px 32px; background-color: #555; border-radius: 2em; border-width: 0px; text-decoration: none; color: white; font-size: 25.0px; line-height: 2.5em;}
+    a.button:hover {background-color: #777}
+    a.button_big {padding: 0.5em; background-image: linear-gradient(to top, #427b0e, #9ba97d); background-color: lightgray; background-blend-mode: multiply; border-radius: .75em; border-width: 0px; text-decoration: none; min-width: 150px; max-width: 150px; min-height: 150px; max-height: 150px; display: inline-block; vertical-align: top; margin: 4px 4px 10px 4px; color: white; font-size: 25.0px; background-size: auto 100%; background-position-x: center;}
+    a.button_big:hover {background-color: white; color: #e6d23f; text-decoration: underline;}
+    mark {background: #ccff99;}
+    span {background-color: rgba(0, 0, 0, 0.55); padding: .1em; line-height: 1.35em;}
+    img {max-width: 100%; vertical-align: top;}
+    .code_block {background-color: whitesmoke; padding: 10px; margin: 0; font-family: monospace; font-size: 20; font-weight: normal; white-space: pre;}
+
+    purple {color: hsl(289.0, 50%, 50%);}
+    gray {color: gray;}
+    olive {color: olive;}
+    yellow {color: darkgoldenrod;}
+    green {color: seagreen;}
+    blue {color: hsl(210, 50%, 50%);}
+
+</style>
+<html>
+<left>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> ursina engine documentation</title>
+<br>
+
+<div style="text-align: center;font-weight: bold;font-family: arial;font-size: 100.0px;">
+<a href="index.html" style="text-decoration: none; color:inherit">ursina engine<br>
+ʕ •ᴥ•ʔゝ□</a><br>
+<div style="font-weight: normal;font-size: 60.0px;text-align: left;max-width: 650px; margin: auto;">
+<br>
+<div style="font-size: 40.0px;font-weight: bold;">
+<div id="Entity Coordinate System"/><br>
+Entity Coordinate System<br>
+<div style="font-size: 20.0px;font-weight: normal;">
+<br>
+<div class="code_block" style="margin-left: 0em;">
+            y (up)
+            |
+            |
+(forward) z |
+          \ |
+           \|
+            *---------- x (right)
+
+</div><br>
+<br>
+<br>
+<br>
+<div style="font-size: 40.0px;font-weight: bold;">
+<div id="UI Coordinate System"/><br>
+UI Coordinate System<br>
+<div style="font-size: 20.0px;font-weight: normal;">
+<br>
+<div class="code_block" style="margin-left: 0em;">
+_______________________(.<yellow>5</yellow>, .<yellow>5</yellow>)____(window.top_right)
+|       <green>'                  '</green>       |
+|       <green>'                  '</green>       |
+|       <green>'                  '</green>       |
+|       <green>'                  '</green>       |
+|       <green>'      (<yellow>0</yellow>, <yellow>0</yellow>)      '</green>       |(.<yellow>5</yellow>*window.aspect_ratio, <yellow>0</yellow>)
+|       <green>'                  '</green>       |
+|       <green>'                  '</green>       |
+|       <green>'                  '</green>       |
+|_______<green>'__________________'</green>_______|
+    (-.<yellow>5</yellow>, -.<yellow>5</yellow>)
+
+</div><br>
+<br>
+<br>
+<div style="font-size: 40.0px;font-weight: bold;">
+<div id="Rotation"/><br>
+Rotation<br>
+<div style="font-size: 20.0px;font-weight: normal;">
+<br>
+Positive value is clock-wise around axis.<br>
+Imagine looking from a positive point on the axis and turing the entity left.<br>
+<br>
+<div class="code_block" style="margin-left: 0em;">
+           _______
+          /
+          \->
+    __
+   /  \     y
+  |   v     |
+  |      z  |                __
+          \ |               /  \
+           \|               v   |
+            *---------- x       |
+                                |
+</div><br>
+<br>
+<br>
+<br>
+<div style="font-size: 40.0px;font-weight: bold;">
+<div id="Origin"/><br>
+Origin<br>
+<div style="font-size: 20.0px;font-weight: normal;">
+<br>
+Setting the origin will move the origin point of the model.<br>
+This can be especially useful when working with ui.<br>
+<br>
+<div class="code_block" style="margin-left: 0em;">            (-.<yellow>5</yellow>,.<yellow>5</yellow>)
++--------+      *--------+
+|        |      |        |
+|  (<yellow>0</yellow>,<yellow>0</yellow>) |      |        |
+|        |      |        |
++--------+      +--------+
+
+  (<yellow>0</yellow>,.<yellow>5</yellow>)
++----*---+      +--------+
+|        |      |        |
+|        |      |        * (.<yellow>5</yellow>,<yellow>0</yellow>)
+|        |      |        |
++--------+      +--------+
+
+</div><br>
+
+</html>
