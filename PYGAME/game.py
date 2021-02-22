@@ -1,213 +1,23 @@
 import pygame
+from player import player
+from enemy import enemy
+from bullets import knifes
+from sounds import Music
+
 pygame.init()
 pygame.display.set_caption("Third game!")
+
 
 screen_width = 800
 screen_height = 450
 
 win = pygame.display.set_mode((screen_width, screen_height))
 
-knifeSound = pygame.mixer.Sound("character/knife.wav")
-hitSound = pygame.mixer.Sound("character/hit.wav")
-hit2Sound = pygame.mixer.Sound("character/hit2.wav")
-jumpSound = pygame.mixer.Sound("character/jump.wav")
 
-music = pygame.mixer.music.load(
-    "character/MUSICadmiralbob77-HighAboveTheDarkness.mp3")
-pygame.mixer.music.play(-1)
+SOUNDS = Music()
+
+
 score = 0
-
-
-class player():
-    def __init__(self, x, y, character_width, character_height):
-        self.x = x
-        self.y = y
-        self.character_width = character_width
-        self.character_height = character_height
-        self.vel = 10
-        self.isJump = False
-        self.jumpHeight = 7
-        self.left = False
-        self.right = False
-        self.walkCount = 0
-        self.standing = True
-        self.walkRight = [pygame.image.load('character/1.png'),
-                          pygame.image.load('character/2.png'),
-                          pygame.image.load('character/3.png'),
-                          pygame.image.load('character/4.png'),
-                          pygame.image.load('character/5.png'),
-                          pygame.image.load('character/6.png'),
-                          pygame.image.load('character/7.png'),
-                          pygame.image.load('character/8.png'),
-                          pygame.image.load('character/9.png'),
-                          pygame.image.load('character/10.png'),
-                          ]
-        self.walkLeft = [
-            pygame.transform.flip(pygame.image.load(
-                'character/1.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/2.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/3.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/4.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/5.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/6.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/7.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/8.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/9.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/10.png'), True, False)
-        ]
-        self.hitbox = (self.x+10, self.y+8, 80, 93)
-
-    def draw(self, win):
-        if self.walkCount >= 30:
-            self.walkCount = 0
-
-        if not self.standing:
-            if self.left:
-                win.blit(self.walkLeft[self.walkCount//3], (self.x, self.y))
-                self.walkCount += 1
-            elif self.right:
-                win.blit(self.walkRight[self.walkCount//3], (self.x, self.y))
-                self.walkCount += 1
-        else:
-            if self.right:
-                win.blit(self.walkRight[0], (self.x, self.y))
-            else:
-                win.blit(self.walkLeft[0], (self.x, self.y))
-        self.hitbox = (self.x+10, self.y+8, 80, 93)
-        #pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
-
-    def hit(self):
-        self.x = 10
-        self.y = 300
-        self.walkCount = 0
-        font1 = pygame.font.SysFont('comicsans', 80)
-        text = font1.render('-10', 1, (0, 255, 255))
-        win.blit(text, ((screen_width/2)-(text.get_width()/2), 200))
-        pygame.display.update()
-        i = 0
-        while(i < 70):
-            pygame.time.delay(10)
-            i += 1
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    i = 71
-                    pygame.quit()
-
-
-class enemy():
-    def __init__(self, x, y, enemy_width, enemy_height, end):
-        self.x = x
-        self.y = y
-        self.enemy_width = enemy_width
-        self.enemy_height = enemy_height
-        self.end = end
-        self.path = [self.x, self.end]
-        self.walkCount = 0
-        self.vel = 5
-        self.walkRight = [pygame.image.load('character/1E.png'),
-                          pygame.image.load('character/2E.png'),
-                          pygame.image.load('character/3E.png'),
-                          pygame.image.load('character/4E.png'),
-                          pygame.image.load('character/5E.png'),
-                          pygame.image.load('character/6E.png'),
-                          pygame.image.load('character/7E.png'),
-                          pygame.image.load('character/8E.png'),
-                          pygame.image.load('character/9E.png'),
-                          pygame.image.load('character/10E.png'),
-                          pygame.image.load('character/11E.png')
-                          ]
-        self.walkLeft = [
-            pygame.transform.flip(pygame.image.load(
-                'character/1E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/2E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/3E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/4E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/5E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/6E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/7E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/8E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/9E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/10E.png'), True, False),
-            pygame.transform.flip(pygame.image.load(
-                'character/11E.png'), True, False)
-        ]
-        self.hitbox = (self.x+10, self.y+8, 80, 93)
-        self.health = 100
-        self.visibility = True
-
-    def drawEnemy(self, win):
-        self.move()
-        if self.visibility:
-            if self.walkCount >= 33:
-                self.walkCount = 0
-
-            if self.vel > 0:
-                win.blit(self.walkRight[self.walkCount // 3], (self.x, self.y))
-                self.walkCount += 1
-            else:
-                win.blit(self.walkLeft[self.walkCount // 3], (self.x, self.y))
-                self.walkCount += 1
-
-            pygame.draw.rect(win, (255, 0, 0),
-                             (self.hitbox[0], self.hitbox[1]-30, 50, 10))
-            pygame.draw.rect(win, (0, 128, 0),
-                             (self.hitbox[0], self.hitbox[1]-30, 50-(5 * (10-(self.health/10))), 10))
-            self.hitbox = (self.x+30, self.y+8, 45, 80)
-            #pygame.draw.rect(win, (255, 0, 0), self.hitbox, 1)
-
-    def move(self):
-        if self.vel > 0:
-            if self.x + self.vel < self.path[1]:
-                self.x += self.vel
-            else:
-                self.vel = self.vel * -1
-                self.walkCount = 0
-        else:
-            if self.x - self.vel > self.path[0]:
-                self.x += self.vel
-            else:
-                self.vel = self.vel * -1
-                self.walkCount = 0
-
-    def hit(self):
-        if self.health > 0:
-            self.health -= 10
-        else:
-            self.visibility = False
-
-
-class knifes():
-    def __init__(self, x, y, facing):
-        self.x = x
-        self.y = y
-        self.facing = facing
-        self.vel = 15 * facing
-        self.bulletsImages = [pygame.image.load('character/knife.png'), pygame.transform.flip(
-            pygame.image.load('character/knife.png'), True, False)]
-
-    def drawKnife(self, win):
-        if self.facing == 1:
-            win.blit(self.bulletsImages[0], (self.x, self.y))
-        else:
-            win.blit(self.bulletsImages[1], (self.x, self.y))
 
 
 def drawGameWindows():
@@ -226,14 +36,13 @@ bg = pygame.image.load('character/bg.png')
 character = pygame.image.load('character/1.png')
 
 
-clock = pygame.time.Clock()
-
 # MAINLOOP
-man = player(10, 300, 100, 100)
-enemy = enemy(200, 312, 100, 100, 400)
+man = player(10, 300, 100, 100, win, screen_width, screen_height)
+enemy = enemy(200, 312, 100, 100, 400, win)
 shootLoop = 0
 bullets = []
 font = pygame.font.SysFont('comicsans', 50)
+clock = pygame.time.Clock()
 
 run = True
 while run:
@@ -241,7 +50,7 @@ while run:
 
     if shootLoop > 0:
         shootLoop += 1
-    if shootLoop > 7:
+    if shootLoop > 10:
         shootLoop = 0
 
     for event in pygame.event.get():
@@ -249,20 +58,22 @@ while run:
             run = False
 
     # colision -> enemy | character
-    if man.hitbox[1] < enemy.hitbox[1] + enemy.hitbox[3] and man.hitbox[1] + man.hitbox[3] > enemy.hitbox[1] + enemy.hitbox[3]:
-        if man.hitbox[0] + man.hitbox[2] > enemy.hitbox[0] and man.hitbox[0] < enemy.hitbox[0] + enemy.hitbox[2]:
-            hit2Sound.play()
-            man.hit()
-            score -= 10
+    if enemy.visibility:
+        if man.hitbox[1] < enemy.hitbox[1] + enemy.hitbox[3] and man.hitbox[1] + man.hitbox[3] > enemy.hitbox[1] + enemy.hitbox[3]:
+            if man.hitbox[0] + man.hitbox[2] > enemy.hitbox[0] and man.hitbox[0] < enemy.hitbox[0] + enemy.hitbox[2]:
+                SOUNDS.hit2Sound.play()
+                man.hit()
+                score -= 10
 
     # colision -> knife | enemy
     for bullet in bullets:
-        if bullet.y > enemy.hitbox[1] and bullet.y < enemy.hitbox[1] + enemy.hitbox[3]:
-            if bullet.x + 40 > enemy.hitbox[0] and bullet.x < enemy.hitbox[0] + enemy.hitbox[2]:
-                hitSound.play()
-                enemy.hit()
-                score += 1
-                bullets.pop(bullets.index(bullet))
+        if enemy.visibility:
+            if bullet.y > enemy.hitbox[1] and bullet.y < enemy.hitbox[1] + enemy.hitbox[3]:
+                if bullet.x + 40 > enemy.hitbox[0] and bullet.x < enemy.hitbox[0] + enemy.hitbox[2]:
+                    SOUNDS.hitSound.play()
+                    enemy.hit()
+                    score += 1
+                    bullets.pop(bullets.index(bullet))
 
         if bullet.x < screen_width and bullet.x > 0:
             bullet.x += bullet.vel
@@ -272,14 +83,14 @@ while run:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_SPACE] and shootLoop == 0:
-        knifeSound.play()
+        SOUNDS.knifeSound.play()
         if man.left:
             facing = -1
         else:
             facing = 1
-        if len(bullets) < 3:
+        if len(bullets) < 10:
             bullets.append(knifes(
-                round(man.x + man.character_width//3), round(man.y + man.character_height//2), facing))
+                round(man.x + man.character_width//3), round(man.y + man.character_height//2), facing, win))
         shootLoop = 1
 
     if keys[pygame.K_LEFT] or keys[pygame.K_a] and man.x > 0:
@@ -298,7 +109,7 @@ while run:
 
     if not man.isJump:
         if keys[pygame.K_UP] or keys[pygame.K_w]:
-            jumpSound.play()
+            SOUNDS.jumpSound.play()
             man.isJump = True
             helpy = man.y
             man.left = False
