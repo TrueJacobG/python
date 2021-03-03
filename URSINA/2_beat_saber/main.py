@@ -30,12 +30,14 @@ class Voxel(Button):
 
 
 class Bullet(Button):
-    def __init__(self, position=(0, 0, 0)):
+    def __init__(self, position=(0, 0, 0), direction="N"):
+        self.direction = direction
         super().__init__(
             parent=scene,
             scale=0.5,
             model='cube',
-            color=color.rgba(255, 255, 255, 128),
+            #color=color.rgba(255, 255, 255, 122),
+            color=color.random_color(),
             position=position
         )
 
@@ -48,48 +50,73 @@ class Bullet(Button):
                 bulletExist = False
                 shootNewBullet = True
                 points += 1
+                # print(points)
                 destroy(self)
 
             if key == "right mouse down":
                 bulletExist = False
                 shootNewBullet = True
                 points += 1
+                # print(points)
                 destroy(self)
 
 
-startX = 10
+def randomX():
+    x = random.randint(10, 15)
+    return x
 
 
-def buildObject():
-    bullet = Bullet(position=(startX, 2, 0))
-    return bullet
+def randomZ():
+    z = random.randint(0, 4)
+    return z
 
 
-bullet = buildObject()
+def destroyBullet():
+    global shootNewBullet
+    global bullet
+    global points
+    destroy(bullet)
+    bulletExist = False
+    shootNewBullet = True
+    points -= 1
+
+
+# startings
+startingX = 10
+bullet = Bullet(position=(startingX, 2, randomZ()), direction="N")
 
 
 def update():
-    global startX
+    global startingX
     global bulletExist
     global shootNewBullet
     global bullet
     global points
-    startX -= 2 * time.dt
 
     if bulletExist:
-        bullet.set_x(startX)
-        if bullet.x < -10:
-            destroy(bullet)
-            bulletExist = False
-            shootNewBullet = True
-            points -= 1
+        if bullet.direction == 'N':
+            startingX -= 2 * time.dt
+            bullet.set_x(startingX)
+            if bullet.x < -10:
+                destroyBullet()
+
+        if bullet.direction == 'S':
+            startingX += 2 * time.dt
+            bullet.set_x(startingX)
+            if bullet.x > 10:
+                destroyBullet()
 
     if shootNewBullet:
-        bullet = buildObject()
+        directions = ["N", "N", "S", "S"]
+        startings = [10, 10, -10, -10]
+        r = random.randint(0, 3)
+
+        startingX = startings[r]
+
+        bullet = Bullet(position=(startings[r], 2, randomZ()),
+                        direction=directions[r])
         shootNewBullet = False
         bulletExist = True
-        startX = 10
-
 
     # platforms
 for z in range(5):
