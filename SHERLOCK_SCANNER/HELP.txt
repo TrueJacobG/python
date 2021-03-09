@@ -1,0 +1,6 @@
+cd sherlock
+python sherlock --timeout 1 Damdzior
+# to 1 sec limit time
+
+in sherlock:
+	nick.txt info
