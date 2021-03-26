@@ -1,3 +1,5 @@
+# 26.03.2021
+
 def find_right_intervals(intervals):
     intervals.sort()
     result = []
