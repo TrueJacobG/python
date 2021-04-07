@@ -7,6 +7,10 @@ w_width, w_height = 1600, 900
 window = pygame.display.set_mode((w_width, w_height))
 clock = pygame.time.Clock()
 
+bg = pygame.image.load("bg.svg")
+bgX = 0
+bgX2 = bg.get_width()
+
 
 class Player:
     def __init__(self, x, y, screen):
@@ -21,16 +25,25 @@ class Player:
 
 
 def running():
-    window.fill((255, 255, 255))
+    window.blit(bg, (bgX, 0))
+    window.blit(bg, (bgX2, 0))
     man.drawCharacter(window)
     pygame.display.update()
 
 
 man = Player(500, 430, window)
+speed = 60
 
 run = True
 while run:
-    clock.tick(60)
+    clock.tick(speed)
+
+    bgX -= 3
+    bgX2 -= 3
+    if bgX < bg.get_width() * -1:
+        bgX = bg.get_width()
+    if bgX2 < bg.get_width() * -1:
+        bgX2 = bg.get_width()
 
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
