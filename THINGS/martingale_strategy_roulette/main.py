@@ -5,16 +5,16 @@ from random import randint
 
 def gambling(m):
     if randint(0, 1) == 0:
-        return -m
-    return m*2
+        return (-m)
+    return m
 
 
 def play():
-    money = 1000
+    money = 100
+    d_money = money*2
     value = 1
     throw = 0
-    playFlag = True
-    while playFlag:
+    while True:
         throw += 1
         money_last_round = money
         money += gambling(value)
@@ -23,18 +23,18 @@ def play():
                 value = money
             else:
                 value *= 2
+        else:
+            value = 1
 
         if money < 0:
             return 0
-        if money >= 2000:
+        if money >= d_money:
             return 1
-        if throw > 100:
-            return 0
 
 
 games = []
-n_games = 10000
-for p in range(1, n_games):
+n_games = 100
+for p in range(0, n_games):
     games.append(play())
 
-print("WinRatio -> " + str(sum(games)/n_games*100))
+print("You won " + str(sum(games)) + " of " + str(n_games) + " games")
