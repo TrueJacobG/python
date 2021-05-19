@@ -5,7 +5,7 @@ face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 # cap = cv2.VideoCapture(0)
 
 # mp4
-cap = cv2.VideoCapture('face.mp4')
+cap = cv2.VideoCapture('face1.mp4')
 while True:
     _, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -19,7 +19,7 @@ while True:
     cv2.imshow('img', img)
 
     # Stop
-    if cv2.waitKey(60) & 0xFF == ord('q'):
+    if cv2.waitKey(30) & 0xFF == ord('q'):
         break
 
 cap.release()
