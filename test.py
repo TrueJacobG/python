@@ -1,2 +1,7 @@
-n = [1, 2, 3, 4]
-print(sum(n[0:1]))
+def isequal(l):
+    return len(set(l)) <= 1
+
+
+l = [1, 1, 1, 1]
+
+print(isequal(l))
