@@ -1,4 +1,6 @@
 from pygame import *
+from pygame import display, time, draw, event
+import pygame_textinput
 
 init()
 w_width, w_height = 900, 900
@@ -8,6 +10,8 @@ window = display.set_mode((w_width, w_height))
 clock = time.Clock()
 
 window.fill([0, 255, 0])
+
+textinput = pygame_textinput.TextInput()
 
 
 def GridColor(x, y):
@@ -30,25 +34,25 @@ def drawGrid():
         for iy, y in enumerate(range(0, w_height, w_height//9)):
             rect = Rect(x, y, w_width//9, w_height//9, width=-1)
             draw.rect(window, GridColor(ix, iy), rect)
+            window.blit(textinput.get_surface(), (10, 10))
             for i in range(4):
                 draw.rect(window, (255, 255, 255),
                           (x-i, y-i, w_width//9, w_height//9), 1)
-
-
-def running(window):
-    drawGrid()
-    display.update()
 
 
 run = True
 while run:
     clock.tick(60)
 
-    for e in event.get():
+    events = event.get()
+
+    for e in events:
         if e.type == QUIT:
             run = False
 
-    running(window)
+    textinput.update(events)
 
+    drawGrid()
+    display.update()
 
 quit()
