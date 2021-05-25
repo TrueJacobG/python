@@ -38,38 +38,39 @@ def solveSudoku(g):
                     if isValid(x, y, n, grid):
                         grid[x][y] = n
                         solveSudoku(grid)
-                        # TODO:
-                        #grid[x][y] = 0
+
+    # TODO:
+
+    for line in grid:
+        for x in range(9):
+            if line[x] == 0:
+                solveSudoku(grid)
 
     return grid
 
-# TODO:
-
 
 def decor(g):
-    for line in g:
+    g1 = g
+    for line in g1:
         for i, item in enumerate(line):
             if i % 4 == 0:
                 line.insert(i, "|")
         line.insert(13, "|")
     for x in range(0, 13, 4):
-        g.insert(x, "-------------")
+        g1.insert(x, "-------------")
 
-    for line in g:
+    for line in g1:
         print(" ".join(str(x) for x in line))
 
 
-# TODO: i cant i dont i don
-
 if __name__ == '__main__':
     grid = getGridFromFile("grid")
-    solved = solveSudoku(grid)
+    # it doesn't make sense but i cant do it in other way
+    solved = solveSudoku(getGridFromFile("grid"))
 
     print("\n\n")
     print("UNSOLVED SUDOKU")
     decor(grid)
 
     print("SOLVED")
-
-    for line in solved:
-        print(line)
+    decor(solved)
