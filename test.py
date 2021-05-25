@@ -1,15 +1,13 @@
-def isequal(l):
-    return len(set(l)) <= 1
+def shuffle(nums, n):
+
+    c = n - 1
+    for i in range(n*2):
+        if i % 2 != 0:
+            nums.insert(i, nums[i+c])
+            del nums[i+c+1]
+            c -= 1
+
+    return nums
 
 
-def kidsWithCandies(candies: list[int], extraCandies: int) -> list[bool]:
-    l: list[bool] = []
-    for c in candies:
-        if c + extraCandies > max(candies):
-            l.append(True)
-        else:
-            l.append(False)
-    return l
-
-
-print(kidsWithCandies([2, 3, 5, 1, 3], 3))
+print(shuffle([2, 5, 1, 3, 4, 7], 3))
