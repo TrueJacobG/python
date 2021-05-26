@@ -1,8 +1,14 @@
-def ty(c):
-    print(c+1)
+import time
 
 
-c = 1
-print(c)
-ty(c)
-print(c)
+def gsum():
+    start = time.time()
+    s = 0
+    for i in range(100000000):
+        s += i
+    print(time.time()-start)
+    return s
+
+
+if __name__ == '__main__':
+    gsum()
