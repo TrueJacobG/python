@@ -1,6 +1,0 @@
-1. conda create -n nazwa_środowiska
-2. activate #MUSI TO BYĆ W CMD
-3. przechodzisz do folderu
-4. python nazwa_pliku.py
-
-conda env list -> lista środowisk
