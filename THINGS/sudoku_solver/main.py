@@ -11,66 +11,64 @@ def getGridFromFile(filename="grid"):
     return grid
 
 
-def isValid(x, y, n, grid):
-    for i in range(9):
-        if grid[x][i] == n:
+def isValid(row, column, number):
+    global grid
+    for i in range(0, 9):
+        if grid[row][i] == number:
             return False
-    for i in range(9):
-        if grid[i][y] == n:
+    for i in range(0, 9):
+        if grid[i][column] == number:
             return False
 
-    x0 = (x//3)*3
-    y0 = (y//3)*3
-    for i in range(3):
-        for j in range(3):
-            if grid[x0+i][y0+j] == n:
+    x0 = (row // 3) * 3
+    y0 = (column // 3) * 3
+    for i in range(0, 3):
+        for j in range(0, 3):
+            if grid[x0+i][y0+j] == number:
                 return False
 
     return True
 
 
-def solveSudoku(g):
-    grid = g
-    for x in range(9):
-        for y in range(9):
-            if grid[x][y] == 0:
-                for n in range(1, 10):
-                    if isValid(x, y, n, grid):
-                        grid[x][y] = n
-                        solveSudoku(grid)
+def solveSudoku():
+    global grid
+    for row in range(0, 9):
+        for column in range(0, 9):
+            if grid[row][column] == 0:
+                for number in range(1, 10):
+                    if isValid(row, column, number):
+                        grid[row][column] = number
+                        solveSudoku()
+                        grid[row][column] = 0
 
-    # TODO:
+                return
 
+    with open("grid_solved.txt", "w") as f:
+        for line in grid:
+            f.write("".join(str(x) for x in line))
+            f.write("\n")
+
+
+def decorGrid(grid):
     for line in grid:
-        for x in range(9):
-            if line[x] == 0:
-                solveSudoku(grid)
-
-    return grid
-
-
-def decor(g):
-    g1 = g
-    for line in g1:
-        for i, item in enumerate(line):
+        for i in range(len(line)):
             if i % 4 == 0:
                 line.insert(i, "|")
         line.insert(13, "|")
     for x in range(0, 13, 4):
-        g1.insert(x, "-------------")
+        grid.insert(x, "-------------")
 
-    for line in g1:
+    for line in grid:
         print(" ".join(str(x) for x in line))
 
 
 if __name__ == '__main__':
+    grid_empty = getGridFromFile("grid")
     grid = getGridFromFile("grid")
-    # it doesn't make sense but i cant do it in other way
-    solved = solveSudoku(getGridFromFile("grid"))
+    print("\n", "SUDOKU")
+    decorGrid(grid_empty)
 
-    print("\n\n")
-    print("UNSOLVED SUDOKU")
-    decor(grid)
-
-    print("SOLVED")
-    decor(solved)
+    print("\n", "SOLVED SUDOKU")
+    solveSudoku()
+    grid_solved = getGridFromFile("grid_solved")
+    decorGrid(grid_solved)
