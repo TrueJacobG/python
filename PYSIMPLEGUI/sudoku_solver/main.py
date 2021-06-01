@@ -142,6 +142,7 @@ while True:
 # TODO:
 # fix bugs -> you can't change numbers
 # colors
+# pyinstaller
 
 
 window.close()
