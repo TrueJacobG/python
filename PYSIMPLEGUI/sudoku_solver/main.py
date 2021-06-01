@@ -139,5 +139,9 @@ while True:
 
         # print(solved_grid)
 
+# TODO:
+# fix bugs -> you can't change numbers
+# colors
+
 
 window.close()
