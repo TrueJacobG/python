@@ -14,10 +14,10 @@ table_outputs = []
 for x in range(9):
     for y in range(9):
         table_outputs += [psg.Text(key=(1, y, x),
-                                   font=("Arial", 30), size=(2, 1))]
+                                   font=("Arial", 30), size=(2, 1), background_color="lightgreen")]
 
 column1 = [
-    [psg.Text("Type numbers:")],
+    [psg.Text("FILL SUDOKU:", font=("Arial", 20))],
 
     table_inputs[0:9],
     table_inputs[9:18],
@@ -36,6 +36,7 @@ column1 = [
 
 
 column2 = [
+    [psg.Text("", font=("Arial", 1))],
     table_outputs[0:9],
     table_outputs[9:18],
     table_outputs[18:27],
@@ -52,7 +53,7 @@ column2 = [
 layout = [[
     psg.Column(column1),
     psg.VSeparator(),
-    psg.Column(column2, background_color='lightblue')
+    psg.Column(column2)
 ]]
 
 window = psg.Window(title="Sudoku solver", layout=layout, margins=(10, 10))
@@ -116,7 +117,11 @@ while True:
                     row.append(0)
                     continue
                 row.append(int(value[(y, x)]))
-            grid.append(row)
+            try:
+                grid.append(row)
+            except NameError:
+                grid = []
+                grid.append(row)
 
         solveSudoku()
 
@@ -140,8 +145,6 @@ while True:
         # print(solved_grid)
 
 # TODO:
-# fix bugs -> you can't change numbers
-# colors
 # pyinstaller
 
 
