@@ -1,5 +1,4 @@
 import PySimpleGUI as psg
-import sys
 
 
 # all themes -> psg.theme_previewer()
@@ -17,7 +16,7 @@ for x in range(9):
                                    font=("Arial", 30), size=(2, 1), background_color="lightgreen")]
 
 column1 = [
-    [psg.Text("FILL SUDOKU:", font=("Arial", 20))],
+    [psg.Text("FILL SUDOKU:", font=("Arial", 20), key="-TEXT-")],
 
     table_inputs[0:9],
     table_inputs[9:18],
@@ -98,30 +97,34 @@ def solveSudoku():
                 f.write("\n")
         del grid
     except:
+        grid = []
         return
 
 
 grid = []
-
+open("grid_solved.txt", "w").close()
 while True:
+    flag = True
     event, value = window.read()
 
     if event == psg.WIN_CLOSED:
         break
 
     if event == "Solve":
+        window["-TEXT-"].update("FILL SUDOKU:")
         for x in range(9):
             row = []
             for y in range(9):
                 if value[(y, x)] == "":
                     row.append(0)
                     continue
-                row.append(int(value[(y, x)]))
-            try:
-                grid.append(row)
-            except NameError:
-                grid = []
-                grid.append(row)
+                try:
+                    row.append(int(value[(y, x)]))
+                except:
+                    window["-TEXT-"].update("WRONG INPUT!")
+                    open("grid_solved.txt", "w").close()
+
+            grid.append(row)
 
         solveSudoku()
 
@@ -140,12 +143,11 @@ while True:
 
         for x in range(9):
             for y in range(9):
-                window[(1, y, x)].update(solved_grid[x][y])
-
-        # print(solved_grid)
-
-# TODO:
-# pyinstaller
+                try:
+                    window[(1, y, x)].update(solved_grid[x][y])
+                except:
+                    window[(1, y, x)].update("")
+                    continue
 
 
 window.close()
