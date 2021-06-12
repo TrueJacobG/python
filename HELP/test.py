@@ -1,13 +1,12 @@
-def numberOfMatches(n: int) -> int:
-    matches: int = 0
-    while n > 1:
-        if n % 2 == 0:
-            matches += n//2
-            n -= n//2
-        else:
-            matches += (n-1)//2
-            n = n - (n-1)//2
-    return matches
+def returnBetterPermutations(arr, length):
+    result = []
+    starting = 0
+    ending = length
+    while ending <= len(arr):
+        result.append(arr[starting:ending])
+        starting += 1
+        ending += 1
+    return result
 
 
-print(numberOfMatches(7))
+print(returnBetterPermutations([1, 4, 2, 5, 3], 3))
