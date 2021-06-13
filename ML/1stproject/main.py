@@ -40,6 +40,6 @@ melbourne_model.fit(X, y)
 
 # print prediction
 print(X.head())
-print(melbourne_model.predict(X.head()))
+print(melbourne_model.predict(X))
 
 # %%
