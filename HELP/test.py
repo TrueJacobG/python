@@ -1,4 +1,10 @@
-letters = "A B C D E F G H I J K L lM mN nO oP pQ qR rS sT tU uV vW wX xY yZ z".upper().replace(" ", "")
+class Test:
+    def __init__(self):
+        self.name = "Ro"
 
-print("".join(set(sorted(letters))))
-print("".join(sorted("MWCYJTAGZRKFIPSBEXULQHDVON")))
+    def cout(self):
+        print(self.name)
+
+
+o = Test()
+o.cout()
