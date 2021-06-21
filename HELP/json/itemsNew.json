@@ -1,0 +1,10 @@
+{
+    "firstname": "Bob",
+    "surname": "Smith",
+    "age": 20,
+    "location": {
+        "country": "United States",
+        "state": "Florida",
+        "city": "Miami"
+    }
+}
