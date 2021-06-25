@@ -1,7 +1,7 @@
 from pygame import *
-import net
+import matrix
 
-w_width, w_height = 1920, 1080
+w_width, w_height = 1280, 720
 
 init()
 
@@ -12,8 +12,8 @@ clock = time.Clock()
 scale = 20
 offset = 1
 
-Net = net.Net(w_width, w_height, scale, offset)
-Net.random_array()
+matrix = matrix.matrix(w_width, w_height, scale, offset)
+matrix.random_array()
 
 run = True
 while run:
@@ -24,7 +24,7 @@ while run:
         if e.type == QUIT:
             run = False
 
-    Net.game_of_life(color_off=(255, 255, 255), window=windows)
+    matrix.game_of_life(color_off=(255, 255, 255), window=windows)
 
     display.update()
 
