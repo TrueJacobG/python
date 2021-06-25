@@ -1,8 +1,8 @@
 def IwillDecorate(func):
     def wrapper(*args, **kwargs):
-        print("My name is ")
+        print("###")
         func(*args, **kwargs)
-        print("Nice to meet you")
+        print("###")
     return wrapper
 
 
@@ -13,4 +13,5 @@ def sayYourName(name):
 # when you call this function it will be passed like a parameter to decorator
 
 
-sayYourName(input())
+if __name__ == '__main__':
+    sayYourName(input())

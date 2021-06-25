@@ -1,3 +1,6 @@
+from first_main import IwillDecorate
+
+
 class CountCalls:
     def __init__(self, func):
         self.func = func
@@ -10,8 +13,9 @@ class CountCalls:
 
 
 @CountCalls
+@IwillDecorate
 def print_name(name):
-    print("My name is {name}!")
+    print(f"My name is {name}!")
 
 
 # you can use call as a decorator <3
