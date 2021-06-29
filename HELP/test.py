@@ -1,27 +1,14 @@
-def freqAlphabets(s):
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    letters = []
-    result = ""
-
-    i = 0
-    while i < len(s):
-        try:
-            if s[i+2] == "#":
-                letters.append(int(s[i] + s[i+1]))
-                i += 2
-                continue
-        except:
-            pass
-        if s[i] == "#":
-            i += 1
-            continue
-        letters.append(int(s[i]))
-        i += 1
-
-    for i in letters:
-        result += alphabet[i-1]
+def minOperations(nums):
+    if len(nums) == 1:
+        return 0
+    result = 0
+    for i in range(1, len(nums)):
+        if nums[i-1] >= nums[i]:
+            x = nums[i-1] - nums[i] + 1
+            nums[i] += x
+            result += x
 
     return result
 
 
-print(freqAlphabets("10#11#12"))
+print(minOperations([1, 5, 2, 4, 1]))
