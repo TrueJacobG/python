@@ -26,7 +26,7 @@ def merge_sort(a):
     if len(a) <= 1:
         return a
 
-    # podział listy na 2
+    # divide list
     left = merge_sort(a[:len(a)//2])
     right = merge_sort(a[len(a)//2:])
 
