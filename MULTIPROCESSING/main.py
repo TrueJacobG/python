@@ -11,7 +11,7 @@ def test_func(a):
 
 
 threads = []
-num_threads = cpu_count()
+num_threads = 10
 
 # create processes
 for i in range(num_threads):
