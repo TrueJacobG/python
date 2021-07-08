@@ -33,13 +33,21 @@ class LinkedList:
         self.head = Node(value)
         self.head.next = temp
 
+    def addAfter(self, previous, data):
+        if previous is None:
+            return
+
+        new_node = Node(data)
+        new_node.next = previous.next
+        previous.next = new_node
+
     def findInList(self, value):
         temp = self.head
         i = 0
         while temp:
             if temp.data == value:
                 print(i)
-                return i
+                return temp
             temp = temp.next
             i += 1
         print(None)
@@ -49,8 +57,11 @@ class LinkedList:
 l = LinkedList()
 for x in range(1, 10):
     l.addOnEnd(x)
+
 l.addOnBegin(0)
+l.addAfter(l.findInList(3), 3)
+
 
 l.printLinkedList()
 
-l.findInList(10)
+# l.findInList(10) -> None
