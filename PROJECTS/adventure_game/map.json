@@ -1,0 +1,10 @@
+{
+    "Eagle Town": {
+        "left": null,
+        "right": "Las zbujów"
+    },
+    "Las zbujów": {
+        "left": "Eagle Town",
+        "right": null
+    }
+}
