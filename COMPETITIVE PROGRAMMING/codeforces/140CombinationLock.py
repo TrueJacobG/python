@@ -9,12 +9,17 @@ def minDistance(n1, n2):
     return change[distance]
 
 
-n = int(input())
-locked = input()
-unlocked = input()
+def main():
+    n = int(input())
+    locked = input()
+    unlocked = input()
 
-result = 0
-for i in range(n):
-    result += minDistance(locked[i], unlocked[i])
+    result = 0
+    for i in range(n):
+        result += minDistance(locked[i], unlocked[i])
 
-print(result)
+    print(result)
+
+
+if __name__ == '__main__':
+    main()
