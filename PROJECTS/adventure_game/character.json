@@ -1,0 +1,9 @@
+{
+    "name": "Jakub",
+    "hp": 100,
+    "mana": 100,
+    "money": 1000,
+    "clas": "Mag",
+    "currentLocation": "Eagle Town",
+    "eq": {}
+}

@@ -1,6 +1,12 @@
 {
     "Eagle Town": {
         "text": "Witamy w Eagle Town. Czego u nas szukasz poszukiwaczu?",
-        "shop": ""
+        "shop": "",
+        "options": [
+            "Idz w prawo",
+            "Idz w lewo",
+            "Idz do sklepu",
+            "EQ"
+        ]
     }
 }

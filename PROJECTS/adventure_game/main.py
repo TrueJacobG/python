@@ -4,6 +4,9 @@ import os
 import sys
 from time import sleep
 
+# TODO:
+# screen -> 64 width
+
 
 class Character():
     def __init__(self):
@@ -69,53 +72,67 @@ def clear_console():
     os.system(command)
 
 
-def print_options(*args):
-    options = []
-    for arg in args:
-        options.append(arg)
+def print_options(option1, option2, option3, option4):
+    option1 = " | <" + option1 + "> | "
+    option2 = " | <" + option2 + "> | "
+    option3 = " | <" + option3 + "> | "
+    option4 = " | <" + option4 + "> | "
 
-    if len(options) < 4:
-        empty = "-----"
-        for _ in range(4-len(options)):
-            options.append(empty)
+    filer1 = (64 - (len(option1) + len(option2)))//2
+    filer2 = (64 - (len(option3) + len(option4)))//2
+    filer1 = " "*filer1
+    filer2 = " "*filer2
 
-    print(f"{options[0]} {options[1]}")
-    print(f"{options[2]} {options[3]}")
+    print("################################################################")
+    print(f"{filer1}{option1}{option2}{filer1}")
+    print(f"{filer2}{option3}{option4}{filer2}")
+    print("################################################################")
 
 
-def print_screen():
-    global text, hp, mana, money, options
+def print_screen(text, hp, mana, money, options):
     clear_console()
-    print(text)
+    print("\033[92m", text, "\033[0m")
     print("\n")
-    print(f'HP: {hp}/100 MANA: {mana}/100 MONEY: {money}')
-    print_options(options)
+    print(
+        f'           \033[91mHP: {hp}/100\033[0m     \033[94mMANA: {mana}/100\033[0m    \033[93mMONEY: {money}\033[0m')
+    print_options(*options)
 
 
-def play(story, cur_L):
-    print(story[cur_L]["text"])
+def getActualVariables(story, ch):
+    currentLocation = ch.currentLocation
+
+    text = story[currentLocation]['text']
+    hp = ch.hp
+    mana = ch.mana
+    money = ch.money
+    options = story[currentLocation]['options']
+
+    return text, hp, mana, money, currentLocation, options
+
+
+def play(story, ch):
+    text, hp, mana, money, currentLocation, options = getActualVariables(
+        story, ch)
+    print_screen(text, hp, mana, money, options)
     decision = input()
     if decision.lower() == "quit":
         ch.save_character()
         clear_console()
         print("Do zobaczenia niedługo :D")
         sleep(1)
+        clear_console()
         sys.exit()
 
 
 def main():
+    ch = Character()
 
     with open("story.json") as f:
         story = json.load(f)
 
-    with open("character.json") as f:
-        character = json.load(f)
-
     while True:
-        play(story, character["currentLocation"])
+        play(story, ch)
 
 
 if __name__ == '__main__':
-    ch = Character()
-    ch.save_character()
-    print(ch.name)
+    main()
