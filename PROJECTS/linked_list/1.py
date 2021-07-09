@@ -53,6 +53,29 @@ class LinkedList:
         print(None)
         return None
 
+    def delete(self, value):
+        temp = self.head
+        if temp == None:
+            return None
+
+        if temp.data == value:
+            self.head = temp.next
+            temp = None
+            return
+
+        while temp:
+            if temp.next == None:
+                return None
+            if temp.next.data == value:
+                prev = temp.next
+                temp.next = temp.next.next
+                prev = None
+                break
+
+            temp = temp.next
+
+        return None
+
 
 l = LinkedList()
 for x in range(1, 10):
@@ -61,6 +84,7 @@ for x in range(1, 10):
 l.addOnBegin(0)
 l.addAfter(l.findInList(3), 3)
 
+l.delete(10)
 
 l.printLinkedList()
 
