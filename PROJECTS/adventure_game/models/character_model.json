@@ -1,9 +1,9 @@
 {
     "name": null,
-    "hp": null,
-    "mana": null,
+    "hp": 100,
+    "mana": 100,
     "money": 1000,
-    "class": null,
+    "clas": null,
     "currentLocation": "Eagle Town",
     "eq": {}
 }
