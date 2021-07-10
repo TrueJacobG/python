@@ -1,12 +1,49 @@
 {
     "Eagle Town": {
+        "fight": "0",
         "text": "Witamy w Eagle Town. Czego u nas szukasz poszukiwaczu?",
-        "shop": "",
         "options": [
             "Idz w prawo",
             "Idz w lewo",
             "Idz do sklepu",
             "EQ"
+        ],
+        "options_type": [
+            "move",
+            "move",
+            "move",
+            "eq"
+        ],
+        "directions": [
+            "Las zbojow",
+            "",
+            "Eagle Town - sklep",
+            ""
+        ]
+    },
+    "Eagle Town - sklep": {},
+    "Las zbojow": {
+        "fight": "0",
+        "text1": "Czego tu szukasz gagadku!? Mamy pokazac ci, gdzie raki zimoja?",
+        "options1": [],
+        "text": "Spokojnay las pelen malych zwierzatek.",
+        "options": [
+            "Idz w lewo",
+            "Idz do gory",
+            "",
+            "EQ"
+        ],
+        "options_type": [
+            "move",
+            "move",
+            "",
+            "eq"
+        ],
+        "directions": [
+            "Eagle Town",
+            "",
+            "",
+            ""
         ]
     }
 }

@@ -3,7 +3,16 @@
     "hp": 100,
     "mana": 100,
     "money": 1000,
-    "clas": "Mag",
+    "clas": "Lucznik",
     "currentLocation": "Eagle Town",
-    "eq": {}
+    "eq": {
+        "Zwykly luk": [
+            80,
+            10
+        ],
+        "Dziwny naszyjnik": [
+            80,
+            10
+        ]
+    }
 }
