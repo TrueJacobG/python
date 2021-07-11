@@ -1,0 +1,20 @@
+{
+    "Mag": [
+        "Kula ognia",
+        "Wyczerpanie",
+        "Sciana lodu",
+        "Leczenie"
+    ],
+    "Lucznik": [
+        "Precyzyjny strzal",
+        "Troj-strzal",
+        "Unik",
+        "Leczenie"
+    ],
+    "Wojownik": [
+        "Silny cios",
+        "Wirujace tornado",
+        "Blok tarcza",
+        "Leczenie"
+    ]
+}

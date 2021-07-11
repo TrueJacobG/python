@@ -1,6 +1,6 @@
 {
     "Eagle Town": {
-        "fight": "0",
+        "fightingLocation": false,
         "text": "Witamy w Eagle Town. Czego u nas szukasz poszukiwaczu?",
         "options": [
             "Idz w prawo",
@@ -8,7 +8,7 @@
             "Idz do sklepu",
             "EQ"
         ],
-        "options_type": [
+        "optionsType": [
             "move",
             "move",
             "move",
@@ -23,9 +23,31 @@
     },
     "Eagle Town - sklep": {},
     "Las zbojow": {
-        "fight": "0",
+        "fightingLocation": true,
         "text1": "Czego tu szukasz gagadku!? Mamy pokazac ci, gdzie raki zimoja?",
-        "options1": [],
+        "enemy": {
+            "hp": 100,
+            "attacksDescription": [
+                "Pierwszy lucznik przycelowuje i oddaje strzal w twoja strone.",
+                "Drugi rabus rzuca w ciebie swoim mlotem.",
+                "Najwiekszy z rabusi szarzuje w twoja strone i uderza cie swoja maczuga. ",
+                "Drugi lucznik posyla fale strzal w twoja strone."
+            ],
+            "attacksDMG": [
+                15,
+                17,
+                20,
+                17
+            ],
+            "getDMG": [
+                "Ala moja noga!",
+                "Ja ci zaraz pokaze!",
+                "Tylko na tyle cie stac!?",
+                "Dawajcie chlopaki, co nam moze zrobic to cos!"
+            ],
+            "deafeted": "To potwor nie podroznik! Uciekajmy!"
+        },
+        "__comments": "###Peaceful movement below###",
         "text": "Spokojnay las pelen malych zwierzatek.",
         "options": [
             "Idz w lewo",
@@ -33,7 +55,7 @@
             "",
             "EQ"
         ],
-        "options_type": [
+        "optionsType": [
             "move",
             "move",
             "",

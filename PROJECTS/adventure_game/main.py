@@ -3,12 +3,13 @@ from os import path
 import os
 import sys
 from time import sleep
+from random import randint
 
 # TODO:
 # screen -> 64 width
 
 
-class Character():
+class Character:
     def __init__(self):
         if not path.isfile("character.json"):
             with open("models/character_model.json") as f:
@@ -30,10 +31,15 @@ class Character():
             self.clas = character['clas']
             self.eq = character['eq']
 
+        with open("models/attacks.json") as f:
+            attacks = json.load(f)
+            self.attacks = attacks[self.clas]
+
         self.hp = character['hp']
         self.mana = character['mana']
         self.money = character['money']
         self.currentLocation = character['currentLocation']
+        self.seenFightingLocation = character['seenFightingLocation']
 
     def save_character(self):
         with open("character.json") as f:
@@ -46,6 +52,7 @@ class Character():
         character['money'] = self.money
         character['currentLocation'] = self.currentLocation
         character['eq'] = self.eq
+        character['seenFightingLocation'] = self.seenFightingLocation
 
         with open("character.json", "w") as f:
             json.dump(character, f)
@@ -55,7 +62,7 @@ class Character():
         print("Podaj swoje imie poszukiwaczu przygod: ")
         name = input()
         print("Wybierz klase: ")
-        clas = input("1. <Wojownik> 2. <Lucznik> 3. <Mag>")
+        clas = input("1. <Wojownik> 2. <Lucznik> 3. <Mag>\n\n")
         if clas == str(1) or clas.lower() == "wojownik":
             clas = "Wojownik"
             eq = {"Zwykly miecz": [80, 10],
@@ -76,11 +83,26 @@ class Character():
         return name, clas, eq
 
 
+class Enemy:
+    def __init__(self, ch, story):
+        e = story[ch.currentLocation]["enemy"]
+        self.hp = e["hp"]
+        self.attacksDescription = e["attacksDescription"]
+        self.attacksDMG = e["attacksDMG"]
+        self.getDMG = e["getDMG"]
+        self.defeated = e["deafeted"]
+
+
 def clear_console():
     command = "clear"
     if os.name in ("nt", "dos"):
         command = "cls"
     os.system(command)
+
+
+def deleteCharacter():
+    os.remove("character.json")
+    sleep(1)
 
 
 def print_options(option1, option2, option3, option4):
@@ -138,11 +160,87 @@ def which_option(decision, options):
     return None
 
 
-def make_move(decision, options, options_type, directions, ch):
+def attack(at, ch, enemy, story):
+    defense = 0
+    at = which_option(at, ch.attacks)
+    for i, item in enumerate(ch.eq.items()):
+        if i == 0:
+            weapon = item
+        if i == 1:
+            blocker = item
+        if i == 2:
+            break
+
+    if at == 1:
+        enemy.hp -= weapon[1][0]
+        ch.eq[weapon[0]][1] -= 1
+
+    if at == 2:
+        enemy.hp -= 1.5 * weapon[1][0]
+        ch.eq[weapon[0]][1] -= 2
+
+    if at == 3:
+        if ch.clas == "Wojownik":
+            addDef = 15
+        elif ch.clas == "Lucznik":
+            addDef = 10
+        else:
+            addDef = 5
+
+        defense = addDef + blocker[1][0]//4
+
+        ch.eq[blocker[0]][1] -= 1
+
+    if at == 4:
+        if ch.clas == "Mag":
+            addHeal = 15
+        elif ch.clas == "Lucznik":
+            addHeal = 10
+        else:
+            addHeal = 5
+        ch.hp += addHeal + blocker[1][0]//8
+
+    return defense
+
+
+def fight(ch, story):
+    enemy = Enemy(ch, story)
+    defense = 0
+    while True:
+        # enemy turn
+        randomNumber = randint(0, 3)
+        text = "ENEMY HP: " + str(enemy.hp) + "\n\n" + \
+            enemy.attacksDescription[randomNumber]
+        if defense >= enemy.attacksDMG[randomNumber]:
+            pass
+        else:
+            ch.hp -= enemy.attacksDMG[randomNumber]-defense
+        options = ch.attacks
+        print_screen(text, ch.hp, ch.mana, ch.money, options)
+        # player turn
+        at = input()
+        defense = attack(at, ch, enemy, story)
+
+        if enemy.hp <= 0:
+            print(enemy.defeated)
+            wait = input()
+            break
+        if ch.hp <= 0:
+            print("UMRAŁEŚ")
+            deleteCharacter()
+            wait = input()
+            sys.exit(1)
+
+        text = enemy.getDMG[randomNumber]
+        print(text)
+        wait = input()
+
+
+def makeMove(decision, options, optionsType, directions, ch):
     op = (which_option(decision, options))-1
-    if options_type[op] == "move":
+    if optionsType[op] == "move":
         ch.currentLocation = directions[op]
-    if options_type[op] == "eq":
+    if optionsType[op] == "eq":
         print_eq(ch)
 
 
@@ -152,7 +250,16 @@ def play(story, ch):
     text = story[currentLocation]['text']
     directions = story[currentLocation]['directions']
     options = story[currentLocation]['options']
-    options_type = story[currentLocation]['options_type']
+    optionsType = story[currentLocation]['optionsType']
+
+    if story[ch.currentLocation]["fightingLocation"] and ch.currentLocation not in ch.seenFightingLocation:
+        ch.seenFightingLocation.append(ch.currentLocation)
+
+        text1 = story[currentLocation]['text1']
+        print(text1)
+        while True:
+            fight(ch, story)
+            break
 
     print_screen(text, ch.hp, ch.mana, ch.money, options)
 
@@ -178,7 +285,7 @@ def play(story, ch):
             decision = input()
             continue
 
-        make_move(decision, options, options_type, directions, ch)
+        makeMove(decision, options, optionsType, directions, ch)
         flag = False
 
 

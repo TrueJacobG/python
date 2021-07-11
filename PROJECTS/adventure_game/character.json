@@ -1,18 +1,1 @@
-{
-    "name": "Jakub",
-    "hp": 100,
-    "mana": 100,
-    "money": 1000,
-    "clas": "Lucznik",
-    "currentLocation": "Eagle Town",
-    "eq": {
-        "Zwykly luk": [
-            80,
-            10
-        ],
-        "Dziwny naszyjnik": [
-            80,
-            10
-        ]
-    }
-}
+{"name": "Jakub", "hp": 68, "mana": 100, "money": 1000, "clas": "Mag", "currentLocation": "Eagle Town", "eq": {"Stara rozdzka": [80, 7], "Slomiany kapelusz": [80, 10]}, "seenFightingLocation": ["Las zbojow"]}
