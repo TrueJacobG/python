@@ -76,6 +76,15 @@ class LinkedList:
 
         return None
 
+    def findLength(self):
+        length = 0
+        temp = self.head
+        while temp:
+            length += 1
+            temp = temp.next
+        print(length)
+        return length
+
 
 l = LinkedList()
 for x in range(1, 10):
@@ -87,5 +96,7 @@ l.addAfter(l.findInList(3), 3)
 l.delete(10)
 
 l.printLinkedList()
+
+l.findLength()
 
 # l.findInList(10) -> None
