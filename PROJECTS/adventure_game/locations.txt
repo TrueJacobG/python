@@ -1,0 +1,8 @@
+Miasta:
+	Eagle town
+
+Wrogie lokacje:
+	Las zbujów
+	
+SKARB:
+	browla
