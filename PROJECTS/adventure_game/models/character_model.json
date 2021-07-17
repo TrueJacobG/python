@@ -2,7 +2,7 @@
     "name": null,
     "hp": 100,
     "mana": 100,
-    "money": 1000,
+    "money": 100,
     "clas": null,
     "currentLocation": "EAGLE TOWN",
     "eq": {},

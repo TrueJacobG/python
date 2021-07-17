@@ -881,7 +881,394 @@
             ""
         ]
     },
-    "EAGLE TOWN - sklep": {},
-    "PARTEPOL - sklep": {},
-    "FORTYLLA - sklep": {}
+    "EAGLE TOWN - sklep": {
+        "fightingLocation": false,
+        "text": "Witaj poszukiwaczu! Co chcialbys u nas kupic?",
+        "options": [
+            "Obejrzyj bronie",
+            "Obejrzyj zbroje",
+            "Wyjdz ze sklepu",
+            "EQ"
+        ],
+        "optionsType": [
+            "shop",
+            "shop",
+            "move",
+            "eq"
+        ],
+        "directions": [
+            "weapons",
+            "armors",
+            "EAGLE TOWN",
+            ""
+        ],
+        "shop": {
+            "weapons": {
+                "Wojownik": {
+                    "Miecz Gientosa": [
+                        90,
+                        8,
+                        100
+                    ],
+                    "Wlocznia Mistrza Adoranu": [
+                        50,
+                        30,
+                        150
+                    ],
+                    "Topor Angoleniusza": [
+                        120,
+                        5,
+                        200
+                    ]
+                },
+                "Mag": {
+                    "Rozdzka Czekoladnika": [
+                        90,
+                        8,
+                        100
+                    ],
+                    "Ksiega Z Cmentarza Magow": [
+                        50,
+                        30,
+                        150
+                    ],
+                    "Kostur Burz": [
+                        120,
+                        5,
+                        200
+                    ]
+                },
+                "Lucznik": {
+                    "Luk Elfow": [
+                        90,
+                        8,
+                        100
+                    ],
+                    "Lekki Luk": [
+                        50,
+                        30,
+                        150
+                    ],
+                    "Kusza Doborci": [
+                        120,
+                        5,
+                        200
+                    ]
+                }
+            },
+            "armors": {
+                "Wojownik": {
+                    "Tarcza z meteorytu": [
+                        70,
+                        15,
+                        100
+                    ],
+                    "Napiersnik orkow": [
+                        200,
+                        1,
+                        150
+                    ],
+                    "Helm zielonego orka z bagien": [
+                        20,
+                        50,
+                        200
+                    ]
+                },
+                "Mag": {
+                    "Kapelusz SzuroMaga": [
+                        70,
+                        15,
+                        100
+                    ],
+                    "Naszyjnik Wylodimira": [
+                        200,
+                        1,
+                        150
+                    ],
+                    "Sakiewka z kaszmiru": [
+                        20,
+                        50,
+                        200
+                    ]
+                },
+                "Lucznik": {
+                    "Lekka zbroja": [
+                        70,
+                        15,
+                        100
+                    ],
+                    "Nakolanniki z Meduzich Wysp": [
+                        200,
+                        1,
+                        150
+                    ],
+                    "Helm ": [
+                        20,
+                        50,
+                        200
+                    ]
+                }
+            }
+        }
+    },
+    "PARTEPOL - sklep": {
+        "fightingLocation": false,
+        "text": "O prosze, kogo my tu mamy! Witaj poszukiwaczu przygod! W czym Ci moge pomoc?",
+        "options": [
+            "Obejrzyj bronie",
+            "Obejrzyj zbroje",
+            "Wyjdz ze sklepu",
+            "EQ"
+        ],
+        "optionsType": [
+            "shop",
+            "shop",
+            "move",
+            "eq"
+        ],
+        "directions": [
+            "weapons",
+            "armors",
+            "EAGLE TOWN",
+            ""
+        ],
+        "shop": {
+            "weapons": {
+                "Wojownik": {
+                    "Miecz Piratow": [
+                        120,
+                        12,
+                        100
+                    ],
+                    "Kosa Kosiarza Smierci": [
+                        80,
+                        35,
+                        150
+                    ],
+                    "Dwureczny Miecz Ksiecia Garena": [
+                        200,
+                        5,
+                        200
+                    ]
+                },
+                "Mag": {
+                    "Rozdzka Czarodzieja Z Blizna": [
+                        120,
+                        12,
+                        100
+                    ],
+                    "Kostoru Niewiadomego Pochodzenia": [
+                        80,
+                        35,
+                        150
+                    ],
+                    "Pierscien Smierci": [
+                        200,
+                        5,
+                        200
+                    ]
+                },
+                "Lucznik": {
+                    "Luk Z Junglowego Drzewa": [
+                        120,
+                        12,
+                        100
+                    ],
+                    "Pieska Kusza": [
+                        80,
+                        35,
+                        150
+                    ],
+                    "Luk Z Krainy Ogrow": [
+                        200,
+                        5,
+                        200
+                    ]
+                }
+            },
+            "armors": {
+                "Wojownik": {
+                    "Helm Z Meteorytu": [
+                        100,
+                        20,
+                        100
+                    ],
+                    "Diamentowy Napiersnik": [
+                        200,
+                        8,
+                        150
+                    ],
+                    "Tarcza Lodowego Wasacza": [
+                        40,
+                        60,
+                        200
+                    ]
+                },
+                "Mag": {
+                    "Kapelusz Sadownika": [
+                        100,
+                        20,
+                        100
+                    ],
+                    "Naszyjnik Davida Bronzofilda": [
+                        200,
+                        8,
+                        150
+                    ],
+                    "Sakiewka Uszyta Z Czarnej Magii": [
+                        40,
+                        60,
+                        200
+                    ]
+                },
+                "Lucznik": {
+                    "Helm Z Krainy Elfodonow": [
+                        100,
+                        20,
+                        100
+                    ],
+                    "Szybkie naoczniki": [
+                        200,
+                        8,
+                        150
+                    ],
+                    "Naramienniki Barbadosua": [
+                        40,
+                        60,
+                        200
+                    ]
+                }
+            }
+        }
+    },
+    "FORTYLLA - sklep": {
+        "fightingLocation": false,
+        "text": "O prosze, kogo my tu mamy! Witaj poszukiwaczu przygod! W czym Ci moge pomoc?",
+        "options": [
+            "Obejrzyj bronie",
+            "Obejrzyj zbroje",
+            "Wyjdz ze sklepu",
+            "EQ"
+        ],
+        "optionsType": [
+            "shop",
+            "shop",
+            "move",
+            "eq"
+        ],
+        "directions": [
+            "weapons",
+            "armors",
+            "EAGLE TOWN",
+            ""
+        ],
+        "shop": {
+            "weapons": {
+                "Wojownik": {
+                    "Piracki Topor": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Piracka Kosa": [
+                        100,
+                        25,
+                        150
+                    ],
+                    "Dwureczny Miecz Kapitana Wrobla": [
+                        250,
+                        2,
+                        200
+                    ]
+                },
+                "Mag": {
+                    "Piracki Naszyjnik": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Pierscienie Pirackie": [
+                        100,
+                        25,
+                        150
+                    ],
+                    "Ksiega Wyznawcow Krakena": [
+                        250,
+                        2,
+                        200
+                    ]
+                },
+                "Lucznik": {
+                    "Mini Armata": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Luk z harpunem": [
+                        100,
+                        25,
+                        150
+                    ],
+                    "Kusza Z Latajacego Belga": [
+                        250,
+                        2,
+                        200
+                    ]
+                }
+            },
+            "armors": {
+                "Wojownik": {
+                    "Piracki Helm": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Piracki Napiersnik": [
+                        190,
+                        10,
+                        150
+                    ],
+                    "Tarcza Profesora Nitzhego": [
+                        199,
+                        99,
+                        999
+                    ]
+                },
+                "Mag": {
+                    "Pirackie Buty": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Przepaska Na Oko": [
+                        190,
+                        10,
+                        150
+                    ],
+                    "Naszyjnik z Perel": [
+                        199,
+                        99,
+                        999
+                    ]
+                },
+                "Lucznik": {
+                    "Przepaska Na Oko": [
+                        110,
+                        15,
+                        100
+                    ],
+                    "Szklane Oko": [
+                        190,
+                        10,
+                        150
+                    ],
+                    "Napiersnik Ze Skory Krakena": [
+                        199,
+                        99,
+                        999
+                    ]
+                }
+            }
+        }
+    }
 }

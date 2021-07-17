@@ -1,1 +1,23 @@
-{"name": "GG", "hp": 100, "mana": 100, "money": 1000, "clas": "Wojownik", "currentLocation": "EAGLE TOWN", "eq": {"Zwykly miecz": [80, 10], "Zwykla tarcza": [80, 10]}, "seenFightingLocation": []}
+{
+    "name": "GG",
+    "hp": 100,
+    "mana": 100,
+    "money": 100,
+    "clas": "Wojownik",
+    "currentLocation": "EAGLE TOWN - sklep",
+    "eq": {
+        "Zwykly miecz": [
+            80,
+            10
+        ],
+        "Zwykla tarcza": [
+            80,
+            10
+        ],
+        "Helm zielonego orka z bagien": [
+            20,
+            50
+        ]
+    },
+    "seenFightingLocation": []
+}

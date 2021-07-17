@@ -148,7 +148,7 @@ class Character:
         eq = self.eq
         print("W twoim plecaku znajduja sie: ")
         for item in eq.items():
-            print(f"{item[0]} Obr: {item[1][0]} Wyt: {item[1][1]}")
+            print(f"{item[0]} Att/Obr: {item[1][0]} Wyt: {item[1][1]}")
         wait = input()
 
     def attack(self, at, enemy, story):
@@ -193,12 +193,43 @@ class Character:
 
         return defense
 
-    def makeMove(self, decision, options, optionsType, directions):
+    def shop(self, op, GAME):
+        whichShelf = GAME.story[self.currentLocation]["directions"][op]
+        shelf = GAME.story[self.currentLocation]["shop"][whichShelf][self.clas]
+        for item in shelf.items():
+            print(item[0], " --- ", "\033[91mAtt/Obr: ", item[1][0],
+                  "\033[0m\033[95mWyt: ", item[1][1], "\033[0m\033[93mCena: ", item[1][2], "\033[0m")
+
+        print("Na co masz ochote?")
+        decision = input()
+        try:
+            decision = (Game.which_option(decision, list(shelf.keys())))-1
+        except:
+            return
+
+        boughtItemName = list(shelf)[decision]
+        boughtItemStats = shelf[boughtItemName]
+        if self.money < boughtItemStats[2]:
+            print("Nie masz wystarczajaco pieniedzy! Wynocha z mojego sklepu!")
+            wait = input()
+            return
+        if boughtItemName in self.eq:
+            print("Juz posiadasz taki przedmiot!")
+            wait = input()
+            return
+        self.money -= boughtItemStats[2]
+        self.eq[boughtItemName] = boughtItemStats[0:2]
+        print("Dziekuje za dokonanie u mnie zakupu :D")
+        wait = input()
+
+    def makeMove(self, decision, options, optionsType, directions, GAME):
         op = (Game.which_option(decision, options))-1
         if optionsType[op] == "move":
             self.currentLocation = directions[op]
         if optionsType[op] == "eq":
             self.print_eq()
+        if optionsType[op] == "shop":
+            self.shop(op, GAME)
 
     def fight(self, PLAYER, GAME):
         enemy = Enemy(PLAYER, GAME.story)
@@ -284,7 +315,7 @@ def play(PLAYER, GAME):
             decision = input()
             continue
 
-        PLAYER.makeMove(decision, options, optionsType, directions)
+        PLAYER.makeMove(decision, options, optionsType, directions, GAME)
         flag = False
 
 
