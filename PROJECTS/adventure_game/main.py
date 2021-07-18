@@ -4,7 +4,7 @@ import os
 import sys
 from time import sleep
 from random import randint
-
+from random import uniform
 # TODO:
 # screen -> 64 width
 
@@ -65,6 +65,10 @@ class Game:
         if decision.lower().replace(" ", "") == options[3].lower().replace(" ", "") or decision == str(4):
             return 4
         return None
+
+    @staticmethod
+    def drop_money(enemy_hp):
+        return int(enemy_hp * 0.1 * uniform(1.0, 2.0))
 
 
 class Character:
@@ -233,6 +237,7 @@ class Character:
 
     def fight(self, PLAYER, GAME):
         enemy = Enemy(PLAYER, GAME.story)
+        hp_for_money = enemy.hp
         defense = 0
         while True:
             # enemy turn
@@ -251,6 +256,9 @@ class Character:
 
             if enemy.hp <= 0:
                 print(enemy.defeated)
+                coins = Game.drop_money(hp_for_money)
+                PLAYER.money += coins
+                print("Za udana walke otrzymujesz ", coins, " pieniedzy!")
                 wait = input()
                 break
             if self.hp <= 0:
