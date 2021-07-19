@@ -19,5 +19,6 @@
             50
         ]
     },
-    "seenFightingLocation": []
+    "seenFightingLocation": [],
+    "isKox": false
 }

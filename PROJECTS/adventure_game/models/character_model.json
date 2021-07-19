@@ -6,5 +6,6 @@
     "clas": null,
     "currentLocation": "EAGLE TOWN",
     "eq": {},
-    "seenFightingLocation": []
+    "seenFightingLocation": [],
+    "isKox": false
 }

@@ -14,6 +14,17 @@ class Game:
         self.story = story
 
     @staticmethod
+    def print_help(self):
+        print("Komendy: ")
+        print("help -> Wyswietlenie pomocy")
+        print("eq -> Wyswietlenie eq")
+        print("skills -> Wyswietlenie umiejetnosci")
+        print("quit -> Zapisanie i zamkniecie gry")
+        print("\n")
+        print("W kazdej lokalizacji mozesz dokonac 4 decyzji. Dokonujesz wyboru poprzez wpisanie odpowiedzi lub podanie numeru (1,2,3,4). Zatwierdzasz wybor klawiszem ENTER.")
+        wait = input()
+
+    @staticmethod
     def clear_console():
         command = "clear"
         if os.name in ("nt", "dos"):
@@ -36,14 +47,6 @@ class Game:
         print(f"{filer1}{option1}{option2}{filer1}")
         print(f"{filer2}{option3}{option4}{filer2}")
         print("################################################################")
-
-    def print_help(self):
-        print("Komendy: ")
-        print("help -> Wyswietlenie pomocy")
-        print("quit -> Zapisanie i zamkniecie gry")
-        print("\n")
-        print("W kazdej lokalizacji mozesz dokonac 4 decyzji. Dokonujesz wyboru poprzez wpisanie odpowiedzi lub podanie numeru (1,2,3,4). Zatwierdzasz wybor klawiszem ENTER.")
-        wait = input()
 
     @staticmethod
     def print_screen(text, hp, mana, money, options):
@@ -84,6 +87,7 @@ class Character:
             self.name = name
             self.clas = clas
             self.eq = eq
+            self.isKox = False
 
         else:
             with open("character.json") as f:
@@ -92,6 +96,7 @@ class Character:
             self.name = character['name']
             self.clas = character['clas']
             self.eq = character['eq']
+            self.isKox = character['isKox']
 
         with open("models/attacks.json") as f:
             attacks = json.load(f)
@@ -271,6 +276,72 @@ class Character:
             print(text)
             wait = input()
 
+    def manaRegen(self):
+        randomNumber = randint(10, 22)
+        if self.clas == "Mag":
+            clasMultiplicator = 2
+        elif self.clas == "Lucznik":
+            clasMultiplicator = 1
+        else:
+            clasMultiplicator = 0.5
+        self.mana += int(randomNumber * clasMultiplicator)
+        if self.mana > 100:
+            self.mana = 100
+
+    def skills(self):
+        opt = ["Leczenie", "Ulepszenie Broni",
+               "Wytworzenie monet", "Storzenie broni *rare*"]
+        print("Twoje umiejetnosci: ")
+        print("1. ", opt[0])
+        print("2. ", opt[1])
+        print("3. ", opt[2])
+        print("4. ", opt[3])
+        print("\nCo chcesz zrobic?")
+
+        try:
+            dec = (Game.which_option(input(), opt))-1
+        except:
+            return
+
+        if dec == None:
+            return
+
+        randomNumber = randint(5, 20)
+        self.mana -= 25
+        if self.mana < 0:
+            self.mana += 25
+            print("Masz za malo many!")
+            wait = input()
+            return
+
+        if dec == 0:
+            self.hp += randomNumber
+            if self.hp > 100:
+                self.hp = 100
+            print("Zostales uleczony i twoje zdrowie wynosi ", self.hp)
+            wait = input()
+            return
+        if dec == 1:
+            for item in self.eq.items():
+                self.eq[item[0]][0] += randomNumber // 4
+                self.eq[item[0]][1] += randomNumber // 4
+
+            print("Ulepszyles i naprawiles swoja bron")
+            wait = input()
+            return
+        if dec == 2:
+            self.money += randomNumber
+            print("Udalo ci sie wyczarowac ", randomNumber, " monet!")
+            wait = input()
+            return
+        if dec == 3:
+            if self.isKox == True:
+                self.eq["Giga Bronka"] = [1000, 100]
+                print("JAK?!")
+                wait = input()
+                return
+            print("Nie udalo ci sie. Jestes jeszcze za slaby!")
+
 
 class Enemy:
     def __init__(self, PLAYER, story):
@@ -284,16 +355,17 @@ class Enemy:
 
 def play(PLAYER, GAME):
     # variables
-    currentLocation = PLAYER.currentLocation
-    text = GAME.story[currentLocation]['text']
-    directions = GAME.story[currentLocation]['directions']
-    options = GAME.story[currentLocation]['options']
-    optionsType = GAME.story[currentLocation]['optionsType']
+    text = GAME.story[PLAYER.currentLocation]['text']
+    directions = GAME.story[PLAYER.currentLocation]['directions']
+    options = GAME.story[PLAYER.currentLocation]['options']
+    optionsType = GAME.story[PLAYER.currentLocation]['optionsType']
 
     if GAME.story[PLAYER.currentLocation]["fightingLocation"] and PLAYER.currentLocation not in PLAYER.seenFightingLocation:
         PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
 
-        text1 = GAME.story[currentLocation]['text1']
+        PLAYER.manaRegen()
+
+        text1 = GAME.story[PLAYER.currentLocation]['text1']
         print(text1)
         while True:
             PLAYER.fight(PLAYER, GAME)
@@ -313,11 +385,15 @@ def play(PLAYER, GAME):
             flag = False
             sys.exit()
         if decision.lower() == "help":
-            GAME.print_help()
+            Game.print_help()
             print("Co chcesz zrobić?")
             decision = input()
             continue
-
+        if decision.lower() == "skills":
+            PLAYER.skills()
+            print("Co chcesz zrobić?")
+            decision = input()
+            continue
         if Game.which_option(decision, options) == None:
             print("Nie rozumiem cie...")
             decision = input()

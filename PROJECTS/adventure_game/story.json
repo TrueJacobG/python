@@ -69,16 +69,30 @@
     },
     "KROLESTWO ASPKI``KLI": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Witttttaj poszukiwaczu. Chyba sie zbugiles w naszym lasku... Chlopcy do ataku! Pozrec to w calosci.",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 150,
+            "attacksDescription": [
+                "Krolowa pajakow uderza cie swoim odnozem.",
+                "Male pajaczki gryza cie po pietach.",
+                "Ze wszystkich stron zostajesz zalany ogromna iloscia pajeczyny.",
+                "Krolowa pajakow gryzie cie w noge."
+            ],
+            "attacksDMG": [
+                15,
+                17,
+                18,
+                20
+            ],
+            "getDMG": [
+                "Sktttttt! Za kogo ty sie uwazasz?!",
+                "Tylko na tyle cie stac!?",
+                "Moje biedne robaczki. WSTAWAC! Broncie swoja krolowa!",
+                "Ala nie w odwlok!"
+            ],
+            "deafeted": "Krolowa pajakow pokonana. Ja blagac o litosc podroznika."
         },
-        "__comments": "",
-        "text": "",
+        "text": "Niegdys w tym lesie ginelo mnostwo kupcow i poszukiwaczy przygod. Od kiedy udalo sie przepedzic stąd Krolowa ASPKI``KLI jest to bardzo spokojny lasek jagodowy.",
         "options": [
             "Idz w dol",
             "Idz w prawo",
