@@ -114,16 +114,30 @@
     },
     "JUNGLA": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Kto naruszyl naszzzze terytorium? CO?! TO CZLOWIEK?! WEZO-ZOLNIERZE BRAC GO!!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 200,
+            "attacksDescription": [
+                "Wezowa istota wije sie w twoim kierunku i wstrzykuje ci jad w kolano.",
+                "Male weze wychodza ze swoich kryjowek, otaczaja Cie i gryza seriami.",
+                "Wezowi zolnierze rzucaja w twoim kierunku dzidami z grotami w ksztalcie wezy.",
+                "Najwiekszy z wezo-zolnierzy wije sie za twoje plecy i zaczyna Cie dusic."
+            ],
+            "attacksDMG": [
+                18,
+                22,
+                25,
+                27
+            ],
+            "getDMG": [
+                "Ala moj ogon!",
+                "Ej, nie w trujace kly!",
+                "AAAAAAAAAAAAAA KRWAWIE!!! Zaraz weze maja krew?!",
+                "Moje kobrowe zmysly... ZAWIODLY?!"
+            ],
+            "deafeted": "UCIESSSSKAMY! WSZYSSSSCY ODWROT!"
         },
-        "__comments": "",
-        "text": "",
+        "text": "Byla siedziba wezo-ludzi. Od niedawna zadomowily sie w kanalach pod Partepolem.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
