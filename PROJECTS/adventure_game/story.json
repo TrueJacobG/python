@@ -181,15 +181,30 @@
     },
     "WIOSKA ARDOLA": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "*Krasnoludzkie chichot* Oooo, prosze prosze, kogo my tu mamy! Chyba szukasz tu guza koleszko?!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 200,
+            "attacksDescription": [
+                "Krasnolud w beczce uderza Cie swoja maczuga.",
+                "Niepewnie kroczacy krasnolud oblewa cie zawartoscia swojego kufla. Mocno kreci Ci sie w glowie.",
+                "Zza slomianych domkow wybiega chmara niskich lecz umiesnionych zolnierzy. Ucieczka przed nimi nie byla mocno wymagajaca.",
+                "Najwyzszy z krasnoludow przycelowuje i oddaje celny strzal w twoje kolano."
+            ],
+            "attacksDMG": [
+                20,
+                22,
+                23,
+                25
+            ],
+            "getDMG": [
+                "Jasny gwint, ale bol!",
+                "ALA! .... halo gdzie ja jestem... ej panowie wyciagnijcie mnie z tej beczki!",
+                "Szybki jest! Wszyscy dawac szybciej",
+                "AAAAA moja noga!"
+            ],
+            "deafeted": "CHOLIBKA, ALE POTEZNA ISTOTA! Masz u nas dozywotni dlug szefunciu."
         },
-        "text": "",
+        "text": "Witamy ponownie poszukiwaczu! Co u Ciebie slychac? Wszystko dobrze? Moze przycupniesz na sekundke i napijesz sie z nami?",
         "options": [
             "Idz w lewo",
             "Idz w dol",
@@ -233,15 +248,30 @@
     },
     "JASKINIA POD PARTEPOLEM": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "A co to za ludek! Widzisz go Marian? Dawaj lykniemy go w calosci, jak na wezo-ludzi przystalo!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 100,
+            "attacksDescription": [
+                "Marian gryzie cie w stope.",
+                "Brat Mariana z rozpedu uderza Cie ogonem.",
+                "Marian polyka twoja bron... rozcinajac tym samym swoj brzuch.",
+                "Brat Mariana grycie Cie w kolano."
+            ],
+            "attacksDMG": [
+                15,
+                20,
+                21,
+                22
+            ],
+            "getDMG": [
+                "Ala moj ogon!",
+                "Ala moj zab!",
+                "Nie w szczepionke, co ty czlowieku!",
+                "Aaaa trafil mnie w oko!"
+            ],
+            "deafeted": "Dawaj szybko zwijamy sie stad! * w oddali * Juz wiem czemu nie wzieli nas do wojska Marian... totalne z nassssss lamagi!"
         },
-        "text": "",
+        "text": "Spokojna jaskinia. Na scianach widac otwory kanalizacyjne Partepolu.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
@@ -263,15 +293,30 @@
     },
     "OPUSZCZONA KOPALNIA": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "*Odglosy spiskowania przy malym stoliku po srodku kopalni* O nie! Panowie reptilianie, on slyszal nasze plany! Brac go!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Jaszczuroludz w berecie strzela w ciebie z metalowej konstrukcji podobnej do kuszy.",
+                "Jaszczur w niebieskiej koszulce z 'F' na klatce piersiowej rzuca w ciebie ciastkami.",
+                "Najwiekszy ze spiskowcow uderza Cie silnym prawym sierpowym. Tracisz na chwile przytomnosc.",
+                "Jaszczur w kroliczej czapce uderza Cie w glowe wielkim krzyzem."
+            ],
+            "attacksDMG": [
+                25,
+                27,
+                29,
+                30
+            ],
+            "getDMG": [
+                "ALA, wisisz mi za dentyste!",
+                "Mnie bolec twoj czyn ty mi za to zaplacic!",
+                "UGHHH! Moj berecik! Ja ci dam!",
+                "Jeszcze raz i pozalujesz!"
+            ],
+            "deafeted": "Wszyscy do wlazu! Uciekniemy nim do Watykanu!"
         },
-        "text": "",
+        "text": "Opuszczona kopalnia wegla. Zanim magowie ognia nie zaczeli zajmowac sie oswietlaniem miast, wegiel byl bardzo potrzebnym surowcem.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
