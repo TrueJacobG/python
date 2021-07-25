@@ -338,15 +338,30 @@
     },
     "BRAMY WITORGARDU": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "A kto ty byc?! Co ty tu robic?! Wypad stad maly!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Wielki czlowieko-podobny olbrzym uderza cie swoja maczuga.",
+                "Olbrzym przebija Twoj bok zwoja wlocznia.",
+                "Olbrzym uderza Cie w glowe zlotym toporem.",
+                "Jeden z zolnierzy stojacych przed wielka zlota brama rzuca w ciebie glazami."
+            ],
+            "attacksDMG": [
+                25,
+                26,
+                27,
+                30
+            ],
+            "getDMG": [
+                "Ala, moja glowa!",
+                "Ahgggg... moj palec... moj biedny paluszek!",
+                "Uwazajcie na niego! To przebiegly czlowieczek!",
+                "Jakim cudem to przebilo moja zlota zbroje!"
+            ],
+            "deafeted": "Wszyscy za brame odwrot!"
         },
-        "text": "",
+        "text": "Ogromne zlota wrota. Od niedawna niebronione przez olbrzymow.",
         "options": [
             "Idz do gory",
             "Idz w dol",
@@ -368,15 +383,30 @@
     },
     "PLAC KROLA KATORALDA": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "*Z fontanny stojacej na srodku placu wychodza cztero metrowe olbrzymy...*",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 300,
+            "attacksDescription": [
+                "Najwiekszy z olbrzymow uderza Cie swoim mieczem, rani Cie dotkliwie w reke.",
+                "Z fontanny wyskakuje zwinny czlowieko-lud w czarnym przebraniu i uderza Cie w twarz kawalkami metalu w ksztalcie gwiazdek.",
+                "Zostajesz uderzony silnym ciosem halabarda w brzuch. Nie mozesz zlapac przez chwile oddechu.",
+                "Zostajesz zasypany chmara szklanych butelek z fioletowa substancja. Twoja skora pali Cie niemilosiernie."
+            ],
+            "attacksDMG": [
+                30,
+                31,
+                32,
+                33
+            ],
+            "getDMG": [
+                "*trafiasz w bron jednego z olbrzymow, w wyniku czego bron wypada mu z rak* Ej oddawaj to to moja bron!",
+                "Ala, nie w kolano!",
+                "AAAAA to boli!",
+                "Tylko na tyle cie stac?!"
+            ],
+            "deafeted": "Wszyscy odwrot do fontanny! Uciekniemy kanalami!"
         },
-        "text": "",
+        "text": "Opuszczone krolestwo podziemnych olbrzymow. Wedlug legend ostani krol tej krainy, Krol Katorald, znikal w niewyjasnionych okolicznosciach pozostawiajac zamek bez opieki. Korupcja i przemoc sprawily, ze niegdys piekna kraina w pare lat zamienila sie w ruine, a po miescie, z ktorego bilo bogactwo zostaly tylko zgliszcza.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
