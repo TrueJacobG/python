@@ -92,7 +92,7 @@
             ],
             "deafeted": "Krolowa pajakow pokonana. Ja blagac o litosc podroznika."
         },
-        "text": "Niegdys w tym lesie ginelo mnostwo kupcow i poszukiwaczy przygod. Od kiedy udalo sie przepedzic stąd Krolowa ASPKI``KLI jest to bardzo spokojny lasek jagodowy.",
+        "text": "Niegdys w tym lesie ginelo mnostwo kupcow i poszukiwaczy przygod. Od kiedy udalo sie przepedzic stad Krolowa ASPKI``KLI jest to bardzo spokojny lasek jagodowy.",
         "options": [
             "Idz w dol",
             "Idz w prawo",
@@ -159,7 +159,7 @@
     },
     "POLA BOHATEROW": {
         "fightingLocation": false,
-        "text": "'Wielu probowalo, ale tylko nieliczni zostali bohaterami zapamietanymi na wieki.' Ogromna ilosc marmurowych kolumn z podobiznami DZIESIĘCIU NAJWIĘKSZYCH przyprawia Cie o bol glowy.",
+        "text": "'Wielu probowalo, ale tylko nieliczni zostali bohaterami zapamietanymi na wieki.' Ogromna ilosc marmurowych kolumn z podobiznami DZIESIECIU NAJWIEKSZYCH przyprawia Cie o bol glowy.",
         "options": [
             "Idz w dol",
             "",
@@ -428,15 +428,30 @@
     },
     "SKARBNICA": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Patrzcie to on pokonal wszystkich naszych zolnierzy! Brac go!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 300,
+            "attacksDescription": [
+                "Najwiekszy z olbrzymow uderza Cie w glowe niszczac twoje nakrycie glowy.",
+                "Jeden z zolnierzy skarbnicy dusi Cie swoim nunczako.",
+                "Zostajesz powalony przez najgrubszego z olbrzymow.",
+                "Olbrzym lucznik rani Cie w szyje strzala."
+            ],
+            "attacksDMG": [
+                15,
+                15,
+                15,
+                15
+            ],
+            "getDMG": [
+                "Ala moja glowa!",
+                "Ej nie w szczepionke!",
+                "Ja Ci dam hultaju!",
+                "Dawaj na solo, jak taki mocny!"
+            ],
+            "deafeted": "Auuuuu *Wszyscy zolnierze skamieniali. W tym momencie zdajesz sobie sprawe ze skarbiec wypelniony jest posagami olbrzymow.*"
         },
-        "text": "",
+        "text": "Skarbiec pelen swiecacego na zielono zlota i zlotych lupow.",
         "options": [
             "Idz w lewo",
             "Idz w prawo",
@@ -458,7 +473,7 @@
     },
     "BROWLA": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Gratulacje udalo Ci sie dojsc do V3N6eXN0a2llZ28gbmFqbGVwc3plZ28h celu swojej podrozy! Dziekuje za przejscie mojej gry! ~ JakubG",
         "options": [
             "Idz w prawo",
             "",
