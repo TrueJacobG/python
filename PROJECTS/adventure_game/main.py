@@ -153,12 +153,70 @@ class Character:
         os.remove("character.json")
         sleep(1)
 
-    def print_eq(self):
-        eq = self.eq
-        print("W twoim plecaku znajduja sie: ")
-        for item in eq.items():
-            print(f"{item[0]} Att/Obr: {item[1][0]} Wyt: {item[1][1]}")
+    def printEq(self):
+        print("W twoim plecaku znajduja sie: \n")
+        weapons = []
+        armors = []
+        for weaponType in self.eq.items():
+            if weaponType[0] == "weapons":
+                weapons.append(list(weaponType[1].items()))
+            else:
+                armors.append(list(weaponType[1].items()))
+
+        nr = 0
+        print("\033[94mBronie:\033[0m")
+        for item in weapons[0]:
+            nr += 1
+            print(
+                f"\033[93m{nr}. {item[0]}\033[0m  -  Att/Obr: {item[1][0]} Wyt: {item[1][1]}")
+
+        nr = 0
+        print("\n \033[94mZbroje:\033[0m")
+        for item in armors[0]:
+            nr += 1
+            print(
+                f"\033[93m{nr}. {item[0]}\033[0m  -  Att/Obr: {item[1][0]} Wyt: {item[1][1]}")
+
+        print("\nChcesz zmienic swoja glowna bron i zbroje?")
+        print("<TAK> <NIE>")
+        decision = input()
+        if decision.lower() == "tak" or decision == 1:
+            self.rearrangeEq(weapons[0], armors[0])
         wait = input()
+        return
+
+    def rearrangeEq(self, weapons, armors):
+
+        print("Ktora bron chcesz ustawic jako glowna? (podaj numer)")
+        weaponDecision = int(input())-1
+        print("Ktora zbroje chcesz ustawic jako glowna? (podaj numer)")
+        armorDecision = int(input())-1
+
+        try:
+            self.eq["weapons"] = self.moveElementInDict(
+                self.eq["weapons"], weapons[weaponDecision][0])
+
+            self.eq["armors"] = self.moveElementInDict(
+                self.eq["armors"], armors[armorDecision][0])
+        except:
+            print("Podales zly numer!")
+            wait = input()
+
+        self.printEq()
+
+    def moveElementInDict(self, di, key):
+        queue = []
+        result = {}
+        for item in di.items():
+            if item[0] == key:
+                result[item[0]] = item[1]
+                continue
+            queue.append(item)
+
+        for item in queue:
+            result[item[0]] = item[1]
+
+        return result
 
     def attack(self, at, enemy, story):
         defense = 0
@@ -236,7 +294,7 @@ class Character:
         if optionsType[op] == "move":
             self.currentLocation = directions[op]
         if optionsType[op] == "eq":
-            self.print_eq()
+            self.printEq()
         if optionsType[op] == "shop":
             self.shop(op, GAME)
 

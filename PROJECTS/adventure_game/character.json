@@ -6,18 +6,22 @@
     "clas": "Wojownik",
     "currentLocation": "EAGLE TOWN - sklep",
     "eq": {
-        "Zwykly miecz": [
-            80,
-            10
-        ],
-        "Zwykla tarcza": [
-            80,
-            10
-        ],
-        "Helm zielonego orka z bagien": [
-            20,
-            50
-        ]
+        "weapons": {
+            "Zwykly miecz": [
+                80,
+                10
+            ]
+        },
+        "armors": {
+            "Helm zielonego orka z bagien": [
+                20,
+                50
+            ],
+            "Zwykla tarcza": [
+                80,
+                10
+            ]
+        }
     },
     "seenFightingLocation": [],
     "isKox": false

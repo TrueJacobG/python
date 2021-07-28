@@ -495,15 +495,30 @@
     },
     "EL` GLOBINGOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przy wyjsciu z jaskini zaczepia Cie grupka globindzkich rabusiow. Chca zawinac twoja zaszetke ze zlotem.",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 200,
+            "attacksDescription": [
+                "Najmniejszy z globindzkich rabusiow szybkim susem dostaje sie za twoje plecy i wbija Ci sztylet w plecy.",
+                "Kazdy globing rzuca w Ciebie szklanymi kulkami. Kulki wybuchaja i zaczynasz dusic sie w chmurze dymu.",
+                "Dwoch rabusiow zaczyna biegac dookola Ciebie zwiazujac Ci nogi. Przewracasz sie.",
+                "Globing wbija ci drewniany noz w ramie."
+            ],
+            "attacksDMG": [
+                20,
+                22,
+                24,
+                25
+            ],
+            "getDMG": [
+                "Ala moje ucho!",
+                "Tylko na tyle cie stac!?",
+                "O NIE MOJE WLOSY! JAK JA SIE TERAZ POKAZE NA SLUBIE CIOTKI?!",
+                "Zostaw mnie wazniaku! Ja ci dam mnie tak podnosic za nos!"
+            ],
+            "deafeted": "Ugh! Ej ludziska spadamy stad to jakis giga kox!"
         },
-        "text": "",
+        "text": "Wychodzisz z jaskini. Widzisz wspaniala doline pelna drewnianych domkow globingow. W oddali widzisz ryneczek, szkole i sale sadowa.",
         "options": [
             "Idz do gory",
             "Idz w dol",
@@ -525,7 +540,7 @@
     },
     "RYNEK GLOBINGOW": {
         "fightingLocation": false,
-        "text": "Gobliny to szemrane gostki.. ale bardzo kochaja pieniadze. W tej dolinie od setek lat sprzedaja przedmioty niewiadomego pochodzenia. Niestety, nie masz goblinich denarow, wiec nie dobijesz z nimi targu.",
+        "text": "Globingi to szemrane gostki.. ale bardzo kochaja pieniadze. W tej dolinie od setek lat sprzedaja przedmioty niewiadomego pochodzenia. Niestety, nie masz globindzkich denarow, wiec nie dobijesz z nimi targu.",
         "options": [
             "Idz do gory",
             "Idz w dol",
