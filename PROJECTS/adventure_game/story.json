@@ -562,15 +562,30 @@
     },
     "ZBROJOWNIA GLOBINGOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Wchodzisz do zbrojowni globingow, ktora jest jednoczesnie muzeum zdobyczy globinskich poszukiwaczy przygod. Jestes swiadkiem nieudolnej kradziezy. Grupka wlamywaczy ze skarpetami na glowach probuje ukrasc zbroje Sir Grzyboleta. Gdy Cie dostrzegaja zaczynaja panikowac... to znaczy atakowac Cie?...",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 200,
+            "attacksDescription": [
+                "Najmniejszy z globingow probuje ukrasc Ci sakiewke, ale potyka sie i uderza w Ciebie glowa.",
+                "Zamaskowany globing odcina Ci sznurowki i ucieka.",
+                "Jeden z globinow rzuca w Ciebie smierdzacym kaloszem.",
+                "Globing z rabusiowym workiem szarzuje w Twoja strone i lamie sobie o Ciebie reke."
+            ],
+            "attacksDMG": [
+                12,
+                13,
+                14,
+                15
+            ],
+            "getDMG": [
+                "Ala nie w zeby, co ty pogrzalo Cie ziomal!",
+                "Ala, moja glowa!",
+                "Gostek co z Toba! Wisisz mi czapke!",
+                "Jeszcze raz i pozalujesz!"
+            ],
+            "deafeted": "Dobra juz spokojnie szefunciu po co tyle agresji juz spadamy do siebie."
         },
-        "text": "",
+        "text": "Po ostatniej potyczce globingi bacznie obserwuja Cie zza antycznych figur, ale boja sie z Toba walczyc.",
         "options": [
             "Idz w dol",
             "",
