@@ -220,24 +220,36 @@ class Character:
 
     def attack(self, at, enemy, story):
         defense = 0
-        at = Game.which_option(at, self.attacks)
-        for i, item in enumerate(self.eq.items()):
-            if i == 0:
-                weapon = item
-            if i == 1:
-                blocker = item
-            if i == 2:
-                break
+        dmg = 0
+        weaponDestructionDamage = 0
 
-        if at == 1:
-            enemy.hp -= weapon[1][0]
-            self.eq[weapon[0]][1] -= 1
+        whichAttack = Game.which_option(at, self.attacks)
+        weapons = []
+        armors = []
+        for weaponType in self.eq.items():
+            if weaponType[0] == "weapons":
+                weapons.append(list(weaponType[1].items()))
+            else:
+                armors.append(list(weaponType[1].items()))
 
-        if at == 2:
-            enemy.hp -= 1.5 * weapon[1][0]
-            self.eq[weapon[0]][1] -= 2
+        weapon = list(weapons[0][0])
+        armor = list(armors[0][0])
 
-        if at == 3:
+        weaponName = list(self.eq["weapons"].keys())[0]
+        armorName = list(self.eq["armors"].keys())[0]
+
+        if whichAttack == 1:
+            dmg = 1
+            weaponDestructionDamage = 1
+
+        if whichAttack == 2:
+            dmg = 1.5
+            weaponDestructionDamage = 2
+
+        enemy.hp -= weapon[1][0] * dmg
+        self.eq["weapons"][weaponName][1] -= weaponDestructionDamage
+
+        if whichAttack == 3:
             if self.clas == "Wojownik":
                 addDef = 15
             elif self.clas == "Lucznik":
@@ -245,18 +257,18 @@ class Character:
             else:
                 addDef = 5
 
-            defense = addDef + blocker[1][0]//4
+            defense = addDef + armor[1][0]//4
 
-            self.eq[blocker[0]][1] -= 1
+            self.eq["armors"][armorName][1] -= 1
 
-        if at == 4:
+        if whichAttack == 4:
             if self.clas == "Mag":
                 addHeal = 15
             elif self.clas == "Lucznik":
                 addHeal = 10
             else:
                 addHeal = 5
-            self.hp += addHeal + blocker[1][0]//8
+            self.hp += addHeal + armor[1][0]//4
 
         return defense
 
@@ -305,10 +317,11 @@ class Character:
         while True:
             # enemy turn
             randomNumber = randint(0, 3)
-            text = "ENEMY HP: " + str(enemy.hp) + "\n\n" + \
-                enemy.attacksDescription[randomNumber]
+            text = "\033[91m" + "ENEMY HP: " + str(enemy.hp) + "\n\n" + \
+                enemy.attacksDescription[randomNumber] + "\033[0m"
             if defense >= enemy.attacksDMG[randomNumber]:
-                pass
+                enemy.hp -= enemy.hp//5
+                print("Odbiles atak wroga!")
             else:
                 self.hp -= enemy.attacksDMG[randomNumber]-defense
             options = self.attacks
@@ -321,6 +334,7 @@ class Character:
                 print(enemy.defeated)
                 coins = Game.drop_money(hp_for_money)
                 PLAYER.money += coins
+                coins = "\033[93m" + str(coins) + "\033[0m"
                 print("Za udana walke otrzymujesz ", coins, " pieniedzy!")
                 wait = input()
                 break
@@ -449,7 +463,7 @@ def play(PLAYER, GAME):
             continue
         if decision.lower() == "skills":
             PLAYER.skills()
-            print("Co chcesz zrobić?")
+            print("Uzyles umiejetnosci! Gdzie chcesz teraz isc?")
             decision = input()
             continue
         if Game.which_option(decision, options) == None:
