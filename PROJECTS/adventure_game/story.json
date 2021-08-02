@@ -607,15 +607,30 @@
     },
     "KARAWAN ZLODZIEI": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przechodzisz obok rozbitego karawanu. Nad soba widzisz chmare wywern. Widzisz jak z karawanu wyskakuje skraja zlodziei. Wywerny nurkuja i rozrywaja rabusiow na strzepy. Po krotkiej chwili konsumpcji dostrzegaja Cie i ruszaja w Twoja strone.",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Wywerna dziobie cie brzuch.",
+                "Wywerna uderza Cie swoim skrzydlem.",
+                "Wywerna rani Cie w glowe.",
+                "Wywerna probuje odgrysc Ci kostke."
+            ],
+            "attacksDMG": [
+                20,
+                21,
+                22,
+                23
+            ],
+            "getDMG": [
+                "SKRRA!",
+                "SKRRRRRA!",
+                "SKRR SKRAAAAA!",
+                "SKRA SKRA SKRA!"
+            ],
+            "deafeted": "SKRAAAAAAAAAAAA!"
         },
-        "text": "",
+        "text": "Porzucony i obrabowany karawan krola Katoralda. Na pobliskim wzgorzu widac gniazdo wywern.",
         "options": [
             "Idz w dol",
             "Idz w prawo",
