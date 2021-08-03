@@ -652,7 +652,7 @@
     },
     "JURNY PARK": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Spokojny park, w ktorym zyja kroliczki wielkanocne.",
         "options": [
             "Idz do gory",
             "Idz w lewo",
@@ -674,15 +674,30 @@
     },
     "OPUSZCZONY ZAMEK ORKOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przechodzisz przez opuszczony zamek orkow. W pewnym momencie slyszysz dobiegajace szczekanie z piwnicy. Postanawiasz to sprawdzic. Gdy otwierasz klape prowadzaca do piwnicy, wyskakuja z niej wilki.",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 100,
+            "attacksDescription": [
+                "Wilk gryzie Cie w reke.",
+                "Wilk gryzie Cie w reke.",
+                "Wilk gryzie Cie w noge.",
+                "Wilk gryzie Cie w noge."
+            ],
+            "attacksDMG": [
+                12,
+                25,
+                14,
+                15
+            ],
+            "getDMG": [
+                "WRRRRRRR!",
+                "WRRR!",
+                "WRRR HAU HAU!",
+                "WRRRRRRRRRRR!"
+            ],
+            "deafeted": "WOOF WOOF..."
         },
-        "text": "",
+        "text": "Ten zamek zostal opuszczony 32 lata temu podczas ekspansjii ludzi z Partepolu na pobliskie tereny. Orkowie dlugow walczyli, ale nie mieli szans w walce z ludzmi. Zabrali wszystkie drogocenne przedmioty i uciekli na bagna. Legendy glosza, ze planuja zemste na ludziach.",
         "options": [
             "Idz w lewo",
             "Idz w prawo",
