@@ -719,15 +719,30 @@
     },
     "CHATKA NA RZECE ULULULU": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przechodzisz obok dziwnie wygladajacej chatki na granicy bagien. Z jej srodka wydobywaja sie dziwne dzwieki przypominajace rytualy szamanckie. *BUUUUM!* Chatka eksploduje! Z jej srodka wypada szaman ork, ktoremu pala sie obrania. *CHLUP! UFFF! Ale ulga! Dobrze, ze nie zakopalem tego bajorka, co ja teraz bym pocza! ... A niech cie Kurdowidalontku! Znowu mnie przebiegly pirat oszukal na proch strzelniczy! Tyle razy mu powtarzalem, C Z Y S T Y proch, ale jak zwykle dal mi jakie.... A KTO TO TAM SIEDZI ZA DRZEWEM! TO CZLOWIEK! CHOC TU ZARAZ ZROBIE Z CIEBIE ZUPE!!*",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 100,
+            "attacksDescription": [
+                "Szaman uderza cie swoim kosturem.",
+                "Szaman uderza cie swoim kosturem w glowe.",
+                "Szaman uderza cie swoim kosturem w glowe.",
+                "Szaman uderza cie swoim kosturem. Nie sprawia Ci to wiele bolu."
+            ],
+            "attacksDMG": [
+                15,
+                16,
+                17,
+                18
+            ],
+            "getDMG": [
+                "Ala nie po twarzy!",
+                "O nie, ja sie dalej pale HU HU HU!",
+                "Ja Ci dam hultaju!",
+                "Ej nie tak szybko, wiesz jak ciezko sie biega w zweglonych ubraniach!"
+            ],
+            "deafeted": "Dobra juz dobra, zostaw mnie hultaju! Ide sprzatac moja chatke.. Matko jedyna caly dom w zgliszczach.. Nie daruje Kurdowidalontkowi! Zeby przyjaciela na pare srebrnikow oszukac!"
         },
-        "text": "",
+        "text": "Zgliszcza chatki szamana orka.",
         "options": [
             "Idz w lewo",
             "Idz w prawo",
@@ -883,7 +898,7 @@
     },
     "FORTYLLA": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Przechodzisz przez miasto portowe Fortylla, jedno z najwiekszych w calej krainie. Dookola widzisz pelno piratow i szemranych typow. Fortylla prowadzi nie pisana wojne z innym miastem portowym, Fortys. Pare lat temu bylo to jedno wielkie miasto, ale zostalo podzielone po wprowadzeniu zakazu picia rumu. Mieszkancy, wtedy jeszcze dzielnicy Fortylla, rozpoczeli bunt. Wladze miasta nie mogac poradzic sobie z zamieszkami postanowili podzielic pradawne miasto portowe na Fortys i Fortylle.",
         "options": [
             "Idz do gory",
             "Idz w dol",
@@ -1039,7 +1054,7 @@
     },
     "GRZYBOWICE": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Gdy mijasz wrota miasta grzybo-ludkow widzisz zamieszanie w miescie. Wszyscy poszukuja zbroi Sir Grzyboleta. Zginela pare dni temu i nikt nie wie, gdzie sie podziewa.",
         "options": [
             "Idz do gory",
             "Idz w prawo",
