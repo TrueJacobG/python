@@ -824,7 +824,7 @@
     },
     "CMENTARZ MAGOW": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Widzisz na cmentarzu gildii magow wiele porozkopywanych grobow. Prawdopodobnie orki szukaly tu magicznych artefaktow, ktore mialyby im pomoc w nadchodzacej walce z ludzmi.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
@@ -846,7 +846,7 @@
     },
     "KAPLICA MAGOW": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Maly kosciulek na wzgorzu. Bije od niego magia na kilometry.",
         "options": [
             "Idz w dol",
             "",
@@ -920,7 +920,7 @@
     },
     "FORTYS": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Miasto Fortys to spokojne miejsce. Panujace tu prawa sprawily, ze jest to najspokojniejsza osada portowa. Tylko jedna osoba tu nie pasuje... Widzisz jak w pospiechu odplywa maly stateczek. Na fladze ma napis *Statek Kurdowidalontka*. Chyba ten maly oszust nagrabil sobie u jakiegos orka...",
         "options": [
             "Idz do gory",
             "Idz w dol",
@@ -1032,7 +1032,7 @@
     },
     "WIEZA ZWIADOWCZA": {
         "fightingLocation": false,
-        "text": "",
+        "text": "Wieza zwiadowcza na przedmiesciach Grzybowic.",
         "options": [
             "Idz w lewo",
             "Idz w dol",
