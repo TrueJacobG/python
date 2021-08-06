@@ -226,7 +226,7 @@
     },
     "PARTEPOL": {
         "fightingLocation": false,
-        "text": "Witaj w stolicy! Znajdziesz w Partepolu wszystko, czego dusza zapragnie. Co czwartek gra u nas zepsol Hajz3r-dol. Musisz wpasc i to zobaczyc! Swietnie graja ataki paniki.",
+        "text": "*Witaj w stolicy! Znajdziesz w Partepolu wszystko, czego dusza zapragnie. Co czwartek gra u nas zepsol Hajz3r-dol. Musisz wpasc i to zobaczyc! Swietnie graja ataki paniki.* Mimo milych slow, ktore slyszysz od witacza przy bramie miasta, czujesz w powietrzu niepokoj. Na ulicach jest pelno wojsk i obawia sie jednego, wojny z orkami...",
         "options": [
             "Idz do gory",
             "Idz w dol",
@@ -764,15 +764,30 @@
     },
     "BAGNA ORKOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przechodzisz przez bagna. Masz cicha nadzieje, ze nie napotkasz na zadnych orkow. Gdy nagle... *CZLOWIEK NA NASZYM TERENIE!!! BRAC GO* Rozpedzony oddzial piecio metrowych stworow biegnie w twoja strone. Uciekasz przez bagna az ladujesz na pobliskiej plazy. Chowasz sie przez chwile w opuszczonym domku rybackim. Gdy czujesz, ze jest juz bezpiecznie wychodzisz z chatki napotykajac wlasciciela domostwa, jest nim Gali Rybakov... Twoj stary znajomy ze szkoly, ktory wisi Ci sporo pieniedzy!!!",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 100,
+            "attacksDescription": [
+                "Gali probuje Ci zwiac, ale sila zmuszasz go do rozmowy.",
+                "Gali probuje Ci zwiac, ale sila zmuszasz go do rozmowy.",
+                "Rybakov bierze nogi za pas, ale zatrzymujesz go sila.",
+                "Rybakov bierze nogi za pas, ale zatrzymujesz go sila."
+            ],
+            "attacksDMG": [
+                5,
+                5,
+                5,
+                5
+            ],
+            "getDMG": [
+                "NIE MAM PIENIEDZY!",
+                "Jakie pieniadze? O czym ty mowisz!?",
+                "Nie mam twoich pieniedzy!",
+                "Daj spokoj jestem splukany, oszukal mnie jeden pirat w Fortylli."
+            ],
+            "deafeted": "Dobra, *wyjmuje sakiewke* juz masz te pieniadze i zostaw mnie w spokoju!"
         },
-        "text": "",
+        "text": "Bardzo niebezpieczne miejsce, zwlaszcza dla ludzi. Orkowie prowadza bardzo intensywne przygotowania do wojny z ludzmi. Widzisz pelno piecow, kowali, dostaw artefaktow i innych narzedzi potrzebnych do stworzenia maszyn wojennych. Po poprzednich przygodach na tych terenach postanawiasz oplynac bagna na malej tratwie.",
         "options": [
             "Idz w lewo",
             "Idz do gory",
@@ -794,15 +809,30 @@
     },
     "EVI`LOGROWICE": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Trafiasz na mala studnie na granicy bagien i gor Aldogordis. *Przez gory nie dam rady przejsc, nie jestem szalony* Po skonczonym zwiedzaniu postanawiasz zawrocic, ale na sam koniec wrzucasz monete do studni. *OOO PIENIAZEK PIENIAZEK* Ze studni wyskakuje ogromny Pingwin Lichwiarz... *TY MI ODDAC SWOJE MONETY!*",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 300,
+            "attacksDescription": [
+                "*A masz z rakietnicy.... Zaraz gdzie jest rakietnica... RICO!*",
+                "*SZEREGOWY POKAZ MU GDZIE RAKI ZIMUJ... Szeregowy?...",
+                "Pingwin uderza Cie w glowe wykrzykujac przy tym jak dobrze zna 14 sztuk walki.",
+                "Pingwin dusi Cie swoim poteznym przytulasem."
+            ],
+            "attacksDMG": [
+                13,
+                15,
+                16,
+                17
+            ],
+            "getDMG": [
+                "Ala nie w dziub!",
+                "Ty wiesz kim ja jestem! Ja sluzylem z Manfredim i Johnsonem! Ale niestety zgineli podczas ataku na pociag zwierzat cyrkowcow...",
+                "Ja Ci tam! Ty wiesz kim ja jestem! Ja sluzylem z Manfredim i Johnsonem! Ale niestety zgineli w masakrze w Nowym Yorku...",
+                "Haaa co tak slabo! Ty wiesz kim ja jestem! Ja sluzylem z Manfredim i Johnsonem! Ale niestety zgineli w wypadku samochodowym pod Moskwa"
+            ],
+            "deafeted": "*ALA DOBRA GOSTEK ZBASTUJ BAJERKE JUZ SPADAM DO SIEBIE* ~ powiedzial pingwin wskakujac do studni. *KOWALSKI, SZEREGOWY A WY CZEMU NIE WYSKOCZYLISCIE DO TEGO GOSTKA*"
         },
-        "text": "",
+        "text": "*Spokojne miejsce piknikowe z mala studzienka w centrum. Tylko jestem otoczony przez ogromne gory Aldogordis i niebezpieczne bagna orkow... Zmieniam zdanie to nie jest spokojne miejsce*",
         "options": [
             "Idz w dol",
             "",
