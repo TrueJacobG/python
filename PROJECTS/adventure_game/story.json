@@ -898,15 +898,30 @@
     },
     "KLIFY SYREN": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "*Witaj podrozniku - :DDDD - Czego u nas szukasz? Moze skusisz sie na caluska.... I ODDASZ MI SWOJA DUSZE!*",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Syrena wciaga Cie pod wode i zaczynasz sie dusic.",
+                "Syrena rozsadza Ci uszy swoim spiewem.",
+                "Zostajesz ugryziony przez syrene w noge.",
+                "Syrena rzuca w Ciebie parzaca meduza."
+            ],
+            "attacksDMG": [
+                24,
+                25,
+                26,
+                27
+            ],
+            "getDMG": [
+                "Uwazaj na moje wlosy chlopcze...",
+                "Pfff ktos taki chce sie ze mna mierzyc?!",
+                "Uspokoj sie maly... za kogo ty sie uwazasz?",
+                "EJ! MOJ MAKIJAZ! JAK MOGLES?!"
+            ],
+            "deafeted": "*LEEE.. dobrze moje Panie spadamy stad... Pan nie jest nami zaintereSOWAny..."
         },
-        "text": "",
+        "text": "Klify przejete przez krwiozercze syreny. Bardzo niebezpieczne miejsce. Patrz pod nogi.",
         "options": [
             "Idz do gory",
             "Idz w prawo",
@@ -1032,15 +1047,30 @@
     },
     "KUTER RYBACKI": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Przechodzac obok kutra rybackiego slyszysz wydobywajace sie z jego wnetrza strzaly. Postanawiasz to sprawdzic. W srodku znajdujesz szajke piratow, ktorzy kloca sie o pieniadze i rum. Teraz ich najwiekszym problemem stajesz sie ty....",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Pirat uderza Cie szabla.",
+                "Pirat oblewa Cie alkoholem i podpala.",
+                "Najwiekszy z piratow uderza Toba o ziemie.",
+                "Zostajesz postrzelony w ramie. *Dobrze, ze nie kolano*"
+            ],
+            "attacksDMG": [
+                15,
+                17,
+                18,
+                19
+            ],
+            "getDMG": [
+                "UGH moj zab!",
+                "Ala moja glowa!",
+                "Moj kapelusz tak skrzywdzic?! Ja Ci zaraz pokaze!",
+                "Ej, oddawaj to moj hak!"
+            ],
+            "deafeted": "Wyrzuccie go za burte i odplywamy!!!"
         },
-        "text": "",
+        "text": "Kuter rybacki odplynal pare dni temu. Zostal po nim tylko slad na plazy i pare skrzyn po rumie.",
         "options": [
             "Idz w dol",
             "",
