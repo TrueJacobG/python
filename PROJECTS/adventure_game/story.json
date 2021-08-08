@@ -987,15 +987,30 @@
     },
     "PLAZA PIRATOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "Miedzy miastem Fortys, a polaciami wydm trafiasz na plaze. Widzisz na niej grupke zeglazy, ktorzy smaza kielbaski nad ognisiem. Jestes weganem, wiec postanawiasz pokazac im gdzie ich miejsce...",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 200,
+            "attacksDescription": [
+                "Pirat rzuca w Ciebie przepyszna kielbaska.",
+                "Pirat rzuca w Ciebie przepyszna kaszanka.",
+                "Pirat rzuca w Ciebie przepysznym upieczonym chlebkiem.",
+                "Pirat rzuca w Ciebie przepyszna szyneczka."
+            ],
+            "attacksDMG": [
+                14,
+                15,
+                16,
+                17
+            ],
+            "getDMG": [
+                "ZOSTAW MOJE KIELBACHY!",
+                "EJ, TO MOJA DAWAJ TO!",
+                "gdzie jest ketchup?",
+                "NIE PO TO TYLE ROZPALALEM GRILA ZEBY TERAZ GO GASIC!"
+            ],
+            "deafeted": "Dobra juz sie zwijamy daj spokoj gosciu!"
         },
-        "text": "",
+        "text": "Plaza z niesamowicie czysta morska woda. Przed wejsciem widziales znak *Zakaz grilowania.*",
         "options": [
             "Idz w dol",
             "Idz w prawo",
@@ -1017,15 +1032,30 @@
     },
     "WYDMY LUPIEZCOW": {
         "fightingLocation": true,
-        "text1": "",
+        "text1": "*Szybciej Wadron! Musimy zakopac ten skarb i wracac, bo szef nie da nam spokoju! - powiedzial Gali. - Ciekawe, skad szef ma tyle pieniedzy. Pewnie ukradl, jak zwykle - powiedzial Wadron - No pewnie, ze ukradl! Oszukiwal orki na proch strzelniczy! Wciskal im ze to czysty proch, a tak naprawde byly to zmielone... KURDE WADRON KTOS NAS OBSERWUJE ZZA WYDMY! NA NIEGOOOOO!*",
         "enemy": {
-            "hp": null,
-            "attacksDescription": [],
-            "attacksDMG": [],
-            "getDMG": [],
-            "deafeted": ""
+            "hp": 250,
+            "attacksDescription": [
+                "Dostajesz lopata po glowie.",
+                "Zostajesz postrzelony w udo z muszkietu.",
+                "Pirat uderza Cie w brzuch kolba muszkietu.",
+                "Pirat uderza Cie lopata w noge."
+            ],
+            "attacksDMG": [
+                16,
+                17,
+                20,
+                23
+            ],
+            "getDMG": [
+                "Ala, moja glowa! Jak mogles?!",
+                "Ej ty, nie pozwalaj sobie!",
+                "Znam 6 sztuk walki! Zaraz Ci pokaze jak to jest miec zlamany nos!",
+                "Ala, moj nos!"
+            ],
+            "deafeted": "SZYBKO WADRON WSIADAJ NA LODZ PIASKOWA I ZWIEWAMY STAD!"
         },
-        "text": "",
+        "text": "Legendy glosza, ze w tych wydmach zakopane sa setki, tysiecy skarbow... ale komu by sie chcialo tego szukac... jest tu tak goraco...",
         "options": [
             "Idz w lewo",
             "Idz do gory",
