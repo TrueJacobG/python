@@ -232,8 +232,17 @@ class Character:
             else:
                 armors.append(list(weaponType[1].items()))
 
-        weapon = list(weapons[0][0])
-        armor = list(armors[0][0])
+        try:
+            weapon = list(weapons[0][0])
+            armor = list(armors[0][0])
+        except:
+            Game.clear_console()
+            print("Nie masz broni lub zbroi! Twoj przeciwnik Cie nokaltuje i okrada!")
+            self.money -= self.money//2
+            print(
+                "Zostajesz odnaleziony przez innego poszukiwacza. Przedstawil Ci sie jako Linus. Odprowadza Cie do szpitala w Eagle Town.")
+            wait = input()
+            return None
 
         weaponName = list(self.eq["weapons"].keys())[0]
         armorName = list(self.eq["armors"].keys())[0]
@@ -249,6 +258,9 @@ class Character:
         enemy.hp -= weapon[1][0] * dmg
         self.eq["weapons"][weaponName][1] -= weaponDestructionDamage
 
+        if self.eq["weapons"][weaponName][1] <= 0:
+            del self.eq["weapons"][weaponName]
+
         if whichAttack == 3:
             if self.clas == "Wojownik":
                 addDef = 15
@@ -260,6 +272,9 @@ class Character:
             defense = addDef + armor[1][0]//4
 
             self.eq["armors"][armorName][1] -= 1
+
+            if self.eq["armors"][armorName][1] <= 0:
+                del self.eq["armors"][armorName]
 
         if whichAttack == 4:
             if self.clas == "Mag":
@@ -329,6 +344,8 @@ class Character:
             # player turn
             at = input()
             defense = self.attack(at, enemy, GAME.story)
+            if defense == None:
+                return None
 
             if enemy.hp <= 0:
                 print(enemy.defeated)
@@ -339,9 +356,9 @@ class Character:
                 wait = input()
                 break
             if self.hp <= 0:
-                print("UMRALES")
-                self.deleteCharacter()
+                print("UMARLES! (Twoja postac zostanie usunieta za chwile)")
                 wait = input()
+                self.deleteCharacter()
                 sys.exit(1)
 
             text = enemy.getDMG[randomNumber]
@@ -433,14 +450,20 @@ def play(PLAYER, GAME):
     optionsType = GAME.story[PLAYER.currentLocation]['optionsType']
 
     if GAME.story[PLAYER.currentLocation]["fightingLocation"] and PLAYER.currentLocation not in PLAYER.seenFightingLocation:
-        PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
 
         PLAYER.manaRegen()
 
         text1 = GAME.story[PLAYER.currentLocation]['text1']
         print(text1)
         while True:
-            PLAYER.fight(PLAYER, GAME)
+            state = PLAYER.fight(PLAYER, GAME)
+            if state != None:
+                PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
+            PLAYER.currentLocation = "EAGLE TOWN"
+            text = GAME.story[PLAYER.currentLocation]['text']
+            directions = GAME.story[PLAYER.currentLocation]['directions']
+            options = GAME.story[PLAYER.currentLocation]['options']
+            optionsType = GAME.story[PLAYER.currentLocation]['optionsType']
             break
 
     Game.print_screen(text, PLAYER.hp, PLAYER.mana, PLAYER.money, options)

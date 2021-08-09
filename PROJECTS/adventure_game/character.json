@@ -2,7 +2,7 @@
     "name": "GG",
     "hp": 100,
     "mana": 100,
-    "money": 100,
+    "money": 300,
     "clas": "Wojownik",
     "currentLocation": "EAGLE TOWN - sklep",
     "eq": {
