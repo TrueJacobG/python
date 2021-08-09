@@ -260,6 +260,8 @@ class Character:
 
         if self.eq["weapons"][weaponName][1] <= 0:
             del self.eq["weapons"][weaponName]
+            print("Twoja bron ulegla zniszczeniu!")
+            wait = input()
 
         if whichAttack == 3:
             if self.clas == "Wojownik":
@@ -275,6 +277,8 @@ class Character:
 
             if self.eq["armors"][armorName][1] <= 0:
                 del self.eq["armors"][armorName]
+                print("TWoja zbroja ulegla zniszczeniu!")
+                wait = input()
 
         if whichAttack == 4:
             if self.clas == "Mag":
