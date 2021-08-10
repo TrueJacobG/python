@@ -1,3 +1,5 @@
+from ctypes import POINTER, WinDLL, Structure, sizeof, byref
+from ctypes.wintypes import BOOL, SHORT, WCHAR, UINT, ULONG, DWORD, HANDLE
 import json
 from os import path
 import os
@@ -5,22 +7,83 @@ import sys
 from time import sleep
 from random import randint
 from random import uniform
-# TODO:
-# screen -> 64 width
 
+
+# twitter.com/TrueJacobG
 
 class Game:
     def __init__(self, story):
         self.story = story
 
     @staticmethod
-    def print_help(self):
+    def terminal_size():
+
+        LF_FACESIZE = 32
+        STD_OUTPUT_HANDLE = -11
+
+        class COORD(Structure):
+            _fields_ = [
+                ("X", SHORT),
+                ("Y", SHORT),
+            ]
+
+        class CONSOLE_FONT_INFOEX(Structure):
+            _fields_ = [
+                ("cbSize", ULONG),
+                ("nFont", DWORD),
+                ("dwFontSize", COORD),
+                ("FontFamily", UINT),
+                ("FontWeight", UINT),
+                ("FaceName", WCHAR * LF_FACESIZE)
+            ]
+
+        kernel32_dll = WinDLL("kernel32.dll")
+
+        get_last_error_func = kernel32_dll.GetLastError
+        get_last_error_func.argtypes = []
+        get_last_error_func.restype = DWORD
+
+        get_std_handle_func = kernel32_dll.GetStdHandle
+        get_std_handle_func.argtypes = [DWORD]
+        get_std_handle_func.restype = HANDLE
+
+        get_current_console_font_ex_func = kernel32_dll.GetCurrentConsoleFontEx
+        get_current_console_font_ex_func.argtypes = [
+            HANDLE, BOOL, POINTER(CONSOLE_FONT_INFOEX)]
+        get_current_console_font_ex_func.restype = BOOL
+
+        set_current_console_font_ex_func = kernel32_dll.SetCurrentConsoleFontEx
+        set_current_console_font_ex_func.argtypes = [
+            HANDLE, BOOL, POINTER(CONSOLE_FONT_INFOEX)]
+        set_current_console_font_ex_func.restype = BOOL
+
+        stdout = get_std_handle_func(STD_OUTPUT_HANDLE)
+
+        font = CONSOLE_FONT_INFOEX()
+        font.cbSize = sizeof(CONSOLE_FONT_INFOEX)
+        res = get_current_console_font_ex_func(stdout, False, byref(font))
+        for field_name, _ in font._fields_:
+            field_data = getattr(font, field_name)
+            font.dwFontSize.X = 10
+            font.dwFontSize.Y = 25
+            res = set_current_console_font_ex_func(stdout, False, byref(font))
+
+        cmd = 'mode 65, 24'
+        os.system(cmd)
+
+    @staticmethod
+    def print_help():
         print("Komendy: ")
         print("help -> Wyswietlenie pomocy")
         print("eq -> Wyswietlenie eq")
         print("skills -> Wyswietlenie umiejetnosci")
         print("quit -> Zapisanie i zamkniecie gry")
         print("\n")
+        print("Nie mozesz uleczyc sie ponad 100hp.")
+        print("Mana odnawia Ci sie co walke.")
+
+        print("\n")
+
         print("W kazdej lokalizacji mozesz dokonac 4 decyzji. Dokonujesz wyboru poprzez wpisanie odpowiedzi lub podanie numeru (1,2,3,4). Zatwierdzasz wybor klawiszem ENTER.")
         wait = input()
 
@@ -49,8 +112,9 @@ class Game:
         print("################################################################")
 
     @staticmethod
-    def print_screen(text, hp, mana, money, options):
+    def print_screen(text, hp, mana, money, options, currentLocation):
         Game.clear_console()
+        print("Twoja lokalizacja: ", currentLocation)
         print("\033[92m", text, "\033[0m")
         print("\n")
         print(
@@ -73,6 +137,10 @@ class Game:
     def drop_money(enemy_hp):
         return int(enemy_hp * 0.1 * uniform(1.0, 2.0))
 
+    @staticmethod
+    def getInformations(GAME, PLAYER):
+        return GAME.story[PLAYER.currentLocation]['text'], GAME.story[PLAYER.currentLocation]['directions'], GAME.story[PLAYER.currentLocation]['options'], GAME.story[PLAYER.currentLocation]['optionsType'],
+
 
 class Character:
     def __init__(self):
@@ -83,11 +151,15 @@ class Character:
             with open("character.json", "w") as f:
                 json.dump(character, f)
 
-            name, clas, eq = self.play_intro()
+            name, clas, weapon, armor = self.play_intro()
             self.name = name
             self.clas = clas
-            self.eq = eq
             self.isKox = False
+
+            self.eq = {
+                "weapons": weapon,
+                "armors": armor
+            }
 
         else:
             with open("character.json") as f:
@@ -118,8 +190,8 @@ class Character:
         character['mana'] = self.mana
         character['money'] = self.money
         character['currentLocation'] = self.currentLocation
-        character['eq'] = self.eq
         character['seenFightingLocation'] = self.seenFightingLocation
+        character['eq'] = self.eq
 
         with open("character.json", "w") as f:
             json.dump(character, f)
@@ -132,22 +204,22 @@ class Character:
         clas = input("1. <Wojownik> 2. <Lucznik> 3. <Mag>\n\n")
         if clas == str(1) or clas.lower() == "wojownik":
             clas = "Wojownik"
-            eq = {"Zwykly miecz": [80, 10],
-                  "Zwykla tarcza": [80, 10]}
+            weapon = {"Zwykly miecz": [80, 10]}
+            armor = {"Zwykla tarcza": [80, 10]}
         elif clas == str(2) or clas.lower() == "lucznik":
             clas = "Lucznik"
-            eq = {"Zwykly luk": [80, 10],
-                  "Dziwny naszyjnik": [80, 10]}
+            weapon = {"Zwykly luk": [80, 10]}
+            armor = {"Dziwny naszyjnik": [80, 10]}
         else:
             clas = "Mag"
-            eq = {"Stara rozdzka": [80, 10],
-                  "Slomiany kapelusz": [80, 10]}
+            weapon = {"Stara rozdzka": [80, 10]}
+            armor = {"Slomiany kapelusz": [80, 10]}
 
         print("\n Swietnie! Decyzje dokonujesz poprzez wpisanie odpowiedniego wyboru lub numeru. Jesli chcesz zamknac gre wpisz QUIT. Pomoc -> help")
 
         wait = input()
 
-        return name, clas, eq
+        return name, clas, weapon, armor
 
     def deleteCharacter(self):
         os.remove("character.json")
@@ -157,6 +229,7 @@ class Character:
         print("W twoim plecaku znajduja sie: \n")
         weapons = []
         armors = []
+
         for weaponType in self.eq.items():
             if weaponType[0] == "weapons":
                 weapons.append(list(weaponType[1].items()))
@@ -182,15 +255,20 @@ class Character:
         decision = input()
         if decision.lower() == "tak" or decision == 1:
             self.rearrangeEq(weapons[0], armors[0])
-        wait = input()
         return
 
     def rearrangeEq(self, weapons, armors):
 
         print("Ktora bron chcesz ustawic jako glowna? (podaj numer)")
-        weaponDecision = int(input())-1
+        try:
+            weaponDecision = int(input())-1
+        except:
+            weaponDecision = 1
         print("Ktora zbroje chcesz ustawic jako glowna? (podaj numer)")
-        armorDecision = int(input())-1
+        try:
+            armorDecision = int(input())-1
+        except:
+            armorDecision = 1
 
         try:
             self.eq["weapons"] = self.moveElementInDict(
@@ -316,7 +394,7 @@ class Character:
             wait = input()
             return
         self.money -= boughtItemStats[2]
-        self.eq[boughtItemName] = boughtItemStats[0:2]
+        self.eq[whichShelf][boughtItemName] = boughtItemStats[0:2]
         print("Dziekuje za dokonanie u mnie zakupu :D")
         wait = input()
 
@@ -344,7 +422,8 @@ class Character:
             else:
                 self.hp -= enemy.attacksDMG[randomNumber]-defense
             options = self.attacks
-            Game.print_screen(text, self.hp, self.mana, self.money, options)
+            Game.print_screen(text, self.hp,
+                              self.mana, self.money, options, self.currentLocation)
             # player turn
             at = input()
             defense = self.attack(at, enemy, GAME.story)
@@ -368,6 +447,7 @@ class Character:
             text = enemy.getDMG[randomNumber]
             print(text)
             wait = input()
+        return 13
 
     def manaRegen(self):
         randomNumber = randint(10, 22)
@@ -448,10 +528,7 @@ class Enemy:
 
 def play(PLAYER, GAME):
     # variables
-    text = GAME.story[PLAYER.currentLocation]['text']
-    directions = GAME.story[PLAYER.currentLocation]['directions']
-    options = GAME.story[PLAYER.currentLocation]['options']
-    optionsType = GAME.story[PLAYER.currentLocation]['optionsType']
+    text, directions, options, optionsType = Game.getInformations(GAME, PLAYER)
 
     if GAME.story[PLAYER.currentLocation]["fightingLocation"] and PLAYER.currentLocation not in PLAYER.seenFightingLocation:
 
@@ -461,16 +538,15 @@ def play(PLAYER, GAME):
         print(text1)
         while True:
             state = PLAYER.fight(PLAYER, GAME)
-            if state != None:
-                PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
-            PLAYER.currentLocation = "EAGLE TOWN"
-            text = GAME.story[PLAYER.currentLocation]['text']
-            directions = GAME.story[PLAYER.currentLocation]['directions']
-            options = GAME.story[PLAYER.currentLocation]['options']
-            optionsType = GAME.story[PLAYER.currentLocation]['optionsType']
+            PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
+            if state == None:
+                PLAYER.currentLocation = "EAGLE TOWN"
+            text, directions, options, optionsType = Game.getInformations(
+                GAME, PLAYER)
             break
 
-    Game.print_screen(text, PLAYER.hp, PLAYER.mana, PLAYER.money, options)
+    Game.print_screen(text, PLAYER.hp,
+                      PLAYER.mana, PLAYER.money, options, PLAYER.currentLocation)
 
     decision = input()
     flag = True
@@ -503,10 +579,13 @@ def play(PLAYER, GAME):
 
 
 def main():
+    Game.terminal_size()
+
     with open("story.json") as f:
         story = json.load(f)
 
     PLAYER = Character()
+    PLAYER.save_character()
     GAME = Game(story)
 
     while True:

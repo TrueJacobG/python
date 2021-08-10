@@ -473,7 +473,7 @@
     },
     "BROWLA": {
         "fightingLocation": false,
-        "text": "Gratulacje udalo Ci sie dojsc do V3N6eXN0a2llZ28gbmFqbGVwc3plZ28h celu swojej podrozy! Dziekuje za przejscie mojej gry! ~ JakubG",
+        "text": "Gratulacje udalo Ci sie dojsc do V3N6eXN0a2llZ28gbmFqbGVwc3plZ28h celu swojej podrozy! Dziekuje za przejscie mojej gry! Mozesz dalej podrozowac po mapie i szukac ciekawych smaczkow! ~ JakubG \n twitter.com/TrueJacobG",
         "options": [
             "Idz w prawo",
             "",
@@ -1312,7 +1312,7 @@
         "directions": [
             "weapons",
             "armors",
-            "EAGLE TOWN",
+            "PARTEPOL",
             ""
         ],
         "shop": {
@@ -1442,7 +1442,7 @@
         "directions": [
             "weapons",
             "armors",
-            "EAGLE TOWN",
+            "FORTYLLA",
             ""
         ],
         "shop": {
