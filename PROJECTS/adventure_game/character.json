@@ -1,0 +1,23 @@
+{
+    "name": "asd",
+    "hp": 300,
+    "mana": 100,
+    "money": 300,
+    "clas": "Lucznik",
+    "currentLocation": "EAGLE TOWN",
+    "eq": {
+        "weapons": {
+            "Zwykly luk": [
+                80,
+                10
+            ]
+        },
+        "armors": {
+            "Dziwny naszyjnik": [
+                80,
+                10
+            ]
+        }
+    },
+    "seenFightingLocation": []
+}

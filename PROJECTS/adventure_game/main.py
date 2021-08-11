@@ -16,7 +16,7 @@ class Game:
         self.story = story
 
     @staticmethod
-    def terminal_size():
+    def terminalSize():
 
         LF_FACESIZE = 32
         STD_OUTPUT_HANDLE = -11
@@ -72,15 +72,27 @@ class Game:
         os.system(cmd)
 
     @staticmethod
-    def print_help():
+    def clearConsole():
+        command = "clear"
+        if os.name in ("nt", "dos"):
+            command = "cls"
+        os.system(command)
+
+    @staticmethod
+    def dropMoney(enemy_hp):
+        return int(enemy_hp * 0.1 * uniform(1.0, 2.0))
+
+    @staticmethod
+    def getInformations(GAME, PLAYER):
+        return GAME.story[PLAYER.currentLocation]['text'], GAME.story[PLAYER.currentLocation]['directions'], GAME.story[PLAYER.currentLocation]['options'], GAME.story[PLAYER.currentLocation]['optionsType']
+
+    @staticmethod
+    def printHelp():
         print("Komendy: ")
         print("help -> Wyswietlenie pomocy")
         print("eq -> Wyswietlenie eq")
         print("skills -> Wyswietlenie umiejetnosci")
         print("quit -> Zapisanie i zamkniecie gry")
-        print("\n")
-        print("Nie mozesz uleczyc sie ponad 100hp.")
-        print("Mana odnawia Ci sie co walke.")
 
         print("\n")
 
@@ -88,14 +100,7 @@ class Game:
         wait = input()
 
     @staticmethod
-    def clear_console():
-        command = "clear"
-        if os.name in ("nt", "dos"):
-            command = "cls"
-        os.system(command)
-
-    @staticmethod
-    def print_options(option1, option2, option3, option4):
+    def printOptions(option1, option2, option3, option4):
         option1 = " | <" + option1 + "> | "
         option2 = " | <" + option2 + "> | "
         option3 = " | <" + option3 + "> | "
@@ -112,17 +117,17 @@ class Game:
         print("################################################################")
 
     @staticmethod
-    def print_screen(text, hp, mana, money, options, currentLocation):
-        Game.clear_console()
+    def printScreen(text, hp, mana, money, options, currentLocation):
+        Game.clearConsole()
         print("Twoja lokalizacja: ", currentLocation)
         print("\033[92m", text, "\033[0m")
         print("\n")
         print(
             f'           \033[91mHP: {hp}/100\033[0m     \033[94mMANA: {mana}/100\033[0m    \033[93mMONEY: {money}\033[0m')
-        Game.print_options(*options)
+        Game.printOptions(*options)
 
     @staticmethod
-    def which_option(decision, options):
+    def whichOption(decision, options):
         if decision.lower().replace(" ", "") == options[0].lower().replace(" ", "") or decision == str(1):
             return 1
         if decision.lower().replace(" ", "") == options[1].lower().replace(" ", "") or decision == str(2):
@@ -132,14 +137,6 @@ class Game:
         if decision.lower().replace(" ", "") == options[3].lower().replace(" ", "") or decision == str(4):
             return 4
         return None
-
-    @staticmethod
-    def drop_money(enemy_hp):
-        return int(enemy_hp * 0.1 * uniform(1.0, 2.0))
-
-    @staticmethod
-    def getInformations(GAME, PLAYER):
-        return GAME.story[PLAYER.currentLocation]['text'], GAME.story[PLAYER.currentLocation]['directions'], GAME.story[PLAYER.currentLocation]['options'], GAME.story[PLAYER.currentLocation]['optionsType'],
 
 
 class Character:
@@ -151,10 +148,10 @@ class Character:
             with open("character.json", "w") as f:
                 json.dump(character, f)
 
-            name, clas, weapon, armor = self.play_intro()
+            name, clas, weapon, armor, difficulty = self.play_intro()
             self.name = name
             self.clas = clas
-            self.isKox = False
+            self.difficulty = difficulty
 
             self.eq = {
                 "weapons": weapon,
@@ -168,7 +165,6 @@ class Character:
             self.name = character['name']
             self.clas = character['clas']
             self.eq = character['eq']
-            self.isKox = character['isKox']
 
         with open("models/attacks.json") as f:
             attacks = json.load(f)
@@ -180,26 +176,20 @@ class Character:
         self.currentLocation = character['currentLocation']
         self.seenFightingLocation = character['seenFightingLocation']
 
-    def save_character(self):
-        with open("character.json") as f:
-            character = json.load(f)
-
-        character['name'] = self.name
-        character['clas'] = self.clas
-        character['hp'] = self.hp
-        character['mana'] = self.mana
-        character['money'] = self.money
-        character['currentLocation'] = self.currentLocation
-        character['seenFightingLocation'] = self.seenFightingLocation
-        character['eq'] = self.eq
-
-        with open("character.json", "w") as f:
-            json.dump(character, f)
-
     def play_intro(self, *args):
         print("Witaj! Musisz stworzyc swoja postac!")
         print("Podaj swoje imie poszukiwaczu przygod: ")
         name = input()
+        print("Podaj poziom trudnosci: <1> <2> <3>")
+        print("1. Latwy 2. Normalny 3. Trudny")
+        difficulty = input()
+        if difficulty == 1:
+            difficulty = 0.5
+        elif difficulty == 2:
+            difficulty = 1
+        elif difficulty == 3:
+            difficulty = 1.2
+
         print("Wybierz klase: ")
         clas = input("1. <Wojownik> 2. <Lucznik> 3. <Mag>\n\n")
         if clas == str(1) or clas.lower() == "wojownik":
@@ -219,11 +209,30 @@ class Character:
 
         wait = input()
 
-        return name, clas, weapon, armor
+        return name, clas, weapon, armor, difficulty
+
+    def save_character(self):
+        with open("character.json") as f:
+            character = json.load(f)
+
+        character['name'] = self.name
+        character['clas'] = self.clas
+        character['hp'] = self.hp
+        character['mana'] = self.mana
+        character['money'] = self.money
+        character['currentLocation'] = self.currentLocation
+        character['seenFightingLocation'] = self.seenFightingLocation
+        character['eq'] = self.eq
+
+        with open("character.json", "w") as f:
+            json.dump(character, f)
 
     def deleteCharacter(self):
+        print("UMARLES! (Twoja postac zostanie usunieta za chwile)")
+        wait = input()
         os.remove("character.json")
         sleep(1)
+        sys.exit(1)
 
     def printEq(self):
         print("W twoim plecaku znajduja sie: \n")
@@ -257,51 +266,55 @@ class Character:
             self.rearrangeEq(weapons[0], armors[0])
         return
 
-    def rearrangeEq(self, weapons, armors):
+    def fight(self, currentLocation, difficulty, GAME):
+        enemy = Enemy(currentLocation, difficulty, GAME.story)
+        coinsForFight = enemy.hp
+        defense = self.hp//14 * self.difficulty
+        while True:
+            # enemy turn
+            randomNumber = randint(0, 3)
+            text = "\033[91m" + "ENEMY HP: " + str(enemy.hp) + "\n\n" + \
+                enemy.attacksDescription[randomNumber] + "\033[0m"
+            if defense >= enemy.attacksDMG[randomNumber]:
+                enemy.hp -= enemy.hp//5
+                self.mana += 10
+                if self.mana > 100:
+                    self.mana = 100
+                    print("Odbiles atak wroga!")
+                else:
+                    print("Odbiles atak wroga i twoja mana ulegla regeneracji!")
+            else:
+                self.hp -= enemy.attacksDMG[randomNumber]-defense
+                if self.hp <= 0:
+                    self.deleteCharacter()
+            options = self.attacks
+            Game.printScreen(text, self.hp,
+                             self.mana, self.money, options, self.currentLocation)
+            # player turn
+            at = input()
+            defense = self.attack(at, enemy, GAME.story)
+            if defense == None:
+                return None
 
-        print("Ktora bron chcesz ustawic jako glowna? (podaj numer)")
-        try:
-            weaponDecision = int(input())-1
-        except:
-            weaponDecision = 1
-        print("Ktora zbroje chcesz ustawic jako glowna? (podaj numer)")
-        try:
-            armorDecision = int(input())-1
-        except:
-            armorDecision = 1
+            if enemy.hp <= 0:
+                print(enemy.defeated)
+                self.money += Game.dropMoney(coinsForFight)
+                coins = "\033[93m" + str(coins) + "\033[0m"
+                print("Za udana walke otrzymujesz ", coins, " pieniedzy!")
+                wait = input()
+                break
 
-        try:
-            self.eq["weapons"] = self.moveElementInDict(
-                self.eq["weapons"], weapons[weaponDecision][0])
-
-            self.eq["armors"] = self.moveElementInDict(
-                self.eq["armors"], armors[armorDecision][0])
-        except:
-            print("Podales zly numer!")
+            text = enemy.getDMG[randomNumber]
+            print(text)
             wait = input()
-
-        self.printEq()
-
-    def moveElementInDict(self, di, key):
-        queue = []
-        result = {}
-        for item in di.items():
-            if item[0] == key:
-                result[item[0]] = item[1]
-                continue
-            queue.append(item)
-
-        for item in queue:
-            result[item[0]] = item[1]
-
-        return result
+        return 13
 
     def attack(self, at, enemy, story):
         defense = 0
         dmg = 0
         weaponDestructionDamage = 0
 
-        whichAttack = Game.which_option(at, self.attacks)
+        whichAttack = Game.whichOption(at, self.attacks)
         weapons = []
         armors = []
         for weaponType in self.eq.items():
@@ -314,7 +327,7 @@ class Character:
             weapon = list(weapons[0][0])
             armor = list(armors[0][0])
         except:
-            Game.clear_console()
+            Game.clearConsole()
             print("Nie masz broni lub zbroi! Twoj przeciwnik Cie nokaltuje i okrada!")
             self.money -= self.money//2
             print(
@@ -369,85 +382,14 @@ class Character:
 
         return defense
 
-    def shop(self, op, GAME):
-        whichShelf = GAME.story[self.currentLocation]["directions"][op]
-        shelf = GAME.story[self.currentLocation]["shop"][whichShelf][self.clas]
-        for item in shelf.items():
-            print(item[0], " --- ", "\033[91mAtt/Obr: ", item[1][0],
-                  "\033[0m\033[95mWyt: ", item[1][1], "\033[0m\033[93mCena: ", item[1][2], "\033[0m")
-
-        print("Na co masz ochote?")
-        decision = input()
-        try:
-            decision = (Game.which_option(decision, list(shelf.keys())))-1
-        except:
-            return
-
-        boughtItemName = list(shelf)[decision]
-        boughtItemStats = shelf[boughtItemName]
-        if self.money < boughtItemStats[2]:
-            print("Nie masz wystarczajaco pieniedzy! Wynocha z mojego sklepu!")
-            wait = input()
-            return
-        if boughtItemName in self.eq:
-            print("Juz posiadasz taki przedmiot!")
-            wait = input()
-            return
-        self.money -= boughtItemStats[2]
-        self.eq[whichShelf][boughtItemName] = boughtItemStats[0:2]
-        print("Dziekuje za dokonanie u mnie zakupu :D")
-        wait = input()
-
     def makeMove(self, decision, options, optionsType, directions, GAME):
-        op = (Game.which_option(decision, options))-1
+        op = (Game.whichOption(decision, options))-1
         if optionsType[op] == "move":
             self.currentLocation = directions[op]
         if optionsType[op] == "eq":
             self.printEq()
         if optionsType[op] == "shop":
             self.shop(op, GAME)
-
-    def fight(self, PLAYER, GAME):
-        enemy = Enemy(PLAYER, GAME.story)
-        hp_for_money = enemy.hp
-        defense = 0
-        while True:
-            # enemy turn
-            randomNumber = randint(0, 3)
-            text = "\033[91m" + "ENEMY HP: " + str(enemy.hp) + "\n\n" + \
-                enemy.attacksDescription[randomNumber] + "\033[0m"
-            if defense >= enemy.attacksDMG[randomNumber]:
-                enemy.hp -= enemy.hp//5
-                print("Odbiles atak wroga!")
-            else:
-                self.hp -= enemy.attacksDMG[randomNumber]-defense
-            options = self.attacks
-            Game.print_screen(text, self.hp,
-                              self.mana, self.money, options, self.currentLocation)
-            # player turn
-            at = input()
-            defense = self.attack(at, enemy, GAME.story)
-            if defense == None:
-                return None
-
-            if enemy.hp <= 0:
-                print(enemy.defeated)
-                coins = Game.drop_money(hp_for_money)
-                PLAYER.money += coins
-                coins = "\033[93m" + str(coins) + "\033[0m"
-                print("Za udana walke otrzymujesz ", coins, " pieniedzy!")
-                wait = input()
-                break
-            if self.hp <= 0:
-                print("UMARLES! (Twoja postac zostanie usunieta za chwile)")
-                wait = input()
-                self.deleteCharacter()
-                sys.exit(1)
-
-            text = enemy.getDMG[randomNumber]
-            print(text)
-            wait = input()
-        return 13
 
     def manaRegen(self):
         randomNumber = randint(10, 22)
@@ -463,16 +405,17 @@ class Character:
 
     def skills(self):
         opt = ["Leczenie", "Ulepszenie Broni",
-               "Wytworzenie monet", "Storzenie broni *rare*"]
+               "Wytworzenie monet", "Gambling", "Storzenie broni *rare*"]
         print("Twoje umiejetnosci: ")
         print("1. ", opt[0])
         print("2. ", opt[1])
         print("3. ", opt[2])
         print("4. ", opt[3])
+        print("5. ", opt[4])
         print("\nCo chcesz zrobic?")
 
         try:
-            dec = (Game.which_option(input(), opt))-1
+            dec = (Game.whichOption(input(), opt))-1
         except:
             return
 
@@ -494,6 +437,7 @@ class Character:
             print("Zostales uleczony i twoje zdrowie wynosi ", self.hp)
             wait = input()
             return
+
         if dec == 1:
             for item in self.eq.items():
                 self.eq[item[0]][0] += randomNumber // 4
@@ -507,19 +451,103 @@ class Character:
             print("Udalo ci sie wyczarowac ", randomNumber, " monet!")
             wait = input()
             return
+
         if dec == 3:
-            if self.isKox == True:
-                self.eq["Giga Bronka"] = [1000, 100]
-                print("JAK?!")
+            print("Rzucasz moneta! Jesli wypadnie reszka wygrywasz pieniadze, jesli nie to tracisz czesc swojej fortuny!")
+            self.mana += 25
+            if self.money < 10:
+                print("Masz za malo pieniedzy!")
                 wait = input()
                 return
+            if randint(0, 1) == 0:
+                print("Nie udalo ci sie wygrac!")
+                self.money -= 10
+                wait = input()
+                return
+
+            coins = self.money//12 + randint(5, 20)
+            print(f"Brawo wygrales \033[93m{coins}\033[0m monet!")
+            wait = input()
+            return
+
+        if dec == 4:
             print("Nie udalo ci sie. Jestes jeszcze za slaby!")
+            wait = input()
+            return
+
+    def shop(self, op, GAME):
+        whichShelf = GAME.story[self.currentLocation]["directions"][op]
+        shelf = GAME.story[self.currentLocation]["shop"][whichShelf][self.clas]
+        for item in shelf.items():
+            print(item[0], " --- ", "\033[91mAtt/Obr: ", item[1][0],
+                  "\033[0m\033[95mWyt: ", item[1][1], "\033[0m\033[93mCena: ", item[1][2], "\033[0m")
+
+        print("Na co masz ochote?")
+        decision = input()
+        try:
+            decision = (Game.whichOption(decision, list(shelf.keys())))-1
+        except:
+            return
+
+        boughtItemName = list(shelf)[decision]
+        boughtItemStats = shelf[boughtItemName]
+        if self.money < boughtItemStats[2]:
+            print("Nie masz wystarczajaco pieniedzy! Wynocha z mojego sklepu!")
+            wait = input()
+            return
+        if boughtItemName in self.eq:
+            print("Juz posiadasz taki przedmiot!")
+            wait = input()
+            return
+        self.money -= boughtItemStats[2]
+        self.eq[whichShelf][boughtItemName] = boughtItemStats[0:2]
+        print("Dziekuje za dokonanie u mnie zakupu :D")
+        wait = input()
+
+    def rearrangeEq(self, weapons, armors):
+
+        print("Ktora bron chcesz ustawic jako glowna? (podaj numer)")
+        try:
+            weaponDecision = int(input())-1
+        except:
+            weaponDecision = 1
+        print("Ktora zbroje chcesz ustawic jako glowna? (podaj numer)")
+        try:
+            armorDecision = int(input())-1
+        except:
+            armorDecision = 1
+
+        try:
+            self.eq["weapons"] = self.moveElementInDict(
+                self.eq["weapons"], weapons[weaponDecision][0])
+
+            self.eq["armors"] = self.moveElementInDict(
+                self.eq["armors"], armors[armorDecision][0])
+        except:
+            print("Podales zly numer!")
+            wait = input()
+
+        self.printEq()
+
+    def moveElementInDict(self, di, key):
+        queue = []
+        result = {}
+        for item in di.items():
+            if item[0] == key:
+                result[item[0]] = item[1]
+                continue
+            queue.append(item)
+
+        for item in queue:
+            result[item[0]] = item[1]
+
+        return result
 
 
 class Enemy:
-    def __init__(self, PLAYER, story):
-        e = story[PLAYER.currentLocation]["enemy"]
-        self.hp = e["hp"]
+    def __init__(self, currentLocation, difficulty, story):
+        e = story[currentLocation]["enemy"]
+        self.hp = e["hp"] * difficulty * 0.8
         self.attacksDescription = e["attacksDescription"]
         self.attacksDMG = e["attacksDMG"]
         self.getDMG = e["getDMG"]
@@ -537,7 +565,8 @@ def play(PLAYER, GAME):
         text1 = GAME.story[PLAYER.currentLocation]['text1']
         print(text1)
         while True:
-            state = PLAYER.fight(PLAYER, GAME)
+            state = PLAYER.fight(PLAYER.currentLocation,
+                                 PLAYER.difficulty, GAME)
             PLAYER.seenFightingLocation.append(PLAYER.currentLocation)
             if state == None:
                 PLAYER.currentLocation = "EAGLE TOWN"
@@ -545,22 +574,22 @@ def play(PLAYER, GAME):
                 GAME, PLAYER)
             break
 
-    Game.print_screen(text, PLAYER.hp,
-                      PLAYER.mana, PLAYER.money, options, PLAYER.currentLocation)
+    Game.printScreen(text, PLAYER.hp,
+                     PLAYER.mana, PLAYER.money, options, PLAYER.currentLocation)
 
     decision = input()
     flag = True
     while flag:
         if decision.lower() == "quit":
             PLAYER.save_character()
-            Game.clear_console()
+            Game.clearConsole()
             print("Do zobaczenia niedługo :D")
             sleep(1)
-            Game.clear_console()
+            Game.clearConsole()
             flag = False
             sys.exit()
         if decision.lower() == "help":
-            Game.print_help()
+            Game.printHelp()
             print("Co chcesz zrobić?")
             decision = input()
             continue
@@ -569,7 +598,7 @@ def play(PLAYER, GAME):
             print("Uzyles umiejetnosci! Gdzie chcesz teraz isc?")
             decision = input()
             continue
-        if Game.which_option(decision, options) == None:
+        if Game.whichOption(decision, options) == None:
             print("Nie rozumiem cie...")
             decision = input()
             continue
@@ -579,7 +608,7 @@ def play(PLAYER, GAME):
 
 
 def main():
-    Game.terminal_size()
+    Game.terminalSize()
 
     with open("story.json") as f:
         story = json.load(f)

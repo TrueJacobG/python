@@ -1,0 +1,3 @@
+jeśli chcesz zacząć od nowa - usuń plik character.json
+podpowiedzi - folder maps (nie korzystaj jak nie chcesz zeby bylo latwo)
+twitter.com/TrueJacobG
