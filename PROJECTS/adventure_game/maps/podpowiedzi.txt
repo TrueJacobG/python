@@ -9,4 +9,4 @@ Porady typu hacki/abusing:
 - Plik, w którym zapisany jest twoj progres to "character.json". Wystarczy, że go otworzysz i pozmieniasz staty, a będzie Ci się łatwiej grało.
 - W tym folderze są mapy, jak chcesz to skorzystaj z nich i idź prosto do skarbu.
 - Mozesz caly czas sie leczyc podczas walki. W ten sposob jestes niesmiertelny. Jest to najlatwiejszy sposob na przejscie gry.
-- 
+- Spell "Gambling" ma 50% szans na wygraną, ale wygrywasz nim więcej niż przegrywasz więc...
