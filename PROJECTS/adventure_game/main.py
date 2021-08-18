@@ -118,6 +118,7 @@ class Game:
 
     @staticmethod
     def printScreen(text, hp, mana, money, options, currentLocation):
+        hp = int(hp)
         Game.clearConsole()
         print("Twoja lokalizacja: ", currentLocation)
         print("\033[92m", text, "\033[0m")
@@ -165,6 +166,7 @@ class Character:
             self.name = character['name']
             self.clas = character['clas']
             self.eq = character['eq']
+            self.difficulty = 0.5
 
         with open("models/attacks.json") as f:
             attacks = json.load(f)
@@ -299,8 +301,9 @@ class Character:
             if enemy.hp <= 0:
                 print(enemy.defeated)
                 self.money += Game.dropMoney(coinsForFight)
-                coins = "\033[93m" + str(coins) + "\033[0m"
-                print("Za udana walke otrzymujesz ", coins, " pieniedzy!")
+                coinsForFight = "\033[93m" + str(coinsForFight) + "\033[0m"
+                print("Za udana walke otrzymujesz ",
+                      coinsForFight, " pieniedzy!")
                 wait = input()
                 break
 
@@ -431,6 +434,10 @@ class Character:
             return
 
         if dec == 0:
+            if self.hp > 100:
+                print("Nie mozesz uleczyc sie ponad 100 HP.")
+                wait = input()
+                return
             self.hp += randomNumber
             if self.hp > 100:
                 self.hp = 100
@@ -547,7 +554,7 @@ class Character:
 class Enemy:
     def __init__(self, currentLocation, difficulty, story):
         e = story[currentLocation]["enemy"]
-        self.hp = e["hp"] * difficulty * 0.8
+        self.hp = e["hp"] * difficulty
         self.attacksDescription = e["attacksDescription"]
         self.attacksDMG = e["attacksDMG"]
         self.getDMG = e["getDMG"]
