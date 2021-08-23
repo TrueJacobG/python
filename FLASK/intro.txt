@@ -1,4 +1,0 @@
-enter folder
-set FLASK_APP=name of file
-set FLASK_ENV=development
-flask run
