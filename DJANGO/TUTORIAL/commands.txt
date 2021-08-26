@@ -1,3 +1,4 @@
 django-admin startproject (name of the project) - create empty project
 
 python manage.py runserver - start server
+python manage.py migrate - if you changed something in settings.py
