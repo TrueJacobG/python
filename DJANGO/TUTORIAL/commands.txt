@@ -1,4 +1,6 @@
 django-admin startproject (name of the project) - create empty project
 
 python manage.py runserver - start server
-python manage.py migrate - if you changed something in settings.py
+python manage.py migrate - if you changed something in settings.py, working apps(components)
+
+python manage.py createsuperuser - create admin user
