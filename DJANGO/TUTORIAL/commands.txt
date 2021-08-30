@@ -1,6 +1,12 @@
-django-admin startproject (name of the project) - create empty project
+django-admin startproject <name of the project> - create empty project
 
 python manage.py runserver - start server
+
+python manage.py makemigrations - then
 python manage.py migrate - if you changed something in settings.py, working apps(components)
 
 python manage.py createsuperuser - create admin user
+
+python manage.py startapp <name of the app> - create app (component)
+
+python manage.py shell - do things in terminal
