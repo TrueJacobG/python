@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body>
+    <h1> MENU </h1>
+    <ul>
+        <li><a href="/home">HOME</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+    </ul>
+
+    <p>HOME</p>
+    {%block home %}
+    <p>You are not on the <b>home</b> page.</p>
+    {% endblock %}
+
+    <p>CONTACT</p>
+    {%block contact %}
+    <p>You are not on the <b>contact </b> page.</p>
+    {% endblock %}
+
+
+</body>
+
+</html>
