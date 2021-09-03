@@ -1,6 +1,8 @@
 import pygame as pg
+import time
 
 pg.init()
+pg.font.init()
 
 # CONSTANTS
 SIZE = 100
@@ -8,8 +10,8 @@ JUMPINGHEIGHT, FALLINGSPEED = 8, 1
 WHITE, BLACK, RED, GREEN, BLUE = (
     255, 255, 255), (0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255)
 
-s_width, s_height = 1600, 800
-win = pg.display.set_mode((s_width, s_height))
+SCREENWIDTH, SCREENHEIGHT = 1600, 800
+win = pg.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 
 
 clock = pg.time.Clock()
@@ -18,91 +20,45 @@ clock = pg.time.Clock()
 class Player():
     def __init__(self):
         # pos
-        self.pos_x = 500
-        self.pos_y = 599
+        self.level = 1
 
         # size
-        self.w_size = SIZE
-        self.h_size = SIZE
+        self.characterWidth = SIZE
+        self.characterHeight = SIZE
 
+        # speed
         self.velocity = 10
 
         # jump
         self.isJump = False
         self.jumpHeight = JUMPINGHEIGHT
+        self.jumpLimit = 0
 
+        # fall
         self.fallingSpeed = FALLINGSPEED
 
         # crouch
         self.isCrouch = False
 
+    def respawn(self):
+        self.posX = 80
+        self.posY = 599
+
     def drawCharacter(self):
-        pg.draw.rect(win, BLUE, (self.pos_x, self.pos_y,
-                     self.w_size, self.h_size))
-
-    def jump(self, keys):
-        if not self.isJump:
-            if keys[pg.K_UP] or keys[pg.K_w] or keys[pg.K_SPACE]:
-                self.isJump = True
-                self.startingY = self.pos_y
-        else:
-            if self.jumpHeight >= -JUMPINGHEIGHT:
-                direction = 1
-                if self.jumpHeight < 0:
-                    direction = -1
-                back = (self.jumpHeight ** 2) * direction
-                self.pos_y -= (self.jumpHeight ** 2) * direction
-
-                self.jumpHeight -= 1
-
-                if self.collides():
-                    print("COLLIDES")
-                    self.pos_y += back
-
-                if self.pos_y < 0:
-                    self.pos_y = 600
-                    self.isJump = False
-                    self.jumpHeight = JUMPINGHEIGHT
-
-            else:
-                self.jumpHeight = JUMPINGHEIGHT
-                self.isJump = False
-
-    def crouch(self, keys):
-        if not self.isCrouch:
-            if keys[pg.K_DOWN] or keys[pg.K_s]:
-                self.isCrouch = True
-                half = self.h_size//2
-                self.h_size -= half
-                self.pos_y += half
-                self.crouchCounter = 0
-        else:
-            self.crouchCounter += 1
-            if self.crouchCounter > 50:
-                self.h_size *= 2
-                self.pos_y -= self.h_size//2
-                self.isCrouch = False
-
-    def fall(self):
-        if not self.collides():
-            self.pos_y += (self.fallingSpeed ** 2)
-            self.fallingSpeed += 0.2
-            if self.collides():
-                self.fallingSpeed -= 0.2
-                self.pos_y -= (self.fallingSpeed ** 2)
-                self.fallingSpeed = FALLINGSPEED
+        pg.draw.rect(win, BLUE, (self.posX, self.posY,
+                     self.characterWidth, self.characterHeight))
 
     def move(self, keys, platforms):
         self.platforms = platforms
         if keys[pg.K_LEFT] or keys[pg.K_a]:
-            self.pos_x -= self.velocity
+            self.posX -= self.velocity
             if self.collides():
-                self.pos_x += self.velocity
+                self.posX += self.velocity
 
         if keys[pg.K_RIGHT] or keys[pg.K_d]:
-            self.pos_x += self.velocity
+            self.posX += self.velocity
             if self.collides():
-                self.pos_x -= self.velocity
+                self.posX -= self.velocity
 
         self.crouch(keys)
 
@@ -110,11 +66,77 @@ class Player():
 
         self.fall()
 
+        self.isWinning()
+
+    def jump(self, keys):
+        if not self.isJump:
+            self.jumpLimit -= 1
+
+        if not self.isJump:
+            if keys[pg.K_UP] or keys[pg.K_w] or keys[pg.K_SPACE]:
+                if self.jumpLimit <= 0:
+                    self.isJump = True
+                    self.jumpLimit = 17
+        else:
+            if self.jumpHeight < 0:
+                self.isJump = False
+                self.jumpHeight = JUMPINGHEIGHT
+            else:
+                self.posY -= (self.jumpHeight ** 2)
+                self.jumpHeight -= 1
+                if self.collides():
+                    while self.collides():
+                        self.posY += 1
+                    self.isJump = False
+                    self.jumpHeight = JUMPINGHEIGHT
+
+            # roof
+            if self.posY < 0:
+                self.posY = 0
+                self.isJump = False
+                self.jumpHeight = JUMPINGHEIGHT
+
+    def crouch(self, keys):
+        if not self.isCrouch:
+            if keys[pg.K_DOWN] or keys[pg.K_s]:
+                self.isCrouch = True
+                half = self.characterHeight//2
+                self.characterHeight -= half
+                self.posY += half
+                self.crouchCounter = 0
+        else:
+            self.crouchCounter += 1
+            if self.crouchCounter > 50:
+                self.characterHeight *= 2
+                self.posY -= self.characterHeight//2
+                self.isCrouch = False
+
+    def fall(self):
+        if not self.collides():
+            self.posY += (self.fallingSpeed ** 2)
+            self.fallingSpeed += 0.2
+            if self.collides():
+                self.fallingSpeed -= 0.2
+                self.posY -= (self.fallingSpeed ** 2)
+                self.fallingSpeed = FALLINGSPEED
+                return False
+
     def collides(self):
         for platform in self.platforms:
-            if self.pos_x + self.w_size - 10 >= platform.x and self.pos_x <= platform.x + platform.width - 10 and self.pos_y + self.h_size >= platform.y and self.pos_y <= platform.y + platform.height:
+            if self.posX + self.characterWidth - 10 >= platform.x and self.posX <= platform.x + platform.width - 10 and self.posY + self.characterHeight >= platform.y and self.posY <= platform.y + platform.height:
                 return True
         return False
+
+    def isWinning(self):
+        if self.posX >= SCREENWIDTH - self.characterWidth//1.5:
+            self.level += 1
+            self.respawn()
+
+    def printLevel(self):
+        font = pg.font.SysFont("Times New Roman", 50)
+        text = "LEVEL: " + str(self.level)
+        textBoard = font.render(text, False, (0, 0, 0))
+        win.blit(textBoard, (SCREENWIDTH - 240, 0))
 
 
 class Platform():
@@ -129,20 +151,41 @@ class Platform():
         pg.draw.rect(win, GREEN, (self.x, self.y, self.width, self.height))
 
 
+class GameMap():
+    def __init__(self, character):
+        self.ground = Platform(character, 0, 700, SCREENWIDTH, 200)
+        self.wall = Platform(character, 0, 0, 50, SCREENHEIGHT)
+        self.platform1 = Platform(character, 200, 600, 100, 100)
+        self.platform2 = Platform(character, 450, 450, 100, 100)
+        self.platform3 = Platform(character, 750, 250, 100, 100)
+
+    def generateMap(self):
+        # TODO:
+        platforms1 = [self.platform1, self.platform2]
+        platforms2 = [self.platform1, self.platform2, self.platform3]
+        mp = [platforms1, platforms2]
+        for platforms in mp:
+            platforms.append(self.ground)
+            platforms.append(self.wall)
+
+        return mp
+
+
 def updateWindow(platforms):
     win.fill(WHITE)
     for platform in platforms:
         platform.draw()
+    character.printLevel()
     character.drawCharacter()
     pg.display.update()
 
 
 character = Player()
-ground = Platform(character, 0, 700, 1600, 200)
-platform1 = Platform(character, 200, 600, 100, 100)
-platform2 = Platform(character, 450, 450, 100, 100)
+character.respawn()
 
-platforms = [ground, platform1, platform2]
+gameMap = GameMap(character)
+mp = gameMap.generateMap()
+
 
 while True:
     clock.tick(60)
@@ -151,6 +194,6 @@ while True:
         if event.type == pg.QUIT:
             pg.quit()
 
-    character.move(pg.key.get_pressed(), platforms)
+    character.move(pg.key.get_pressed(), mp[character.level-1])
 
-    updateWindow(platforms)
+    updateWindow(mp[character.level-1])
