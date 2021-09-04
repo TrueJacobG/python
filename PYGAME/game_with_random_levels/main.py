@@ -33,6 +33,8 @@ class Player():
         self.isJump = False
         self.jumpHeight = JUMPINGHEIGHT
         self.jumpLimit = 0
+        self.jumpSound = pg.mixer.Sound("jump.wav")
+        pg.mixer.Sound.set_volume(self.jumpSound, 0.25)
 
         # fall
         self.fallingSpeed = FALLINGSPEED
@@ -77,6 +79,8 @@ class Player():
                 if self.jumpLimit <= 0:
                     self.isJump = True
                     self.jumpLimit = 17
+                    self.jumpSound.play()
+
         else:
             if self.jumpHeight < 0:
                 self.isJump = False
