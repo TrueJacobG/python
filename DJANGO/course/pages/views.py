@@ -5,10 +5,17 @@ from django.http import HttpResponse
 
 
 def home_view(request, *args, **kwargs):
-    return render(request, "home.html", {})
+    my_context = {
+        "my_title": "Main Page - Home"
+    }
+    return render(request, "home.html", my_context)
 
 
 def contact_view(request, *args, **kwargs):
     # print(request.user)
     # return HttpResponse("<h1>Contact here :D</h1>")
-    return render(request, "contact.html", {})
+    my_context = {
+        "my_title": "Contact Page - Contact",
+        "my_number": "000-000-000",
+    }
+    return render(request, "contact.html", my_context)

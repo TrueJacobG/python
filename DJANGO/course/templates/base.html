@@ -10,20 +10,16 @@
 </head>
 
 <body>
-    <h1> MENU </h1>
-    <ul>
-        <li><a href="/home">HOME</a></li>
-        <li><a href="/contact">CONTACT</a></li>
-    </ul>
+    {% include "menu.html" %}
 
     <p>HOME</p>
     {%block home %}
-    <p>You are not on the <b>home</b> page.</p>
+    <!-- <p>You are not on the <b>home</b> page.</p> -->
     {% endblock %}
 
     <p>CONTACT</p>
     {%block contact %}
-    <p>You are not on the <b>contact </b> page.</p>
+    <!-- <p>You are not on the <b>contact </b> page.</p> -->
     {% endblock %}
 
 
