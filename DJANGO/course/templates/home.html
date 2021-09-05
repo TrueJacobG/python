@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}
-<!-- from my context -> views -> dict -->
 <title>{{ my_title }}</title>
 {% endblock %}
 
-{% block home %}
+{% block main %}
 <h1> Welcome home!</h1>
 <h2> Your user: {{ request.user }} </h2>
+
+<ul>
+    {% for my_thing in my_list %}
+    <li>{{forloop.counter}} - {{my_thing}}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
