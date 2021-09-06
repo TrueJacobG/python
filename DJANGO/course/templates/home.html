@@ -10,8 +10,11 @@
 
 <ul>
     {% for my_thing in my_list %}
-    <li>{{forloop.counter}} - {{my_thing}}</li>
-    {% endfor %}
+    {% if my_thing < 1 %} <li>{{forloop.counter}} - {{my_thing}}</li>
+        {% else %}
+        <li>{{forloop.counter}} - {{my_thing|add:1}}</li>
+        {% endif %}
+        {% endfor %}
 </ul>
 
 {% endblock %}
