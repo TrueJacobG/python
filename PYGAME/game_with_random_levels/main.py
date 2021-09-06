@@ -1,5 +1,6 @@
 import pygame as pg
 import time
+from random import randint
 
 pg.init()
 pg.font.init()
@@ -7,8 +8,8 @@ pg.font.init()
 # CONSTANTS
 SIZE = 100
 JUMPINGHEIGHT, FALLINGSPEED = 8, 1
-WHITE, BLACK, RED, GREEN, BLUE = (
-    255, 255, 255), (0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255)
+WHITE, BLACK, RED, GREEN, BLUE, YELLOW, ORANGE = (
+    255, 255, 255), (0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 127, 0)
 
 SCREENWIDTH, SCREENHEIGHT = 1600, 800
 win = pg.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
@@ -21,6 +22,9 @@ class Player():
     def __init__(self):
         # pos
         self.level = 1
+
+        # life
+        self.deathCounter = 0
 
         # size
         self.characterWidth = SIZE
@@ -42,9 +46,9 @@ class Player():
         # crouch
         self.isCrouch = False
 
-    def respawn(self):
-        self.posX = 80
-        self.posY = 599
+    def respawn(self, x=55, y=599):
+        self.posX = x
+        self.posY = y
 
     def drawCharacter(self):
         pg.draw.rect(win, BLUE, (self.posX, self.posY,
@@ -68,7 +72,9 @@ class Player():
 
         self.fall()
 
-        self.isWinning()
+        self.nextLevel()
+
+        self.previousLevel()
 
     def jump(self, keys):
         if not self.isJump:
@@ -114,6 +120,9 @@ class Player():
                 self.characterHeight *= 2
                 self.posY -= self.characterHeight//2
                 self.isCrouch = False
+                if self.collides():
+                    self.respawn()
+                    self.deathCounter += 1
 
     def fall(self):
         if not self.collides():
@@ -131,21 +140,31 @@ class Player():
                 return True
         return False
 
-    def isWinning(self):
+    def nextLevel(self):
         if self.posX >= SCREENWIDTH - self.characterWidth//1.5:
             self.level += 1
             self.respawn()
 
+    def previousLevel(self):
+        if self.posX < 0:
+            self.level -= 1
+            self.respawn(x=SCREENWIDTH - 100)
+
     def printLevel(self):
-        font = pg.font.SysFont("Times New Roman", 50)
+        font = pg.font.SysFont("Times New Roman", 32)
         text = "LEVEL: " + str(self.level)
-        textBoard = font.render(text, False, (0, 0, 0))
-        win.blit(textBoard, (SCREENWIDTH - 240, 0))
+        textBoard = font.render(text, False, ORANGE)
+        win.blit(textBoard, (SCREENWIDTH - 170 - 180, 0))
+
+    def printDeaths(self):
+        font = pg.font.SysFont("Times New Roman", 32)
+        text = "DEATHS: " + str(self.deathCounter)
+        textBoard = font.render(text, False, RED)
+        win.blit(textBoard, (SCREENWIDTH - 170, 0))
 
 
 class Platform():
-    def __init__(self, character, x, y, width, height):
-        self.character = character
+    def __init__(self, x, y, width, height):
         self.x = x
         self.y = y
         self.width = width
@@ -156,21 +175,33 @@ class Platform():
 
 
 class GameMap():
-    def __init__(self, character):
-        self.ground = Platform(character, 0, 700, SCREENWIDTH, 200)
-        self.wall = Platform(character, 0, 0, 50, SCREENHEIGHT)
-        self.platform1 = Platform(character, 200, 600, 100, 100)
-        self.platform2 = Platform(character, 450, 450, 100, 100)
-        self.platform3 = Platform(character, 750, 250, 100, 100)
+    def __init__(self):
+        self.ground = Platform(0, 700, SCREENWIDTH, 200)
+        self.wall = Platform(0, 0, 50, SCREENHEIGHT)
+        self.platform1 = Platform(200, 600, 100, 100)
+        self.platform2 = Platform(450, 450, 100, 100)
+        self.platform3 = Platform(750, 250, 100, 100)
+
+    def genPlatform(self, type="low"):
+        if type == "low":
+            y = randint(SCREENHEIGHT//2, SCREENHEIGHT-200)
+        else:
+            y = randint(0, SCREENHEIGHT//2)
+        x = randint(200, SCREENWIDTH)
+        width = randint(100, 500)
+        height = randint(50, 200)
+        return Platform(x, y, width, height)
 
     def generateMap(self):
         # TODO:
-        platforms1 = [self.platform1, self.platform2]
+        platforms1 = [self.genPlatform("low"), self.genPlatform("low")]
         platforms2 = [self.platform1, self.platform2, self.platform3]
+
+        platforms1.append(self.ground)
+        platforms1.append(self.wall)
+        platforms2.append(self.ground)
+
         mp = [platforms1, platforms2]
-        for platforms in mp:
-            platforms.append(self.ground)
-            platforms.append(self.wall)
 
         return mp
 
@@ -180,6 +211,7 @@ def updateWindow(platforms):
     for platform in platforms:
         platform.draw()
     character.printLevel()
+    character.printDeaths()
     character.drawCharacter()
     pg.display.update()
 
@@ -187,7 +219,7 @@ def updateWindow(platforms):
 character = Player()
 character.respawn()
 
-gameMap = GameMap(character)
+gameMap = GameMap()
 mp = gameMap.generateMap()
 
 
