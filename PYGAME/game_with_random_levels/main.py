@@ -121,8 +121,7 @@ class Player():
                 self.posY -= self.characterHeight//2
                 self.isCrouch = False
                 if self.collides():
-                    self.respawn()
-                    self.deathCounter += 1
+                    self.die()
 
     def fall(self):
         if not self.collides():
@@ -137,6 +136,8 @@ class Player():
     def collides(self):
         for platform in self.platforms:
             if self.posX + self.characterWidth - 10 >= platform.x and self.posX <= platform.x + platform.width - 10 and self.posY + self.characterHeight >= platform.y and self.posY <= platform.y + platform.height:
+                if platform.isDamaging:
+                    self.die()
                 return True
         return False
 
@@ -162,16 +163,26 @@ class Player():
         textBoard = font.render(text, False, RED)
         win.blit(textBoard, (SCREENWIDTH - 170, 0))
 
+    def die(self):
+        self.respawn()
+        self.deathCounter += 1
+
 
 class Platform():
-    def __init__(self, x, y, width, height):
+    def __init__(self, x, y, width, height, color=GREEN):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
+        self.color = color
+        if self.color == RED:
+            self.isDamaging = True
+        else:
+            self.isDamaging = False
 
     def draw(self):
-        pg.draw.rect(win, GREEN, (self.x, self.y, self.width, self.height))
+        pg.draw.rect(win, self.color,
+                     (self.x, self.y, self.width, self.height))
 
 
 class GameMap():
@@ -182,7 +193,7 @@ class GameMap():
         self.platform2 = Platform(450, 450, 100, 100)
         self.platform3 = Platform(750, 250, 100, 100)
 
-    def genPlatform(self, type="low"):
+    def genPlatform(self, type="low", damage=False):
         if type == "low":
             y = randint(SCREENHEIGHT//2, SCREENHEIGHT-200)
         else:
@@ -190,11 +201,13 @@ class GameMap():
         x = randint(200, SCREENWIDTH)
         width = randint(100, 500)
         height = randint(50, 200)
+        if damage:
+            return Platform(x, y, width, height, RED)
         return Platform(x, y, width, height)
 
     def generateMap(self):
         # TODO:
-        platforms1 = [self.genPlatform("low"), self.genPlatform("low")]
+        platforms1 = [self.genPlatform("low", True), self.genPlatform("low")]
         platforms2 = [self.platform1, self.platform2, self.platform3]
 
         platforms1.append(self.ground)
