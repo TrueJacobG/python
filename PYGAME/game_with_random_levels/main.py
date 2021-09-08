@@ -8,10 +8,16 @@ pg.font.init()
 # CONSTANTS
 SIZE = 100
 JUMPINGHEIGHT, FALLINGSPEED = 8, 1
-WHITE, BLACK, RED, GREEN, BLUE, YELLOW, ORANGE = (
-    255, 255, 255), (0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 127, 0)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (128, 128, 128)
+RED, GREEN, BLUE = (255, 0, 0), (0, 255, 0), (0, 0, 255)
+YELLOW = (255, 255, 0)
+ORANGE = (255, 127, 0)
+GOLD = (255, 215, 0)
 
-SCREENWIDTH, SCREENHEIGHT = 1600, 800
+
+SCREENWIDTH, SCREENHEIGHT = 1280, 720
 win = pg.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 
 
@@ -46,6 +52,25 @@ class Player():
         # crouch
         self.isCrouch = False
 
+        # eq
+        self.isEqActive = False
+        self.eq = [[], [], []]
+        self.delay = 0
+
+    def main(self, keys, platforms):
+        self.platforms = platforms
+
+        self.fall()
+
+        self.move(keys)
+
+        self.crouch(keys)
+
+        self.jump(keys)
+
+        self.nextLevel()
+        self.previousLevel()
+
     def respawn(self, x=55, y=599):
         self.posX = x
         self.posY = y
@@ -54,8 +79,7 @@ class Player():
         pg.draw.rect(win, BLUE, (self.posX, self.posY,
                      self.characterWidth, self.characterHeight))
 
-    def move(self, keys, platforms):
-        self.platforms = platforms
+    def move(self, keys):
         if keys[pg.K_LEFT] or keys[pg.K_a]:
             self.posX -= self.velocity
             if self.collides():
@@ -65,16 +89,6 @@ class Player():
             self.posX += self.velocity
             if self.collides():
                 self.posX -= self.velocity
-
-        self.crouch(keys)
-
-        self.jump(keys)
-
-        self.fall()
-
-        self.nextLevel()
-
-        self.previousLevel()
 
     def jump(self, keys):
         if not self.isJump:
@@ -167,6 +181,37 @@ class Player():
         self.respawn()
         self.deathCounter += 1
 
+    def printEq(self, keys):
+        self.delay -= 1
+        if keys[pg.K_e] and self.delay <= 0:
+            self.isEqActive = not self.isEqActive
+            self.delay = 20
+
+        if self.isEqActive:
+            w = SCREENWIDTH//2
+            h = SCREENHEIGHT//2
+            size = 500
+
+            squareSize = (size-1)//3
+            border = 1
+
+            pg.draw.rect(win, GOLD, (w-(size+80)//2,
+                         h-(size+80)//2, size+80, size+80))
+
+            pg.draw.rect(win, BLACK, (w-size//2,
+                         h-size//2, size, size))
+
+            for row in range(1, 4):
+                for col in range(1, 4):
+                    pg.draw.rect(win, WHITE, (w-(size//2) + (squareSize+border)*(row-1),
+                                 h-(size//2) + (squareSize+border)*(col-1), squareSize, squareSize))
+
+
+class Item():
+    def __init__(self, name):
+        self.name = name
+        self.quality = randint(1, 5)
+
 
 class Platform():
     def __init__(self, x, y, width, height, color=GREEN):
@@ -219,13 +264,16 @@ class GameMap():
         return mp
 
 
-def updateWindow(platforms):
+def updateWindow(keys, platforms):
     win.fill(WHITE)
+
     for platform in platforms:
         platform.draw()
     character.printLevel()
     character.printDeaths()
     character.drawCharacter()
+    character.printEq(keys)
+
     pg.display.update()
 
 
@@ -235,7 +283,6 @@ character.respawn()
 gameMap = GameMap()
 mp = gameMap.generateMap()
 
-
 while True:
     clock.tick(60)
 
@@ -243,6 +290,6 @@ while True:
         if event.type == pg.QUIT:
             pg.quit()
 
-    character.move(pg.key.get_pressed(), mp[character.level-1])
+    character.main(pg.key.get_pressed(), mp[character.level-1])
 
-    updateWindow(mp[character.level-1])
+    updateWindow(pg.key.get_pressed(), mp[character.level-1])
