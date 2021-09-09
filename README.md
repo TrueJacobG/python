@@ -2,7 +2,6 @@
 
 ---
 
-##### API : api tests
 ##### COMPETITIVE PROGRAMMING: exercises, examples, tests etc
 ##### GUI: python gui programs
 ##### MATPLOTLIB: learning data visualizations
