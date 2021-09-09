@@ -8,4 +8,4 @@ def product_detail_view(request):
     content = {
         "object": obj,
     }
-    return render(request, "product/detail.html", content)
+    return render(request, "products/product_detail.html", content)
