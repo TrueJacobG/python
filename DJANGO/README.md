@@ -1,3 +1,3 @@
-### Django - Web Framework
+### 🤠Django - Web Framework
 
 ##### Status - Learning
