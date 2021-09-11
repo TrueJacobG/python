@@ -5,13 +5,10 @@ from .forms import ProductForm
 
 
 def product_create_view(request):
-    form = ProductForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form = ProductForm()
-    content = {
-        "form": form,
-    }
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        print(title)
+    content = {}
     return render(request, "products/product_create.html", content)
 
 
