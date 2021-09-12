@@ -1,0 +1,2 @@
+ctflearn.com/robots.txt -> this will give you a ####.html
+the flag is on -> ctflearn.com/####.html
