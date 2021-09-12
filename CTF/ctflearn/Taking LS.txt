@@ -1,0 +1,2 @@
+linux command, ls hidden files -> ls -la
+then cd and now you have password to the pdf
