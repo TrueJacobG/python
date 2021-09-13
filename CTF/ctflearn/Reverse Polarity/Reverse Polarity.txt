@@ -1,0 +1,1 @@
+divide string into 8 bit strings then convert it to ascii
