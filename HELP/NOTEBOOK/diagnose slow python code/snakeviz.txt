@@ -1,0 +1,2 @@
+visualizations of times
+snakeviz ./name-of-the-file
