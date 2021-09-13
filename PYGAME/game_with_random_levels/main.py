@@ -1,6 +1,6 @@
 import pygame as pg
 import time
-from random import randint
+from random import randint, choice
 
 pg.init()
 pg.font.init()
@@ -55,6 +55,7 @@ class Player():
         # eq
         self.isEqActive = False
         self.eq = [[], [], []]
+        self.points = 0
         self.delay = 0
 
     def main(self, keys, platforms):
@@ -148,10 +149,13 @@ class Player():
                 return False
 
     def collides(self):
-        for platform in self.platforms:
+        for i, platform in enumerate(self.platforms):
             if self.posX + self.characterWidth - 10 >= platform.x and self.posX <= platform.x + platform.width - 10 and self.posY + self.characterHeight >= platform.y and self.posY <= platform.y + platform.height:
                 if platform.isDamaging:
                     self.die()
+                if platform.quality > 0:
+                    self.getItem(platform)
+                    del self.platforms[i]
                 return True
         return False
 
@@ -165,17 +169,28 @@ class Player():
             self.level -= 1
             self.respawn(x=SCREENWIDTH - 100)
 
-    def printLevel(self):
-        font = pg.font.SysFont("Times New Roman", 32)
-        text = "LEVEL: " + str(self.level)
-        textBoard = font.render(text, False, ORANGE)
-        win.blit(textBoard, (SCREENWIDTH - 170 - 180, 0))
+    def printHUD(self):
+        def printLevel():
+            font = pg.font.SysFont("Times New Roman", 32)
+            text = "LEVEL: " + str(self.level)
+            textBoard = font.render(text, False, ORANGE)
+            win.blit(textBoard, (SCREENWIDTH - 170 - 360, 0))
 
-    def printDeaths(self):
-        font = pg.font.SysFont("Times New Roman", 32)
-        text = "DEATHS: " + str(self.deathCounter)
-        textBoard = font.render(text, False, RED)
-        win.blit(textBoard, (SCREENWIDTH - 170, 0))
+        def printPoints():
+            font = pg.font.SysFont("Times New Roman", 32)
+            text = "POINTS: " + str(self.points)
+            textBoard = font.render(text, False, GREEN)
+            win.blit(textBoard, (SCREENWIDTH - 170 - 180, 0))
+
+        def printDeaths():
+            font = pg.font.SysFont("Times New Roman", 32)
+            text = "DEATHS: " + str(self.deathCounter)
+            textBoard = font.render(text, False, RED)
+            win.blit(textBoard, (SCREENWIDTH - 170, 0))
+
+        printLevel()
+        printDeaths()
+        printPoints()
 
     def die(self):
         self.respawn()
@@ -203,14 +218,59 @@ class Player():
 
             for row in range(1, 4):
                 for col in range(1, 4):
-                    pg.draw.rect(win, WHITE, (w-(size//2) + (squareSize+border)*(row-1),
-                                 h-(size//2) + (squareSize+border)*(col-1), squareSize, squareSize))
+                    x = w-(size//2) + (squareSize+border)*(row-1)
+                    y = h-(size//2) + (squareSize+border)*(col-1)
+                    pg.draw.rect(win, WHITE, (x, y, squareSize, squareSize))
+                    try:
+                        item = self.eq[row-1][col-1]
+                        if item.shape == "circle":
+                            pg.draw.circle(win, item.color,
+                                           (x+item.size+squareSize//3, y+item.size+squareSize//3), item.size)
+                            # TODO:
+                        elif item.name == "triangle":
+                            pass
+                        else:
+                            pass
+                    except IndexError:
+                        pass
+
+    def getItem(self, item):
+        self.points += 1
+        for arr in self.eq:
+            if len(arr) < 3:
+                arr.append(item)
+                break
 
 
 class Item():
-    def __init__(self, name):
+    def __init__(self, name, x, y, size):
         self.name = name
+        self.x_draw = x
+        self.y_draw = y
+        self.size = size
+
+        # hitbox
+        self.x = x-size
+        self.y = y-size
+        self.width = size*2
+        self.height = size*2
+
+        # description
+        self.color = BLUE
         self.quality = randint(1, 5)
+        self.shape = "circle"
+        # self.shape = choice(["circle", "triangle", "reverse_triangle"])
+        self.isDamaging = False
+
+    def draw(self):
+        # TODO:
+        if self.shape == "circle":
+            pg.draw.circle(win, self.color,
+                           (self.x_draw, self.y_draw), self.size)
+        elif self.shape == "triangle":
+            pass
+        else:
+            pass
 
 
 class Platform():
@@ -219,11 +279,9 @@ class Platform():
         self.y = y
         self.width = width
         self.height = height
+        self.quality = 0
         self.color = color
-        if self.color == RED:
-            self.isDamaging = True
-        else:
-            self.isDamaging = False
+        self.isDamaging = self.color == RED
 
     def draw(self):
         pg.draw.rect(win, self.color,
@@ -250,6 +308,13 @@ class GameMap():
             return Platform(x, y, width, height, RED)
         return Platform(x, y, width, height)
 
+    def addItems(self, mp):
+        result = []
+        for platforms in mp:
+            platforms.append(Item("Coin", 300, 500, 30))
+            result.append(platforms)
+        return result
+
     def generateMap(self):
         # TODO:
         platforms1 = [self.genPlatform("low", True), self.genPlatform("low")]
@@ -261,6 +326,8 @@ class GameMap():
 
         mp = [platforms1, platforms2]
 
+        mp = self.addItems(mp)
+
         return mp
 
 
@@ -269,8 +336,7 @@ def updateWindow(keys, platforms):
 
     for platform in platforms:
         platform.draw()
-    character.printLevel()
-    character.printDeaths()
+    character.printHUD()
     character.drawCharacter()
     character.printEq(keys)
 
