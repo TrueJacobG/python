@@ -2,7 +2,7 @@
 # how many bills/coins do you need to create that number
 # min
 
-def howManyCoins(number):
+def how_many_coins(number):
     m = [500, 200, 100, 50, 20, 10, 5, 2, 1]
     result = 0
     x = 0
@@ -13,3 +13,7 @@ def howManyCoins(number):
         else:
             x += 1
     return result
+
+
+if __name__ == '__main__':
+    print(how_many_coins(123))
