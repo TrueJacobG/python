@@ -3,9 +3,20 @@ from .models import Product
 
 
 class ProductForm(forms.ModelForm):
+    title = forms.CharField(label="Type your title here", widget=forms.TextInput(
+        attrs={'placeholder': 'Type your title here'}))
+
     class Meta:
         model = Product
         fields = ["title", "description", "price"]
+
+    # def clean_<name_of_form_field>
+    def clean_title(self, *args, **kwargs):
+        title = self.cleaned_data.get('title')
+        if not "CFE" in title:
+            raise forms.ValidationError("THIS IS NOT VALID TITLE")
+
+        return title
 
 
 class RawProductForm(forms.Form):
