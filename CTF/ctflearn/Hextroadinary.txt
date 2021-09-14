@@ -1,0 +1,1 @@
+you have to do XOR hexadecimal decoding
