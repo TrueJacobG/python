@@ -4,10 +4,15 @@ from .forms import ProductForm, RawProductForm
 
 
 def product_create_view(request):
-    form = ProductForm(request.POST or None)
+    initial_data = {
+        'title': "This is initial title"
+    }
+    # now you can edit 1 id in your data base
+    obj = Product.objects.get(id=1)
+    # \/ -> initial=initial_data
+    form = ProductForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
-        form = ProductForm()
 
     content = {
         'form': form,

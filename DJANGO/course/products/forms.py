@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
     # def clean_<name_of_form_field>
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
-        if not "CFE" in title:
+        if "ERROR" in title:
             raise forms.ValidationError("THIS IS NOT VALID TITLE")
 
         return title
