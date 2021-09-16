@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>IN APP: DELETE PRODUCT</title>
+{% endblock %}
+
+{% block main %}
+<form method="POST"> {% csrf_token %}
+    <input type="submit" value="DELTE PRODUCT ID: {{ object.id }}" />
+</form>
+{% endblock %}
