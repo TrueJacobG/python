@@ -1,0 +1,2 @@
+git log -p
+history of the changes
