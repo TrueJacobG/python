@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>DETAIL</h1>
+<p>TITLE: {{object.title}}</p>
+<p>DESCRIPTION: {{object.description}}</p>
+{% load static %}
+<img src="{% static 'images/' %}{{ object.id}}.jpg" width=100 height=auto>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% for item in object_list %}
+<p><a href="{{item.id}}">ID: {{item.id}}</a></p>
+{% load static %}
+<img src="{% static 'images/' %}{{ item.id}}.jpg" width=100 height=auto>
+{% endfor %}
+{% endblock %}
