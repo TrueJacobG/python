@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from .models import Photo
 
 from django.views.generic import (
@@ -49,3 +50,14 @@ class PhotosUpdateView(UpdateView):
 
     def get_success_url(self):
         return "/"
+
+
+class PhotosDeleteView(DeleteView):
+    template_name = 'photos/delete.html'
+
+    def get_object(self):
+        my_id = self.kwargs.get("id")
+        return get_object_or_404(Photo, id=my_id)
+
+    def get_success_url(self):
+        return reverse('photos:photos-list-view')
