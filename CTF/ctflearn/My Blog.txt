@@ -1,0 +1,1 @@
+inspect page -> applocations -> localstorage
