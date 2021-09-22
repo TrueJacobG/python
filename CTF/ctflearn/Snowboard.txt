@@ -1,0 +1,2 @@
+strings <file>
+base64 -> flag
