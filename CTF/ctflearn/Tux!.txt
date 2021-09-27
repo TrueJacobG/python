@@ -1,0 +1,5 @@
+strings <name_of_the_file>
+base64 decode -> password to zip file
+binwalk -e <name_of_the_file>
+unzip <name_of_the_zip>
+paste password -> flag
