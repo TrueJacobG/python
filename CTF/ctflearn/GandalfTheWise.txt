@@ -1,0 +1,4 @@
+strings <name>
+base64 -> xor is your friend
+
+from base64 -> to hex -> xor -> from hex to text -> flag
