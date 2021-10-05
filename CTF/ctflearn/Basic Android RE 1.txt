@@ -1,0 +1,5 @@
+apktool/javadecompilers.com
+Main
+find "CTF{ ... }"
+flag in md5
+connect "CTF{ ... }" with the flag
