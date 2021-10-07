@@ -1,0 +1,6 @@
+bless -> hex tool analysis
+
+gobuster -> https://url/<names from text file> - with this tool you can check every url on the website
+
+strings -> check hidden info in file
+binwalk -> check hidden files in file
