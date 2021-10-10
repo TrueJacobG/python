@@ -1,0 +1,2 @@
+nc thekidofarcrania.com 35235 -> overflow -> "A*33 + "flag"
+flag, because reverse secret from c file
