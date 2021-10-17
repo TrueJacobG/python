@@ -1,0 +1,4 @@
+python3 -> Anaconda 3.8.8
+pypy3 -> Pypy 3.7.10
+python3.10 -> Base Python 3.10
+mypy -> Mypy - test types in your project
