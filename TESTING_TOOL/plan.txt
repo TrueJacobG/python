@@ -1,8 +1,8 @@
-TODO:
 
-FIXME:later: import -> run testing tool on functions
-FIXME:exp. import testingtool
-FIXME:testingtool.ad(func1, args=[int, int])
+TODO:
+error handling for example
+if functions and types in f.py.test are correct
+
 
 
 DONE:
@@ -18,3 +18,8 @@ square;int;int;int
 1,3;3
 2,3;6
 # arg1,arg2;result1
+
+
+FIXME:later: import -> run testing tool on functions
+FIXME:exp. import testingtool
+FIXME:testingtool.ad(func1, args=[int, int])
