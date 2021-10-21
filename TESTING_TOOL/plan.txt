@@ -1,9 +1,8 @@
 
 TODO:
-error handling for example
-if functions and types in f.py.test are correct
 
-
+DOCS?:
+do mypy then testing_tool
 
 DONE:
 python3 testingtool.py file.py
@@ -18,6 +17,23 @@ square;int;int;int
 1,3;3
 2,3;6
 # arg1,arg2;result1
+
+test if files exist's
+
+option live to see which case passing
+-live 
+if something wrong then it stops testing
+else write good results
+
+YOU CAN'T USE WORD 'def' IN YOUR FILE(in comments or in strings)
+
+warnigs -> if functions in .py.test are correct
+
+
+COLORS:
+red -> error
+green -> ok
+yellow -> warning, problem with testing_tool
 
 
 FIXME:later: import -> run testing tool on functions
