@@ -41,6 +41,8 @@ do mypy before testing
 
 check if inputs in .py.test are correct type
 
+test if .py.test file exist
+
 
 
 COLORS:
