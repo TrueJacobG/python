@@ -1,8 +1,14 @@
 
 TODO:
+colors in func for example -> printc("dudu", color="red") <- warning etc
+without mypy arrows etc in file support
+class tests
+test file on import
+
 
 DOCS?:
 do mypy then testing_tool
+
 
 DONE:
 python3 testingtool.py file.py
@@ -27,13 +33,22 @@ else write good results
 
 YOU CAN'T USE WORD 'def' IN YOUR FILE(in comments or in strings)
 
-warnigs -> if functions in .py.test are correct
+in .py.test in strings you can't use ";" and "," 
+
+checking if types in .py are equal to .py.test
+
+do mypy before testing
+
+check if inputs in .py.test are correct type
+
 
 
 COLORS:
 red -> error
 green -> ok
+blue -> types are correct
 yellow -> warning, problem with testing_tool
+
 
 
 FIXME:later: import -> run testing tool on functions
