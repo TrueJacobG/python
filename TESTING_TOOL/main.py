@@ -92,8 +92,12 @@ def get_args_results(line, types):
 
 
 def import_test_file(name):
-    with open(name+".test", 'r') as f:
-        file_txt = f.readlines()
+    try:
+        with open(name+".test", 'r') as f:
+            file_txt = f.readlines()
+    except:
+        print("\033[93m" + f"ERROR! NO .py.test FILE IN DIRECTORY!" + "\033[0m")
+        exit()
 
     types_lst = []
 
