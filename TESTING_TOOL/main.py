@@ -49,7 +49,7 @@ class TestingTool:
 
         types_lst = []
 
-        expectations = []
+        expects = []
         need_name = True
         for line in file_txt:
             if need_name:
@@ -71,9 +71,9 @@ class TestingTool:
 
             args, res = get_args_and_results(line.strip(), types)
 
-            expectations.append([func, args, res])
+            expects.append([func, args, res])
 
-        return expectations, types_lst
+        return expects, types_lst
 
     def testing_with_mypy(self):
         try:
@@ -83,12 +83,13 @@ class TestingTool:
             exit()
 
         if x.returncode != 0:
-            say(f"MYPY DETECTED TYPE ERROR IN {self.flags['filename']}", "g")
+            say(f"MYPY DETECTED TYPE ERROR IN {self.flags['filename']}", "r")
             exit()
 
     def testing_test_file(self):
         in_py = self.functions_in_py
         in_test = self.functions_in_test
+
         if in_py != in_test:
             for i in range(0, len(in_test)):
                 if in_py[i][1] != in_test[i][1]:
@@ -108,21 +109,26 @@ class TestingTool:
         ok = True
         for x in self.expects:
             try:
-                result = getattr(module, x[0])(*x[1])
+                out = getattr(module, x[0])(*x[1])
             except AttributeError:
                 say(
                     f"You put wrong function in {self.flags['filename']}.test", "y")
                 exit()
+            # except TypeError:
+            #     say(f"ERROR! Wrong inputs in .py.test!", "r")
+            #     exit()
 
-            if [result] != x[2]:
+            args = " ".join([str(arg) for arg in x[1]])
+            results = " ".join([str(res) for res in x[2]])
+            if [out] != x[2]:
                 ok = False
                 say(
-                    f"WARNING! {x[0]} -> {x[1]} should give {x[2]}, but instead gave {[result]}", "r")
+                    f"WARNING! {x[0]} -> {args} should give {results}, but instead gave {out}", "r")
                 if self.flags["live"]:
                     break
 
             if self.flags["live"]:
-                say(f"{x[0]} args->{x[1]} res->{x[2]}", "g")
+                say(f"{x[0]} args-> {args} res-> {results}", "g")
 
         if ok:
             say("EVERYTHING OK!", "g")

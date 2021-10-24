@@ -2,7 +2,6 @@
 TODO:
 import imports from fortest.py
 without mypy arrows etc in file support
-add list to type
 add diferent types
 class tests
 test file on import
@@ -22,10 +21,10 @@ expectations file name -> like a file, but with .test
 test file example
 square;int;int;int
 # func name ;arg1 type; arg2 type; result1 type
-1,2;2
-1,3;3
-2,3;6
-# arg1,arg2;result1
+1:2;2
+1:3;3
+2:3;6
+# arg1:arg2;result1
 
 test if files exist's
 
@@ -36,7 +35,7 @@ else write good results
 
 YOU CAN'T USE WORD 'def' IN YOUR FILE(in comments or in strings)
 
-in .py.test in strings you can't use ";" and "," 
+in .py.test in strings you can't use ";" and ":", because they are separators
 
 checking if types in .py are equal to .py.test
 
@@ -49,6 +48,9 @@ test if .py.test file exist
 colors in func for example -> say("Hi!", color="red") <- error etc
 
 everything in class based formula
+
+lists are now compatible
+
 
 
 COLORS:

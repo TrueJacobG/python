@@ -33,6 +33,41 @@ def to_type(arg, t):
             print(error_message)
             exit()
 
+    if t == "List[int]":
+        try:
+            l = []
+            for item in arg:
+                if item != "[" and item != "]" and item != ",":
+                    l.append(int(item))
+            return l
+        except ValueError:
+            print(error_message)
+            exit()
+
+    if t == "List[str]":
+        try:
+            l = []
+            for item in arg:
+                if item != "[" and item != "]" and item != ",":
+                    l.append(str(item))
+            return l
+        except ValueError:
+            print(error_message)
+            exit()
+
+    if t == "List[float]":
+        try:
+            l = []
+            for item in arg:
+                if item != "[" and item != "]" and item != ",":
+                    l.append(float(item))
+            return l
+        except ValueError:
+            print(error_message)
+            exit()
+
+    assert False, "UNKNOWN TYPE!"
+
 
 def say(text, t):
 
@@ -58,11 +93,11 @@ def get_args_and_results(line, types):
     results = []
     i = 0
 
-    for arg in line[0].split(","):
+    for arg in line[0].split(":"):
         args.append(to_type(arg, types[i]))
         i += 1
 
-    for res in line[1].split(","):
+    for res in line[1].split(":"):
         results.append(to_type(res, types[i]))
         i += 1
 
