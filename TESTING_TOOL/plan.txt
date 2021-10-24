@@ -15,7 +15,7 @@ so -> random tests HARD:
 DONE:
 python3 testingtool.py file.py
 
-test file types -> str, int, float, bool
+test file types -> str, int, float, bool, List[str, int, float, bool]
 expectations file name -> like a file, but with .test
 
 test file example

@@ -33,34 +33,21 @@ def to_type(arg, t):
             print(error_message)
             exit()
 
-    if t == "List[int]":
+    if t == "List[int]" or t == "List[str]" or t == "List[float]" or t == "List[bool]":
         try:
             l = []
             for item in arg:
                 if item != "[" and item != "]" and item != ",":
-                    l.append(int(item))
-            return l
-        except ValueError:
-            print(error_message)
-            exit()
-
-    if t == "List[str]":
-        try:
-            l = []
-            for item in arg:
-                if item != "[" and item != "]" and item != ",":
-                    l.append(str(item))
-            return l
-        except ValueError:
-            print(error_message)
-            exit()
-
-    if t == "List[float]":
-        try:
-            l = []
-            for item in arg:
-                if item != "[" and item != "]" and item != ",":
-                    l.append(float(item))
+                    if t == "List[int]":
+                        l.append(int(item))
+                    elif t == "List[str]":
+                        l.append(str(item))
+                    elif t == "List[float]":
+                        l.append(float(item))
+                    elif t == "List[bool]":
+                        l.append(bool(item))
+                    else:
+                        assert False, "UNKNOWN LIST[TYPE]!"
             return l
         except ValueError:
             print(error_message)
