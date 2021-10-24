@@ -13,7 +13,7 @@ so -> random tests HARD:
 
 
 DONE:
-python3 testingtool.py file.py
+python3.10 testingtool.py file.py
 
 test file types -> str, int, float, bool, List[str, int, float, bool]
 expectations file name -> like a file, but with .test
@@ -51,6 +51,7 @@ everything in class based formula
 
 lists are now compatible
 
+works only with python3.10
 
 
 COLORS:

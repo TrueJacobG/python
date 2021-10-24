@@ -47,13 +47,15 @@ def to_type(arg, t):
                     elif t == "List[bool]":
                         l.append(bool(item))
                     else:
-                        assert False, "UNKNOWN LIST[TYPE]!"
+                        say("UNKNOWN LIST[TYPE]!", "r")
+                        exit()
             return l
         except ValueError:
             print(error_message)
             exit()
 
-    assert False, "UNKNOWN TYPE!"
+    say("UNKNOWN TYPE!", "r")
+    exit()
 
 
 def say(text, t):
