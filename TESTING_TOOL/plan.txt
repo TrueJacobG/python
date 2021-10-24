@@ -13,10 +13,6 @@ so -> random tests HARD:
 
 
 
-DOCS?:
-do mypy then testing_tool
-
-
 DONE:
 python3 testingtool.py file.py
 
@@ -51,6 +47,8 @@ check if inputs in .py.test are correct type
 test if .py.test file exist
 
 colors in func for example -> say("Hi!", color="red") <- error etc
+
+everything in class based formula
 
 
 COLORS:

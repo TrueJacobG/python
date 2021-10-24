@@ -110,3 +110,19 @@ def py_file_scraping(file_txt):
         funcs_count -= 1
 
     return functions_in_py
+
+
+def visualize_input_types(expects):
+    for i in range(len(expects)):
+        func = expects[i][0]
+        line = []
+        for arg in expects[i][1]:
+            line.append(str(type(arg)).replace(
+                "<class '", "").replace("'>", ""))
+        for res in expects[i][2]:
+            line.append(str(type(res)).replace(
+                "<class '", "").replace("'>", ""))
+
+        args = expects[i][1] + expects[i][2]
+
+        say(f"{args} are {line}", "b")
