@@ -40,7 +40,7 @@ def to_type(arg, t):
             say(error_message, "r", cl.lineno)
             exit()
 
-    if t == "List[int]" or t == "List[str]" or t == "List[float]" or t == "List[bool]":
+    if t.startswith("List"):
         try:
             l = []
             for item in arg:
