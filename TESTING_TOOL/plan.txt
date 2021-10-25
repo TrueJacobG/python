@@ -1,5 +1,7 @@
 
 TODO:
+if func is in .py.test but not in .py ERROR
+if func is in .py but not in .py.test good
 import imports from fortest.py
 without mypy arrows etc in file support
 add diferent types
