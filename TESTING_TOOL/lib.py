@@ -1,3 +1,6 @@
+from inspect import currentframe, getframeinfo
+
+
 def get_raw_filename(name):
     for i in range(len(name)-1, -1, -1):
         if name[i] == "/":
@@ -12,25 +15,29 @@ def to_type(arg, t):
         try:
             return int(arg)
         except ValueError:
-            print(error_message)
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
             exit()
     if t == "str":
         try:
             return str(arg)
         except ValueError:
-            print(error_message)
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
             exit()
     if t == "float":
         try:
             return float(arg)
         except ValueError:
-            print(error_message)
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
             exit()
     if t == "bool":
         try:
             return bool(arg)
         except ValueError:
-            print(error_message)
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
             exit()
 
     if t == "List[int]" or t == "List[str]" or t == "List[float]" or t == "List[bool]":
@@ -38,28 +45,19 @@ def to_type(arg, t):
             l = []
             for item in arg:
                 if item != "[" and item != "]" and item != ",":
-                    if t == "List[int]":
-                        l.append(int(item))
-                    elif t == "List[str]":
-                        l.append(str(item))
-                    elif t == "List[float]":
-                        l.append(float(item))
-                    elif t == "List[bool]":
-                        l.append(bool(item))
-                    else:
-                        say("UNKNOWN LIST[TYPE]!", "r")
-                        exit()
+                    # kinda recusrsion
+                    l.append(to_type(item, t[5:-1]))
             return l
         except ValueError:
-            print(error_message)
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
             exit()
-
-    say("UNKNOWN TYPE!", "r")
+    cl = getframeinfo(currentframe())
+    say("UNKNOWN TYPE!", "r", cl.lineno)
     exit()
 
 
-def say(text, t):
-
+def say(text, t, currentline):
     if t == "warn" or t == "yellow" or t == "y":
         color = "\033[93m"
     elif t == "error" or t == "type_error" or t == "red" or t == "r":
@@ -71,7 +69,8 @@ def say(text, t):
     else:
         color = ""
 
-    print(color + text + "\033[0m")
+    print(color + str(currentline) +
+          "\033[0m" + ":" + color + text + "\033[0m")
 
 
 def get_args_and_results(line, types):
@@ -149,4 +148,5 @@ def visualize_input_types(expects):
 
         args = expects[i][1] + expects[i][2]
 
-        say(f"{args} are {line}", "b")
+        cl = getframeinfo(currentframe())
+        say(f"{args} are {line}", "b", cl.lineno)

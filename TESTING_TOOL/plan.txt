@@ -55,13 +55,17 @@ lists are now compatible
 
 works only with python3.10
 
+to_type recursion
+
+localization of the code
+
+
 
 COLORS:
 red -> error
 yellow -> warning, problem with testing_tool
 green -> ok
 blue -> types are correct
-
 
 
 

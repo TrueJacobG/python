@@ -2,6 +2,7 @@ import argparse
 import sys
 import subprocess
 from lib import get_raw_filename, say, get_args_and_results, py_file_scraping, visualize_input_types
+from inspect import currentframe, getframeinfo
 
 
 class TestingTool:
@@ -44,7 +45,8 @@ class TestingTool:
             with open(self.flags["filename"]+".test", 'r') as f:
                 file_txt = f.readlines()
         except:
-            say(f"ERROR! NO .py.test FILE IN DIRECTORY!", "y")
+            cl = getframeinfo(currentframe())
+            say(f"ERROR! NO .py.test FILE IN DIRECTORY!", "y", cl.lineno)
             exit()
 
         types_lst = []
@@ -56,8 +58,9 @@ class TestingTool:
                 try:
                     t = line.index(";")
                 except ValueError:
-                    print(
-                        "\033[93m" + f"You have to put TYPES in {self.flags['filename']}.test" + "\033[0m")
+                    cl = getframeinfo(currentframe())
+                    say(
+                        f"You have to put TYPES in {self.flags['filename']}.test", "y", cl.lineno)
                     exit()
                 func = line.strip()[:t]
                 types = line.strip()[t+1:]
@@ -79,11 +82,14 @@ class TestingTool:
         try:
             x = subprocess.run(["mypy", self.flags["filename"]])
         except:
-            say(f"YOU HAVE TO INSTALL MYPY", "r")
+            cl = getframeinfo(currentframe())
+            say(f"YOU HAVE TO INSTALL MYPY", "r", cl.lineno)
             exit()
 
         if x.returncode != 0:
-            say(f"MYPY DETECTED TYPE ERROR IN {self.flags['filename']}", "r")
+            cl = getframeinfo(currentframe())
+            say(
+                f"MYPY DETECTED TYPE ERROR IN {self.flags['filename']}", "r", cl.lineno)
             exit()
 
     def testing_test_file(self):
@@ -93,12 +99,14 @@ class TestingTool:
         if in_py != in_test:
             for i in range(0, len(in_test)):
                 if in_py[i][1] != in_test[i][1]:
+                    cl = getframeinfo(currentframe())
                     say(
-                        f"TYPE ERROR! {in_test[i][0]} -> {in_test[i][1]} SHOULD BE EQUAL TO {in_py[i][1]}", "r")
+                        f"TYPE ERROR! {in_test[i][0]} -> {in_test[i][1]} SHOULD BE EQUAL TO {in_py[i][1]}", "r", cl.lineno)
                     exit()
         if self.flags["types"]:
             visualize_input_types(self.expects)
-            say("TYPES and FUNCS IN .py AND .py.test ARE EQUAL", "b")
+            cl = getframeinfo(currentframe())
+            say("TYPES and FUNCS IN .py AND .py.test ARE EQUAL", "b", cl.lineno)
 
     def test_function(self):
         rawname, path = get_raw_filename(self.flags["filename"])
@@ -111,8 +119,9 @@ class TestingTool:
             try:
                 out = getattr(module, x[0])(*x[1])
             except AttributeError:
+                cl = getframeinfo(currentframe())
                 say(
-                    f"You put wrong function in {self.flags['filename']}.test", "y")
+                    f"You put wrong function in {self.flags['filename']}.test", "y", cl.lineno)
                 exit()
             # except TypeError:
             #     say(f"ERROR! Wrong inputs in .py.test!", "r")
@@ -122,16 +131,19 @@ class TestingTool:
             results = " ".join([str(res) for res in x[2]])
             if [out] != x[2]:
                 ok = False
+                cl = getframeinfo(currentframe())
                 say(
-                    f"WARNING! {x[0]} -> {args} should give {results}, but instead gave {out}", "r")
+                    f"WARNING! {x[0]} -> {args} should give {results}, but instead gave {out}", "r", cl.lineno)
                 if self.flags["live"]:
                     break
 
             if self.flags["live"]:
-                say(f"{x[0]} args-> {args} res-> {results}", "g")
+                cl = getframeinfo(currentframe())
+                say(f"{x[0]} args-> {args} res-> {results}", "g", cl.lineno)
 
         if ok:
-            say("EVERYTHING OK!", "g")
+            cl = getframeinfo(currentframe())
+            say("EVERYTHING OK!", "g", cl.lineno)
 
 
 def main():
