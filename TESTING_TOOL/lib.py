@@ -93,19 +93,18 @@ def get_args_and_results(line, types):
 
 
 def py_file_scraping(file_txt):
-    functions_in_py = []
+    functions_in_py = {}
     funcs_count = file_txt.count("def")
 
     i = 0
     while funcs_count != 0:
-        func = []
         df = file_txt.index("def", i)
         bracket_open = file_txt.index("(", i)
         bracket_close = file_txt.index(")", i)
         arrow = file_txt.index(">", i)
         colon = file_txt.index(":", arrow)
 
-        func.append(file_txt[df+4:bracket_open])
+        func_name = file_txt[df+4:bracket_open]
 
         args_types = ""
         args = file_txt[bracket_open+1:bracket_close]
@@ -126,8 +125,7 @@ def py_file_scraping(file_txt):
             i = comma_i
             args_colons -= 1
 
-        func.append(args_types + file_txt[arrow+2:colon])
-        functions_in_py.append(func)
+        functions_in_py[func_name] = args_types + file_txt[arrow+2:colon]
 
         i = colon
         funcs_count -= 1

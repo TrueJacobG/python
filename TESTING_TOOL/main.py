@@ -49,7 +49,7 @@ class TestingTool:
             say(f"ERROR! NO .py.test FILE IN DIRECTORY!", "y", cl.lineno)
             exit()
 
-        types_lst = []
+        functions_in_test = {}
 
         expects = []
         need_name = True
@@ -64,7 +64,7 @@ class TestingTool:
                     exit()
                 func = line.strip()[:t]
                 types = line.strip()[t+1:]
-                types_lst.append([func, types])
+                functions_in_test[func] = types
                 need_name = False
                 continue
 
@@ -72,11 +72,14 @@ class TestingTool:
                 need_name = True
                 continue
 
+            if func not in self.functions_in_py.keys():
+                continue
+
             args, res = get_args_and_results(line.strip(), types)
 
             expects.append([func, args, res])
 
-        return expects, types_lst
+        return expects, functions_in_test
 
     def testing_with_mypy(self):
         try:
@@ -97,11 +100,18 @@ class TestingTool:
         in_test = self.functions_in_test
 
         if in_py != in_test:
-            for i in range(0, len(in_test)):
-                if in_py[i][1] != in_test[i][1]:
+            for key in in_test.keys():
+
+                if key not in in_py.keys():
                     cl = getframeinfo(currentframe())
                     say(
-                        f"TYPE ERROR! {in_test[i][0]} -> {in_test[i][1]} SHOULD BE EQUAL TO {in_py[i][1]}", "r", cl.lineno)
+                        f"ERROR! THERE IS NO {key} FUNC IN {self.flags['filename']}", "r", cl.lineno)
+                    exit()
+
+                if in_py[key] != in_test[key]:
+                    cl = getframeinfo(currentframe())
+                    say(
+                        f"TYPE ERROR! {key} -> {in_test[key]} SHOULD BE EQUAL TO {in_py[key]}", "r", cl.lineno)
                     exit()
         if self.flags["types"]:
             visualize_input_types(self.expects)
