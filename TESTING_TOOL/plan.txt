@@ -1,7 +1,7 @@
 
 TODO:
 import imports from fortest.py
-without mypy arrows etc in file support
+
 add diferent types
 class tests
 test file on import
@@ -71,7 +71,7 @@ green -> ok
 blue -> types are correct
 
 
-
-FIXME:later: import -> run testing tool on functions
-FIXME:exp. import testingtool
-FIXME:testingtool.ad(func1, args=[int, int])
+FIXME: without mypy arrows (without mypy)
+FIXME: later: import -> run testing tool on functions
+FIXME: exp. import testingtool
+FIXME: testingtool.ad(func1, args=[int, int])
