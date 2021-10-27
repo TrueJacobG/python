@@ -39,6 +39,13 @@ def to_type(arg, t):
             cl = getframeinfo(currentframe())
             say(error_message, "r", cl.lineno)
             exit()
+    if t == "bytes":
+        try:
+            return bytes(arg)
+        except ValueError:
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
+            exit()
 
     if t.startswith("List"):
         try:
@@ -52,7 +59,39 @@ def to_type(arg, t):
             cl = getframeinfo(currentframe())
             say(error_message, "r", cl.lineno)
             exit()
+
+    if t.startswith("Set"):
+        try:
+            s = set()
+            for item in arg:
+                if item != "{" and item != "}" and item != ",":
+                    s.add(to_type(item, t[4:-1]))
+            return s
+        except ValueError:
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
+            exit()
+
+    if t.startswith("Dict"):
+        try:
+            d = dict()
+            colon_i = arg.find(":")
+            comma_i = t.find(",")
+            bracket_close1 = arg.find("}")
+            bracket_close2 = t.find("]")
+
+            key = to_type(arg[1:colon_i], t[5:comma_i])
+            value = to_type(
+                arg[colon_i+2:bracket_close1], t[comma_i+2:bracket_close2])
+            d[key] = value
+            return d
+        except ValueError:
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
+            exit()
+
     cl = getframeinfo(currentframe())
+    print(t)
     say("UNKNOWN TYPE!", "r", cl.lineno)
     exit()
 
@@ -81,11 +120,11 @@ def get_args_and_results(line, types):
     results = []
     i = 0
 
-    for arg in line[0].split(":"):
+    for arg in line[0].split("|"):
         args.append(to_type(arg, types[i]))
         i += 1
 
-    for res in line[1].split(":"):
+    for res in line[1].split("|"):
         results.append(to_type(res, types[i]))
         i += 1
 
@@ -99,9 +138,9 @@ def py_file_scraping(file_txt):
     i = 0
     while funcs_count != 0:
         df = file_txt.index("def", i)
-        bracket_open = file_txt.index("(", i)
-        bracket_close = file_txt.index(")", i)
-        arrow = file_txt.index(">", i)
+        bracket_open = file_txt.index("(", df)
+        bracket_close = file_txt.index(")", df)
+        arrow = file_txt.index(">", df)
         colon = file_txt.index(":", arrow)
 
         func_name = file_txt[df+4:bracket_open]
@@ -119,6 +158,15 @@ def py_file_scraping(file_txt):
                 last_comma_i = comma_i
             else:
                 comma_i = len(args)
+
+            # DICT
+            if args[args_colon_i+2:comma_i].startswith("Dict"):
+                square_bracket_close = args.find("]", comma_i)
+                args_types += args[args_colon_i +
+                                   2:square_bracket_close] + "]" + ";"
+                i = comma_i
+                args_colons -= 1
+                continue
 
             args_types += args[args_colon_i+2:comma_i] + ";"
 

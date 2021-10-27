@@ -101,7 +101,6 @@ class TestingTool:
 
         if in_py != in_test:
             for key in in_test.keys():
-
                 if key not in in_py.keys():
                     cl = getframeinfo(currentframe())
                     say(
@@ -126,16 +125,7 @@ class TestingTool:
         module = __import__(rawname[:-3])
         ok = True
         for x in self.expects:
-            try:
-                out = getattr(module, x[0])(*x[1])
-            except AttributeError:
-                cl = getframeinfo(currentframe())
-                say(
-                    f"You put wrong function in {self.flags['filename']}.test", "y", cl.lineno)
-                exit()
-            # except TypeError:
-            #     say(f"ERROR! Wrong inputs in .py.test!", "r")
-            #     exit()
+            out = getattr(module, x[0])(*x[1])
 
             args = " ".join([str(arg) for arg in x[1]])
             results = " ".join([str(res) for res in x[2]])

@@ -1,7 +1,6 @@
 
 TODO:
-import imports from fortest.py
-
+catch and print mypy errors
 add diferent types
 class tests
 test file on import
@@ -24,7 +23,7 @@ square;int;int;int
 1:2;2
 1:3;3
 2:3;6
-# arg1:arg2;result1
+# arg1|arg2;result1
 
 test if files exist's
 
@@ -35,7 +34,7 @@ else write good results
 
 YOU CAN'T USE WORD 'def' IN YOUR FILE(in comments or in strings)
 
-in .py.test in strings you can't use ";" and ":", because they are separators
+in .py.test in strings you can't use ";" and "|", because they are separators
 
 checking if types in .py are equal to .py.test
 
@@ -62,6 +61,12 @@ if func is in .py.test but not in .py ERROR
 functions_lists -> are now -> functions_dicts 
 
 if func is in .py but not in .py.test good
+
+you don't have to worry about imports in fortest.py :D
+
+fix py file scraping
+
+sets and dicts are now compatible
 
 
 COLORS:
