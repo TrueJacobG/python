@@ -2,7 +2,7 @@ from typing import List, Set, Dict
 from toimport import toimportfunc
 
 
-def square(a: List[int], b: int) -> int:
+def square(a: List[int], b: int) -> str:
     x = toimportfunc(a[0], b)
     return a[0] * b
 

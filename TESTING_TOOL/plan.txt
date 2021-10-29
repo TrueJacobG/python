@@ -1,7 +1,8 @@
 
 TODO:
-catch and print mypy errors
 add diferent types
+test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
+
 class tests
 test file on import
 
@@ -67,6 +68,8 @@ you don't have to worry about imports in fortest.py :D
 fix py file scraping
 
 sets and dicts are now compatible
+
+print mypy errors
 
 
 COLORS:
