@@ -1,6 +1,7 @@
 import argparse
 import sys
 import subprocess
+import time
 from lib import get_raw_filename, say, get_args_and_results, py_file_scraping, visualize_input_types
 from inspect import currentframe, getframeinfo
 
@@ -25,9 +26,12 @@ class TestingTool:
                             help="if you want to see passing tests give the flag")
         parser.add_argument("-types", action="store_true",
                             help="if you want to see if types are correct give the flag")
+        parser.add_argument("-time", action="store_true",
+                            help="it will measure time of execution functions")
         args = parser.parse_args()
 
-        flags = {"filename": args.file, "live": args.live, "types": args.types}
+        flags = {"filename": args.file, "live": args.live,
+                 "types": args.types, "time": args.time}
 
         # now file is imported :D
         # exec(open(args.file).read())
@@ -99,6 +103,7 @@ class TestingTool:
         in_py = self.functions_in_py
         in_test = self.functions_in_test
 
+        start = time.time()
         if in_py != in_test:
             for key in in_test.keys():
                 if key not in in_py.keys():
@@ -116,6 +121,10 @@ class TestingTool:
             visualize_input_types(self.expects)
             cl = getframeinfo(currentframe())
             say("TYPES and FUNCS IN .py AND .py.test ARE EQUAL", "b", cl.lineno)
+
+        if self.flags["time"]:
+            say("EXECUTION TIME: " +
+                str(round(time.time() - start, 3)), "b")
 
     def test_function(self):
         rawname, path = get_raw_filename(self.flags["filename"])

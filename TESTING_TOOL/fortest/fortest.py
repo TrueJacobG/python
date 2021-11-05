@@ -4,7 +4,7 @@ from toimport import toimportfunc
 
 def square(a: List[int], b: int) -> str:
     x = toimportfunc(a[0], b)
-    return a[0] * b
+    return str(a[0] * b)
 
 
 def not_square(a: Dict[int, float], b: Dict[int, float]) -> Dict[int, float]:

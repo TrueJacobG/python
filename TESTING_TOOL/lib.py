@@ -96,7 +96,7 @@ def to_type(arg, t):
     exit()
 
 
-def say(text, t, currentline):
+def say(text, t, currentline=0):
     if t == "warn" or t == "yellow" or t == "y":
         color = "\033[93m"
     elif t == "error" or t == "type_error" or t == "red" or t == "r":
@@ -108,8 +108,11 @@ def say(text, t, currentline):
     else:
         color = ""
 
-    print(color + str(currentline) +
-          "\033[0m" + ":" + color + text + "\033[0m")
+    position = ""
+    if currentline != 0:
+        position = color + str(currentline) + "\033[0m" + ":"
+
+    print(position + color + text + "\033[0m")
 
 
 def get_args_and_results(line, types):

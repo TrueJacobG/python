@@ -1,5 +1,6 @@
 
 TODO:
+-utilities -> version of testing framework, python ver, mypy ver itd
 add diferent types
 test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
 
@@ -71,6 +72,7 @@ sets and dicts are now compatible
 
 print mypy errors
 
+-time -> measure time of testing func
 
 COLORS:
 red -> error
