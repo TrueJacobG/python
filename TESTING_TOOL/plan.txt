@@ -1,11 +1,10 @@
 
 TODO:
--utilities -> version of testing framework, python ver, mypy ver itd
+
 add diferent types
 test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
 
 class tests
-test file on import
 
 test edge cases for example if int;int;int give 0 0, 0 1, 1 0, big numbers etc.
 
@@ -73,6 +72,21 @@ sets and dicts are now compatible
 print mypy errors
 
 -time -> measure time of testing func
+
+-utilities -> version of testing framework, python ver, mypy ver itd
+
+script sh to run like a program
+
+
+
+
+FLAGS:
+filename
+-live -> passing test visualizations
+-types -> checking types visualizations
+-time -> measure time of executation
+-utilities -> informations about testing tool, req python and mypy versions etc.
+--help -> print help
 
 COLORS:
 red -> error

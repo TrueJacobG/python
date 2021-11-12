@@ -199,3 +199,10 @@ def visualize_input_types(expects):
 
         cl = getframeinfo(currentframe())
         say(f"{args} are {line}", "b", cl.lineno)
+
+
+def print_utilities():
+    say("REQ: python 3.10", "b")
+    say("mypy 0.761", "b")
+    say("", "b")
+    say("HELP: python3 main.py --help", "b")

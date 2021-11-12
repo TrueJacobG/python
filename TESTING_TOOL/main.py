@@ -2,7 +2,7 @@ import argparse
 import sys
 import subprocess
 import time
-from lib import get_raw_filename, say, get_args_and_results, py_file_scraping, visualize_input_types
+from lib import get_raw_filename, say, get_args_and_results, py_file_scraping, visualize_input_types, print_utilities
 from inspect import currentframe, getframeinfo
 
 
@@ -10,6 +10,9 @@ class TestingTool:
     def __init__(self):
         self.flags, self.functions_in_py = self.import_python_file()
         self.expects, self.functions_in_test = self.import_test_file()
+
+        if self.flags["utilities"]:
+            print_utilities()
 
         self.testing_with_mypy()
 
@@ -28,16 +31,22 @@ class TestingTool:
                             help="if you want to see if types are correct give the flag")
         parser.add_argument("-time", action="store_true",
                             help="it will measure time of execution functions")
+        parser.add_argument("-utilities", action="store_true",
+                            help="if you want to see informations, requirements and other stuff about testing tool")
         args = parser.parse_args()
 
         flags = {"filename": args.file, "live": args.live,
-                 "types": args.types, "time": args.time}
+                 "types": args.types, "time": args.time, "utilities": args.utilities}
 
         # now file is imported :D
         # exec(open(args.file).read())
 
-        with open(flags["filename"], 'r') as f:
-            file_txt = f.read()
+        try:
+            with open(flags["filename"], 'r') as f:
+                file_txt = f.read()
+        except FileNotFoundError:
+            say("File not found.", "r")
+            exit()
 
         # get functions from file.py
         functions_in_py = py_file_scraping(file_txt)
@@ -160,4 +169,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print("")
     main()
