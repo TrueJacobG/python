@@ -1,6 +1,5 @@
 
 TODO:
-
 add diferent types
 test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
 
