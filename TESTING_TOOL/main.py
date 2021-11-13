@@ -1,5 +1,6 @@
 import argparse
 import sys
+import os
 import subprocess
 import time
 from lib import get_raw_filename, say, get_args_and_results, py_file_scraping, visualize_input_types, print_utilities
@@ -8,7 +9,8 @@ from inspect import currentframe, getframeinfo
 
 class TestingTool:
     def __init__(self):
-        self.flags, self.functions_in_py = self.import_python_file()
+        self.get_flags()
+        self.import_python_file()
         self.expects, self.functions_in_test = self.import_test_file()
 
         if self.flags["utilities"]:
@@ -20,7 +22,7 @@ class TestingTool:
 
         self.test_function()
 
-    def import_python_file(self):
+    def get_flags(self):
         # Parse file
         parser = argparse.ArgumentParser("-h")
         parser.add_argument("file", metavar="FILE", type=str,
@@ -38,39 +40,69 @@ class TestingTool:
         flags = {"filename": args.file, "live": args.live,
                  "types": args.types, "time": args.time, "utilities": args.utilities}
 
+        self.flags = flags
+
+    def import_python_file(self):
         # now file is imported :D
         # exec(open(args.file).read())
 
-        try:
-            with open(flags["filename"], 'r') as f:
-                file_txt = f.read()
-        except FileNotFoundError:
-            say("File not found.", "r")
-            exit()
+        if self.flags["filename"].endswith("/"):
+            files = os.listdir(self.flags["filename"])
+            file_txt = ""
+            for file in files:
+                if file.endswith(".py"):
+                    try:
+                        with open(self.flags["filename"]+file, 'r') as f:
+                            file_txt += f.read()
+                    except FileNotFoundError:
+                        say("File not found.", "r")
+                        exit()
+        else:
+            try:
+                with open(self.flags["filename"], 'r') as f:
+                    file_txt = f.read()
+            except FileNotFoundError:
+                say("File not found.", "r")
+                exit()
 
-        # get functions from file.py
-        functions_in_py = py_file_scraping(file_txt)
-
-        return flags, functions_in_py
+        # get functions from .py
+        self.functions_in_py = py_file_scraping(file_txt)
 
     def import_test_file(self):
-        try:
-            with open(self.flags["filename"]+".test", 'r') as f:
-                file_txt = f.readlines()
-        except:
-            cl = getframeinfo(currentframe())
-            say(f"ERROR! NO .py.test FILE IN DIRECTORY!", "y", cl.lineno)
-            exit()
+        if self.flags["filename"].endswith("/"):
+            files = os.listdir(self.flags["filename"])
+            file_txt = []
+            for file in files:
+                if file.endswith(".py"):
+                    try:
+                        with open(self.flags["filename"]+file+".test", 'r') as f:
+                            for el in f.readlines():
+                                file_txt.append(el)
+                            file_txt.append("\n")
+                    except FileNotFoundError:
+                        continue
+                        say(f"File {self.flags['filename']+file+'.test'} not found.", "r")
+                        exit()
+        else:
+            try:
+                with open(self.flags["filename"]+".test", 'r') as f:
+                    file_txt = f.readlines()
+            except FileNotFoundError:
+                cl = getframeinfo(currentframe())
+                say(
+                    f"ERROR! NO {self.flags['filename']}.py.test FILE IN DIRECTORY!", "y", cl.lineno)
+                exit()
 
         functions_in_test = {}
-
         expects = []
         need_name = True
+
         for line in file_txt:
             if need_name:
                 try:
                     t = line.index(";")
                 except ValueError:
+
                     cl = getframeinfo(currentframe())
                     say(
                         f"You have to put TYPES in {self.flags['filename']}.test", "y", cl.lineno)
@@ -136,28 +168,40 @@ class TestingTool:
                 str(round(time.time() - start, 3)), "b")
 
     def test_function(self):
-        rawname, path = get_raw_filename(self.flags["filename"])
+        if self.flags["filename"].endswith("/"):
+            files = os.listdir(self.flags["filename"])
+            for file in files:
+                if file.endswith(".py"):
+                    self.do_test(self.flags["filename"]+file)
+        else:
+            self.do_test(self.flags["filename"])
+
+    def do_test(self, name):
+        rawname, path = get_raw_filename(name)
 
         sys.path.insert(1, path)
-
         module = __import__(rawname[:-3])
         ok = True
+
         for x in self.expects:
-            out = getattr(module, x[0])(*x[1])
+            try:
+                out = getattr(module, x[0])(*x[1])
+                args = " ".join([str(arg) for arg in x[1]])
+                results = " ".join([str(res) for res in x[2]])
+                if [out] != x[2]:
+                    ok = False
+                    cl = getframeinfo(currentframe())
+                    say(
+                        f"WARNING! {x[0]} -> {args} should give {results}, but instead gave {out}", "r", cl.lineno)
+                    if self.flags["live"]:
+                        break
 
-            args = " ".join([str(arg) for arg in x[1]])
-            results = " ".join([str(res) for res in x[2]])
-            if [out] != x[2]:
-                ok = False
-                cl = getframeinfo(currentframe())
-                say(
-                    f"WARNING! {x[0]} -> {args} should give {results}, but instead gave {out}", "r", cl.lineno)
                 if self.flags["live"]:
-                    break
-
-            if self.flags["live"]:
-                cl = getframeinfo(currentframe())
-                say(f"{x[0]} args-> {args} res-> {results}", "g", cl.lineno)
+                    cl = getframeinfo(currentframe())
+                    say(f"{x[0]} args-> {args} res-> {results}", "g", cl.lineno)
+            except:
+                # TODO:
+                pass
 
         if ok:
             cl = getframeinfo(currentframe())

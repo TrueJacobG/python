@@ -50,10 +50,13 @@ def to_type(arg, t):
     if t.startswith("List"):
         try:
             l = []
+            waiting = ""
             for item in arg:
                 if item != "[" and item != "]" and item != ",":
-                    # kinda recusrsion
-                    l.append(to_type(item, t[5:-1]))
+                    waiting += item
+                elif item == ",":
+                    l.append(to_type(waiting, t[5:-1]))
+                    waiting = ""
             return l
         except ValueError:
             cl = getframeinfo(currentframe())
@@ -63,10 +66,30 @@ def to_type(arg, t):
     if t.startswith("Set"):
         try:
             s = set()
+            waiting = ""
             for item in arg:
                 if item != "{" and item != "}" and item != ",":
-                    s.add(to_type(item, t[4:-1]))
+                    waiting += item
+                elif item == ",":
+                    s.add(to_type(waiting, t[4:-1]))
+                    waiting = ""
             return s
+        except ValueError:
+            cl = getframeinfo(currentframe())
+            say(error_message, "r", cl.lineno)
+            exit()
+
+    if t.startswith("Tuple"):
+        try:
+            l = []
+            waiting = ""
+            for item in arg:
+                if item != "(" and item != ")" and item != ",":
+                    waiting += item
+                elif item == ",":
+                    l.append(to_type(waiting, t[6:-1]))
+                    waiting = ""
+            return tuple(l)
         except ValueError:
             cl = getframeinfo(currentframe())
             say(error_message, "r", cl.lineno)
@@ -91,7 +114,6 @@ def to_type(arg, t):
             exit()
 
     cl = getframeinfo(currentframe())
-    print(t)
     say("UNKNOWN TYPE!", "r", cl.lineno)
     exit()
 
