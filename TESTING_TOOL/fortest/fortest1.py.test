@@ -1,7 +1,0 @@
-square1;int;int;int
-1|2;3
-2|2;4
-
-not_square1;int;int;int
-1|1;0
-2|1;1
