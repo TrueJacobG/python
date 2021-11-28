@@ -1,4 +1,5 @@
 from inspect import currentframe, getframeinfo
+import re
 
 
 def get_raw_filename(name):
@@ -157,6 +158,18 @@ def get_args_and_results(line, types):
 
 
 def py_file_scraping(file_txt):
+    functions_in_py = {}
+    functions = re.findall(r"^def.*:$", file_txt, re.MULTILINE)
+    for f in functions:
+        functions_in_py[f[4:f.find("(")]] = ";".join(re.findall(
+            r"Tuple\[.*?\]|List\[.*?\]|Set\[.*?\]|Dict\[.*?\]|int|float|str|bool", f))
+
+    return functions_in_py
+
+
+def py_file_scraping_old_version(file_txt):
+    py_file_scraping2(file_txt)
+
     functions_in_py = {}
     funcs_count = file_txt.count("def")
 

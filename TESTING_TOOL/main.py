@@ -11,6 +11,7 @@ class TestingTool:
     def __init__(self):
         self.get_flags()
         self.import_python_file()
+
         self.expects, self.functions_in_test = self.import_test_file()
 
         if self.flags["utilities"]:

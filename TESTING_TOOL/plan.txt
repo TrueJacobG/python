@@ -1,5 +1,5 @@
 TODO:
-fix printing tuples, list, etc
+fix printing in say() tuples, list, etc
 test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
 test edge cases for example if int;int;int give 0 0, 0 1, 1 0, big numbers etc.
 so -> random tests HARD:
@@ -77,6 +77,7 @@ tuple added
 
 BETA -> check every function in directory
 
+searching in python file with re
 
 
 FLAGS:
