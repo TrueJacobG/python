@@ -1,14 +1,7 @@
-
 TODO:
--utilities -> version of testing framework, python ver, mypy ver itd
-add diferent types
+fix printing in say() tuples, list, etc
 test everything in PROJECTS (and add gitignore for test files + rewrite the programs)
-
-class tests
-test file on import
-
 test edge cases for example if int;int;int give 0 0, 0 1, 1 0, big numbers etc.
-
 so -> random tests HARD:
 
 
@@ -74,6 +67,27 @@ print mypy errors
 
 -time -> measure time of testing func
 
+-utilities -> version of testing framework, python ver, mypy ver itd
+
+script sh to run like a program
+
+floats are now fixed
+
+tuple added
+
+BETA -> check every function in directory
+
+searching in python file with re
+
+
+FLAGS:
+filename
+-live -> passing test visualizations
+-types -> checking types visualizations
+-time -> measure time of executation
+-utilities -> informations about testing tool, req python and mypy versions etc.
+--help -> print help
+
 COLORS:
 red -> error
 yellow -> warning, problem with testing_tool
@@ -85,3 +99,4 @@ FIXME: without mypy arrows (without mypy)
 FIXME: later: import -> run testing tool on functions
 FIXME: exp. import testingtool
 FIXME: testingtool.ad(func1, args=[int, int])
+FIXME: class tests

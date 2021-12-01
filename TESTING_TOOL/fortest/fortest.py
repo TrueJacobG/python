@@ -1,10 +1,9 @@
-from typing import List, Set, Dict
+from typing import List, Set, Dict, Tuple
 from toimport import toimportfunc
 
 
-def square(a: List[int], b: int) -> str:
-    x = toimportfunc(a[0], b)
-    return str(a[0] * b)
+def square(a: Tuple[float], b: int) -> str:
+    return str(b)
 
 
 def not_square(a: Dict[int, float], b: Dict[int, float]) -> Dict[int, float]:
