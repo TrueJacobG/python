@@ -2,6 +2,7 @@
 import tensorflow as tf
 import pandas as pd
 
+
 # %%
 dataframe = pd.read_excel("data.xlsx", usecols="A:B")
 
@@ -19,8 +20,9 @@ when_stop = tf.keras.callbacks.EarlyStopping(
 
 # patience - how many echos it should do try after reaching the halt
 
-model.fit(sizes, prices, epochs=10000,
-          callbacks=when_stop)
+# verbose = 0 - disable verbose logging
+
+model.fit(sizes, prices, epochs=10000, verbose=0, callbacks=when_stop)
 
 
 # %%
