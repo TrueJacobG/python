@@ -11,12 +11,16 @@
 
 <body>
     <h1>Hello World!</h1>
-    <form action="">
+
+    <img src="{{ url_for('static', filename='images/banana.png') }}" />
+    <form action="" method="POST">
         <input type="text" placeholder="First Name" />
         <input type="text" placeholder="Second Name" />
         <input type="number" placeholder="Age" />
         <input type="submit" value="Send" />
     </form>
+
+    <p>test</p>
 </body>
 
 </html>
