@@ -1,3 +1,0 @@
-sudo mysql -> root
-
-mysql --user testowy --password=NotPassword1.
