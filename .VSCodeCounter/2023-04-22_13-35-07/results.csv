@@ -1,0 +1,488 @@
+"filename", "language", "Python", "Markdown", "JSON", "HTML", "XML", "C++", "CSS", "comment", "blank", "total"
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/README.md", "Markdown", 0, 8, 0, 0, 0, 0, 0, 0, 3, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/100OrdinaryNumbers.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/101Football.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/102Twins.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 6, 20
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/103NewYearGarland.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/104HQ9+.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/105EvenOdds.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/106IchihimeandTriangle.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/107GravityFlip.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/108FloorNumber.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/109Dubstep.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/10WordCapitalization.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/110Puzzles.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 1, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/111GameWithSticks.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/112Candies.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/113IlyaandBankAccount.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 7, 23
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/114VasyaandSocks.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/115Multiplyby2divideby6.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 3, 20
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/116OddDivisor.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/117ConstructtheString.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/118FavoriteSequence.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 3, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/119CaseoftheZerosandOnes.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 3, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/11StonesontheTable.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/120VustheCossackandaContest.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/121KanaandDragonQuestgame.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 2, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/122Keyboard.py", "Python", 20, 0, 0, 0, 0, 0, 0, 0, 9, 29
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/123Sale.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 8, 25
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/124NightattheMuseum.py", "Python", 28, 0, 0, 0, 0, 0, 0, 2, 10, 40
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/125Businesstrip.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 7, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/126_01Game.py", "Python", 32, 0, 0, 0, 0, 0, 0, 0, 6, 38
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/127DistanceandAxis.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/128OracandFactors.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/129ShellGame.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/12BoyorGirl.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/130FriendsandCandies.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/131SumofMedians.py", "Python", 22, 0, 0, 0, 0, 0, 0, 0, 6, 28
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/132Two-gram.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/133YetAnotherTetrisProblem.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 6, 27
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/134DieRoll.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 8, 23
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/135UniqueNumber.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 5, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/136FairPlayoff.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/137DominantPiranha.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 5, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/138LinelandMail.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 5, 23
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/139Borze.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 3, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/13SoldierandBananas.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 5, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/140CombinationLock.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 9, 26
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/141C+=.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 4, 20
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/142MagicNumbers.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 4, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/143BustoUdayland.py", "Python", 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/144DevutheSingerandChurutheJoker.py", "Python", 26, 0, 0, 0, 0, 0, 0, 0, 4, 30
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/145ChipsMoving.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 5, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/146ShiftingStacks.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 4, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/147Panoramix'sPrediction.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 9, 26
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/148BadBoy.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/149MaximumIncrease.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 5, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/14BearandBigBrother.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 5, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/15WrongSubtraction.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/16Tram.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/17Elephant.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/18Word.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 7, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/19QueueattheSchool.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 6, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/20NearlyLuckyNumber.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/21Translation.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/22AntonandDanik.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 4, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/23BeautifulYear.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/24GeorgeandAccommodation.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/25VanyaandFence.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/26Presents.py", "Python", 8, 0, 0, 0, 0, 0, 0, 1, 3, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/27Magnets.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 5, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/28InSearchofanEasyProblem.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/29Hulk.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 7, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/30CalculatingFunction.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/31Ultra-FastMathematician.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/32Drinks.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 4, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/33IWannaBetheGuy.py", "Python", 20, 0, 0, 0, 0, 0, 0, 0, 8, 28
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/34Insomniacure.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 5, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/35Is yourhorseshoeontheotherhoof.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/36ArrivaloftheGeneral.py", "Python", 31, 0, 0, 0, 0, 0, 0, 2, 13, 46
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/37AntonandLetters.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/38DivisibilityProblem.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 8, 23
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/39Games.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/40Pangram.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 4, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/41AntonandPolyhedrons.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/42CandiesandTwoSisters.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/43AmusingJoke.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 3, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/44HittheLottery.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/45FoxAndSnake.py", "Python", 31, 0, 0, 0, 0, 0, 0, 0, 7, 38
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/46VasyatheHipster.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/47SumofRound Numbers.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/48NewYearandHurry.py", "Python", 12, 0, 0, 0, 0, 0, 0, 1, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/49DesignTutorial-LearnfromMath.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/50I_love_username.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 5, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/51YetAnotherTwoIntegersProblem.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 3, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/52RestoringThreeNumbers.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 1, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/53BuyaShovel.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 4, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/54ShortSubstrings.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/55PoliceRecruits.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 4, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/56TheNewYearMeetingFriends.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/57HolidayOfEquality.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 1, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/58RequiredRemainder.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/59MinimalSquare.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 1, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/59TeamOlympiad.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/60MishkaandGame.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/61PhoenixandBalance.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/62BachgoldProblem.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/63MagicalSticks.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/64BoringApartments.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 6, 27
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/65MaximuminTable.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 7, 25
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/66ParkLighting.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/67Brain'sPhotos.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 5, 18
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/68BlackSquare.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/69AddOddorSubtractEven.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 3, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/70CollectingCoins.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/71ThreePairwiseMaximums.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/72FashionabLee.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/73SpecialPermutation.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/74CardsforFriends.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/75SerejaandDima.py", "Python", 38, 0, 0, 0, 0, 0, 0, 0, 9, 47
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/76GennadyandaCardGame.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 5, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/77VanyaandCubes.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 6, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/78SoftDrinking.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/79FafaandhisCompany.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/80FairDivision.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 5, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/81ArraywithOddSum.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/82AgainTwentyFive.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/83MinutesBeforetheNewYear.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/84MahmoudandEhabandtheeven-oddgame.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/85SpyDetected.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/86DoNotBeDistracted.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 2, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/87RemoveSmallest.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/88BalancedArray.py", "Python", 24, 0, 0, 0, 0, 0, 0, 0, 2, 26
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/89PalindromeGame(easy version).py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/90RedandBlueBeans.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/91TwoArraysAndSwaps.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/92GiftsFixing.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/93EvenArray.py", "Python", 16, 0, 0, 0, 0, 0, 0, 1, 5, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/94HonestCoach.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/95MaximumGCD.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/96MostUnstableArray.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/97CopyCopyCopyCopyCopy.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/98OmkarandCompletion.py", "Python", 10, 0, 0, 0, 0, 0, 0, 1, 6, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/99EqualizePrices.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codeforces/9HelpfulMaths.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 7, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/10Whicharein.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/11Multiply.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 4, 25
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/12BreakcamelCase.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 3, 21
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/13HumanReadableTime.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/14ValidParentheses.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 3, 22
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/15PaginationHelper.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 4, 25
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/16CatchingCarMileageNumbers.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 7, 28
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/17ExtractthedomainnamefromaURL.py", "Python", 56, 0, 0, 0, 0, 0, 0, 0, 14, 70
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/18_80'sKids#6Rock'Em,Sock'EmRobots.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 3, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/19CalculatingwithFunctions.py", "Python", 89, 0, 0, 0, 0, 0, 0, 0, 18, 107
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/1Isthisatriangle.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/20Regex Password Validation.py", "Python", 61, 0, 0, 0, 0, 0, 0, 0, 31, 92
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/21Numbersthatareapoweroftheirsumofdigits.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 7, 26
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/22StripComments.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 4, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/23Permutations.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 5, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/24StopgninnipSMysdroW.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 3, 11
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/25SumandResttheNumberwithitsReversedandSeeWhatHappens.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 4, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/26SumofIntervals.py", "Python", 23, 0, 0, 0, 0, 0, 0, 1, 9, 33
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/27What'saPerfectPoweranyway.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 5, 19
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/2OnesandZeros.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/3Wheremyanagramsat.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/4DetectPangram.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/5CountingDuplicates.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/6Playingwithdigits.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 5, 13
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/7RGBToHexConversion.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 3, 17
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/8Convertstringtocamelcase.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/COMPETITIVE PROGRAMMING/codewars/9TakeaTenMinuteWalk.py", "Python", 34, 0, 0, 0, 0, 0, 0, 0, 4, 38
+"/Users/wik/Desktop/Developer/python/CTF/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/CTF/ctflearn/Reverse Polarity/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 5, 12
+"/Users/wik/Desktop/Developer/python/CTF/ctflearn/Simple Programming/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 3, 2, 13
+"/Users/wik/Desktop/Developer/python/CTF/ctflearn/The Credit Card Fraudster/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"/Users/wik/Desktop/Developer/python/DJANGO/README.md", "Markdown", 0, 2, 0, 0, 0, 0, 0, 0, 1, 3
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/admin.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/apps.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 3, 7
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/migrations/0001_initial.py", "Python", 13, 0, 0, 0, 0, 0, 0, 1, 7, 21
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/migrations/0002_delete_home.py", "Python", 10, 0, 0, 0, 0, 0, 0, 1, 6, 17
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/migrations/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/models.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/templates/home.html", "HTML", 0, 0, 0, 4, 0, 0, 0, 0, 1, 5
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/tests.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/urls.py", "Python", 6, 0, 0, 0, 0, 0, 0, 1, 2, 9
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/home/views.py", "Python", 8, 0, 0, 0, 0, 0, 0, 2, 5, 15
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/manage.py", "Python", 15, 0, 0, 0, 0, 0, 0, 3, 5, 23
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/admin.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/apps.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 3, 7
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/forms.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 5, 20
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/migrations/0001_initial.py", "Python", 16, 0, 0, 0, 0, 0, 0, 1, 7, 24
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/migrations/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/models.py", "Python", 8, 0, 0, 0, 0, 0, 0, 1, 5, 14
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/templates/photos/create.html", "HTML", 0, 0, 0, 7, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/templates/photos/delete.html", "HTML", 0, 0, 0, 7, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/templates/photos/detail.html", "HTML", 0, 0, 0, 8, 0, 0, 0, 0, 2, 10
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/templates/photos/list.html", "HTML", 0, 0, 0, 8, 0, 0, 0, 0, 1, 9
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/tests.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/urls.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/photos/views.py", "Python", 79, 0, 0, 0, 0, 0, 0, 0, 31, 110
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/templates/base.html", "HTML", 0, 0, 0, 16, 0, 0, 0, 0, 5, 21
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/templates/menu.html", "HTML", 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/testingWebsite/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/testingWebsite/asgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/testingWebsite/settings.py", "Python", 68, 0, 0, 0, 0, 0, 0, 27, 33, 128
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/testingWebsite/urls.py", "Python", 7, 0, 0, 0, 0, 0, 0, 15, 3, 25
+"/Users/wik/Desktop/Developer/python/DJANGO/courseClassBased/testingWebsite/wsgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/djangoCourse/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/djangoCourse/asgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/djangoCourse/settings.py", "Python", 70, 0, 0, 0, 0, 0, 0, 28, 35, 133
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/djangoCourse/urls.py", "Python", 10, 0, 0, 0, 0, 0, 0, 15, 3, 28
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/djangoCourse/wsgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/manage.py", "Python", 15, 0, 0, 0, 0, 0, 0, 3, 5, 23
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/admin.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/apps.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 3, 7
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/migrations/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/models.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/tests.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/pages/views.py", "Python", 14, 0, 0, 0, 0, 0, 0, 3, 6, 23
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/admin.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 3, 6
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/apps.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 3, 7
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/forms.py", "Python", 25, 0, 0, 0, 0, 0, 0, 1, 8, 34
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/migrations/0001_initial.py", "Python", 16, 0, 0, 0, 0, 0, 0, 1, 7, 24
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/migrations/0002_product_istrue.py", "Python", 13, 0, 0, 0, 0, 0, 0, 1, 6, 20
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/migrations/0003_remove_product_istrue.py", "Python", 11, 0, 0, 0, 0, 0, 0, 1, 6, 18
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/migrations/0004_product_istrue.py", "Python", 12, 0, 0, 0, 0, 0, 0, 1, 6, 19
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/migrations/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/models.py", "Python", 9, 0, 0, 0, 0, 0, 0, 2, 5, 16
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/templates/products/product_create.html", "HTML", 0, 0, 0, 10, 0, 0, 0, 0, 6, 16
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/templates/products/product_delete.html", "HTML", 0, 0, 0, 9, 0, 0, 0, 0, 2, 11
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/templates/products/product_detail.html", "HTML", 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/templates/products/product_list.html", "HTML", 0, 0, 0, 11, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/tests.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/urls.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/products/views.py", "Python", 37, 0, 0, 0, 0, 0, 0, 20, 12, 69
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/templates/base.html", "HTML", 0, 0, 0, 15, 0, 0, 0, 1, 6, 22
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/templates/contact.html", "HTML", 0, 0, 0, 8, 0, 0, 0, 0, 3, 11
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/templates/home.html", "HTML", 0, 0, 0, 16, 0, 0, 0, 1, 4, 21
+"/Users/wik/Desktop/Developer/python/DJANGO/courseFuncBase/templates/menu.html", "HTML", 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/FLASK/test/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 6, 13
+"/Users/wik/Desktop/Developer/python/FLASK/test/static/css/style.css", "CSS", 0, 0, 0, 0, 0, 0, 6, 0, 1, 7
+"/Users/wik/Desktop/Developer/python/FLASK/test/templates/index.html", "HTML", 0, 0, 0, 21, 0, 0, 0, 0, 5, 26
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/.idea/1_hello.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/1_hello/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 5, 13
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/2_buttons.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/2_buttons/main.py", "Python", 36, 0, 0, 0, 0, 0, 0, 11, 16, 63
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/3_buttons_span_column.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/3_buttons_span_column/main.py", "Python", 39, 0, 0, 0, 0, 0, 0, 13, 21, 73
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/4_height.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/4_height/main.py", "Python", 40, 0, 0, 0, 0, 0, 0, 15, 21, 76
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/5_kivy_design.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/5_kivy_design/main.py", "Python", 21, 0, 0, 0, 0, 0, 0, 3, 9, 33
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/przejscia_ekranu.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/learning/przejscia_ekranu/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 2, 9, 25
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/3_ping_pong.iml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/inspectionProfiles/Project_Default.xml", "XML", 0, 0, 0, 0, 10, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/inspectionProfiles/profiles_settings.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/misc.xml", "XML", 0, 0, 0, 0, 4, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/modules.xml", "XML", 0, 0, 0, 0, 8, 0, 0, 0, 0, 8
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/.idea/vcs.xml", "XML", 0, 0, 0, 0, 6, 0, 0, 0, 0, 6
+"/Users/wik/Desktop/Developer/python/GUI/KIVY/ping_pong/main.py", "Python", 56, 0, 0, 0, 0, 0, 0, 9, 20, 85
+"/Users/wik/Desktop/Developer/python/GUI/PYSIMPLEGUI/other/1.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 6, 19
+"/Users/wik/Desktop/Developer/python/GUI/PYSIMPLEGUI/other/gallery.py", "Python", 50, 0, 0, 0, 0, 0, 0, 0, 18, 68
+"/Users/wik/Desktop/Developer/python/GUI/PYSIMPLEGUI/sudoku_solver/main.py", "Python", 118, 0, 0, 0, 0, 0, 0, 1, 35, 154
+"/Users/wik/Desktop/Developer/python/GUI/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/GUI/TKINTER/1.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/HELP/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/LOCAL JUPYTER.py", "Python", 4, 0, 0, 0, 0, 0, 0, 4, 5, 13
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/NOTEBOOK/binary_search.py", "Python", 7, 0, 0, 0, 0, 0, 0, 6, 4, 17
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/NOTEBOOK/diagnose slow python code/diagnose slow python code.py", "Python", 15, 0, 0, 0, 0, 0, 0, 2, 8, 25
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/NOTEBOOK/map_filter_zip.py", "Python", 8, 0, 0, 0, 0, 0, 0, 5, 6, 19
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/NOTEBOOK/string_manipulation.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/json/items.json", "JSON", 0, 0, 10, 0, 0, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/json/itemsNew.json", "JSON", 0, 0, 10, 0, 0, 0, 0, 0, 0, 10
+"/Users/wik/Desktop/Developer/python/HELP/TUTORIALS/json/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 5, 7, 21
+"/Users/wik/Desktop/Developer/python/HELP/how_many_python_files.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/wik/Desktop/Developer/python/HELP/test.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/wik/Desktop/Developer/python/MATPLOTLIB/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/MATPLOTLIB/main.py", "Python", 40, 0, 0, 0, 0, 0, 0, 22, 29, 91
+"/Users/wik/Desktop/Developer/python/MATPLOTLIB/other/c.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"/Users/wik/Desktop/Developer/python/ML/LINEAR_REGRESSION/first_project_with_excel/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 8, 13, 32
+"/Users/wik/Desktop/Developer/python/ML/LINEAR_REGRESSION/linear_regression/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 4, 8, 20
+"/Users/wik/Desktop/Developer/python/ML/PYTORCH/learning/1.py", "Python", 1, 0, 0, 0, 0, 0, 0, 1, 1, 3
+"/Users/wik/Desktop/Developer/python/ML/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/ML/classify images of clothes MNIST/main.py", "Python", 106, 0, 0, 0, 0, 0, 0, 32, 33, 171
+"/Users/wik/Desktop/Developer/python/ML/test/1 stproject/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 14, 15, 46
+"/Users/wik/Desktop/Developer/python/ML/test/2 MAE - Model Validation/main.py", "Python", 28, 0, 0, 0, 0, 0, 0, 18, 23, 69
+"/Users/wik/Desktop/Developer/python/ML/test/3 random forest/main.py", "Python", 32, 0, 0, 0, 0, 0, 0, 8, 18, 58
+"/Users/wik/Desktop/Developer/python/ML/test/4 tests linear/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 8, 9, 28
+"/Users/wik/Desktop/Developer/python/PANDAS/1/main.py", "Python", 3, 0, 0, 0, 0, 0, 0, 2, 4, 9
+"/Users/wik/Desktop/Developer/python/PANDAS/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/PROJECTS/FASTAPI/main.py", "Python", 41, 0, 0, 0, 0, 0, 0, 2, 18, 61
+"/Users/wik/Desktop/Developer/python/PROJECTS/FizzBuzz/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/PROJECTS/MATRIX/matrix_operations/main.py", "Python", 60, 0, 0, 0, 0, 0, 0, 0, 21, 81
+"/Users/wik/Desktop/Developer/python/PROJECTS/MATRIX/matrix_rotate/main.py", "Python", 37, 0, 0, 0, 0, 0, 0, 0, 14, 51
+"/Users/wik/Desktop/Developer/python/PROJECTS/MATRIX/matrix_to_img/main.py", "Python", 16, 0, 0, 0, 0, 0, 0, 2, 5, 23
+"/Users/wik/Desktop/Developer/python/PROJECTS/MULTIPROCESSING/main.py", "Python", 18, 0, 0, 0, 0, 0, 0, 3, 9, 30
+"/Users/wik/Desktop/Developer/python/PROJECTS/MULTIPROCESSING/test1.py", "Python", 19, 0, 0, 0, 0, 0, 0, 1, 6, 26
+"/Users/wik/Desktop/Developer/python/PROJECTS/MULTIPROCESSING/test2 - learning.py", "Python", 27, 0, 0, 0, 0, 0, 0, 12, 17, 56
+"/Users/wik/Desktop/Developer/python/PROJECTS/MULTIPROCESSING/test3 - arr,value,lock.py", "Python", 28, 0, 0, 0, 0, 0, 0, 7, 14, 49
+"/Users/wik/Desktop/Developer/python/PROJECTS/MULTIPROCESSING/test4 - pool.py", "Python", 13, 0, 0, 0, 0, 0, 0, 3, 7, 23
+"/Users/wik/Desktop/Developer/python/PROJECTS/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/PROJECTS/REGULAR_EXPRESSIONS/1.py", "Python", 6, 0, 0, 0, 0, 0, 0, 6, 3, 15
+"/Users/wik/Desktop/Developer/python/PROJECTS/aimBooster_bot/main.py", "Python", 20, 0, 0, 0, 0, 0, 0, 1, 9, 30
+"/Users/wik/Desktop/Developer/python/PROJECTS/api_test/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 6, 19
+"/Users/wik/Desktop/Developer/python/PROJECTS/argparse/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 4, 7, 18
+"/Users/wik/Desktop/Developer/python/PROJECTS/array_random/array_random_delete.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 4, 15
+"/Users/wik/Desktop/Developer/python/PROJECTS/base64/main.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 7, 17
+"/Users/wik/Desktop/Developer/python/PROJECTS/binary_search/main.py", "Python", 20, 0, 0, 0, 0, 0, 0, 0, 7, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/box_of_numbers_squares/main.py", "Python", 45, 0, 0, 0, 0, 0, 0, 1, 16, 62
+"/Users/wik/Desktop/Developer/python/PROJECTS/caesar_cipher/main..py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 6, 21
+"/Users/wik/Desktop/Developer/python/PROJECTS/calendar/index.html", "HTML", 0, 0, 0, 59, 0, 0, 0, 0, 0, 59
+"/Users/wik/Desktop/Developer/python/PROJECTS/calendar/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 5, 12, 30
+"/Users/wik/Desktop/Developer/python/PROJECTS/camera_cv2/main.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 3, 13
+"/Users/wik/Desktop/Developer/python/PROJECTS/coin_problem/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 3, 4, 20
+"/Users/wik/Desktop/Developer/python/PROJECTS/context_manager_with-statement/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/PROJECTS/counting/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 8, 22
+"/Users/wik/Desktop/Developer/python/PROJECTS/decorator/first_main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 1, 6, 18
+"/Users/wik/Desktop/Developer/python/PROJECTS/decorator/second_main.py", "Python", 15, 0, 0, 0, 0, 0, 0, 1, 8, 24
+"/Users/wik/Desktop/Developer/python/PROJECTS/dict_as_switch_statement/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 1, 5, 17
+"/Users/wik/Desktop/Developer/python/PROJECTS/draw_diamond/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 8, 22
+"/Users/wik/Desktop/Developer/python/PROJECTS/draw_function/linear_function.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/draw_function/main.py", "Python", 33, 0, 0, 0, 0, 0, 0, 0, 16, 49
+"/Users/wik/Desktop/Developer/python/PROJECTS/draw_function/quadratic_function.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/dynamic_programming/main.py", "Python", 19, 0, 0, 0, 0, 0, 0, 7, 8, 34
+"/Users/wik/Desktop/Developer/python/PROJECTS/eulers_number/main.py", "Python", 24, 0, 0, 0, 0, 0, 0, 0, 12, 36
+"/Users/wik/Desktop/Developer/python/PROJECTS/face_detection/haarcascade_frontalface_default.xml", "XML", 0, 0, 0, 0, 33271, 0, 0, 43, 0, 33314
+"/Users/wik/Desktop/Developer/python/PROJECTS/face_detection/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 6, 7, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/factorial/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 2, 6, 15
+"/Users/wik/Desktop/Developer/python/PROJECTS/factorial/tempCodeRunnerFile.py", "Python", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/PROJECTS/factorial_recursive/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 3, 11
+"/Users/wik/Desktop/Developer/python/PROJECTS/fractal_gen/main.py", "Python", 44, 0, 0, 0, 0, 0, 0, 10, 23, 77
+"/Users/wik/Desktop/Developer/python/PROJECTS/fractal_tree/main.py", "Python", 42, 0, 0, 0, 0, 0, 0, 0, 13, 55
+"/Users/wik/Desktop/Developer/python/PROJECTS/genius_random_song/main.py", "Python", 107, 0, 0, 0, 0, 0, 0, 22, 34, 163
+"/Users/wik/Desktop/Developer/python/PROJECTS/genius_random_song/search.py", "Python", 39, 0, 0, 0, 0, 0, 0, 7, 14, 60
+"/Users/wik/Desktop/Developer/python/PROJECTS/guess_a_number/game.py", "Python", 36, 0, 0, 0, 0, 0, 0, 0, 8, 44
+"/Users/wik/Desktop/Developer/python/PROJECTS/hangman/dist/game/Include/pyconfig.h", "C++", 0, 0, 0, 0, 0, 247, 0, 291, 151, 689
+"/Users/wik/Desktop/Developer/python/PROJECTS/hangman/game.py", "Python", 69, 0, 0, 0, 0, 0, 0, 57, 14, 140
+"/Users/wik/Desktop/Developer/python/PROJECTS/hangman/words.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 0, 11
+"/Users/wik/Desktop/Developer/python/PROJECTS/hanoi/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/wik/Desktop/Developer/python/PROJECTS/hashlib/hash.py", "Python", 30, 0, 0, 0, 0, 0, 0, 3, 18, 51
+"/Users/wik/Desktop/Developer/python/PROJECTS/hashlib/main.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 4, 8
+"/Users/wik/Desktop/Developer/python/PROJECTS/hidden_message/main.py", "Python", 44, 0, 0, 0, 0, 0, 0, 1, 19, 64
+"/Users/wik/Desktop/Developer/python/PROJECTS/instagram_profile_picture_download/main.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 3, 7
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/1.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/10.py", "Python", 19, 0, 0, 0, 0, 0, 0, 1, 7, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/11.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 3, 6
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/12.py", "Python", 3, 0, 0, 0, 0, 0, 0, 1, 4, 8
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/13.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 3, 8
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/2.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 4, 7
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/3.py", "Python", 11, 0, 0, 0, 0, 0, 0, 1, 6, 18
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/4.py", "Python", 8, 0, 0, 0, 0, 0, 0, 1, 3, 12
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/5.py", "Python", 12, 0, 0, 0, 0, 0, 0, 1, 7, 20
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/6.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 3, 20
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/7.py", "Python", 3, 0, 0, 0, 0, 0, 0, 1, 3, 7
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/8.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/wik/Desktop/Developer/python/PROJECTS/interview_questions/9.py", "Python", 5, 0, 0, 0, 0, 0, 0, 1, 4, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/jpg_to_ascii/main.py", "Python", 68, 0, 0, 0, 0, 0, 0, 12, 25, 105
+"/Users/wik/Desktop/Developer/python/PROJECTS/lines_and_dotes/kreski.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 3, 19
+"/Users/wik/Desktop/Developer/python/PROJECTS/lines_and_dotes/test.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/wik/Desktop/Developer/python/PROJECTS/linked_list/1.py", "Python", 80, 0, 0, 0, 0, 0, 0, 1, 22, 103
+"/Users/wik/Desktop/Developer/python/PROJECTS/linked_list/main.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 8, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/logging/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 5, 6, 24
+"/Users/wik/Desktop/Developer/python/PROJECTS/martingale_strategy_roulette/main.py", "Python", 30, 0, 0, 0, 0, 0, 0, 1, 10, 41
+"/Users/wik/Desktop/Developer/python/PROJECTS/match_statement/main.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"/Users/wik/Desktop/Developer/python/PROJECTS/md5_brute_force_password_cracker/faster_version.py", "Python", 22, 0, 0, 0, 0, 0, 0, 0, 12, 34
+"/Users/wik/Desktop/Developer/python/PROJECTS/md5_brute_force_password_cracker/main.py", "Python", 25, 0, 0, 0, 0, 0, 0, 0, 7, 32
+"/Users/wik/Desktop/Developer/python/PROJECTS/median/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 3, 11
+"/Users/wik/Desktop/Developer/python/PROJECTS/password_generator/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 1, 3, 11
+"/Users/wik/Desktop/Developer/python/PROJECTS/perlin_noise/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/ping_pong/main.py", "Python", 89, 0, 0, 0, 0, 0, 0, 3, 27, 119
+"/Users/wik/Desktop/Developer/python/PROJECTS/prime_numbers/main.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 8, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/print_arrow/main.py", "Python", 39, 0, 0, 0, 0, 0, 0, 4, 10, 53
+"/Users/wik/Desktop/Developer/python/PROJECTS/qrCode/main.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 2, 5
+"/Users/wik/Desktop/Developer/python/PROJECTS/randint_test/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 3, 7, 27
+"/Users/wik/Desktop/Developer/python/PROJECTS/remove_above_under_mean/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 2, 6, 17
+"/Users/wik/Desktop/Developer/python/PROJECTS/simple_stock/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/sort/main.py", "Python", 10, 0, 0, 0, 0, 0, 0, 7, 9, 26
+"/Users/wik/Desktop/Developer/python/PROJECTS/sort/mergesort.py", "Python", 26, 0, 0, 0, 0, 0, 0, 1, 10, 37
+"/Users/wik/Desktop/Developer/python/PROJECTS/sort/sort_vs_sorted/main.py", "Python", 12, 0, 0, 0, 0, 0, 0, 3, 5, 20
+"/Users/wik/Desktop/Developer/python/PROJECTS/sort/test.py", "Python", 28, 0, 0, 0, 0, 0, 0, 1, 16, 45
+"/Users/wik/Desktop/Developer/python/PROJECTS/sort_random_array_time/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 5, 14
+"/Users/wik/Desktop/Developer/python/PROJECTS/spam_bot/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"/Users/wik/Desktop/Developer/python/PROJECTS/sudoku_solver/main.py", "Python", 60, 0, 0, 0, 0, 0, 0, 0, 15, 75
+"/Users/wik/Desktop/Developer/python/PROJECTS/testy/pobieranie_rzeczy_z_api.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"/Users/wik/Desktop/Developer/python/PROJECTS/text_to_audio/main.py", "Python", 8, 0, 0, 0, 0, 0, 0, 1, 3, 12
+"/Users/wik/Desktop/Developer/python/PROJECTS/tolower/main.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/wik/Desktop/Developer/python/PROJECTS/track_phone/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 3, 9, 26
+"/Users/wik/Desktop/Developer/python/PROJECTS/translate/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 5, 14
+"/Users/wik/Desktop/Developer/python/PROJECTS/tree_find_path_folders/main.py", "Python", 30, 0, 0, 0, 0, 0, 0, 1, 13, 44
+"/Users/wik/Desktop/Developer/python/PROJECTS/typing_python_comprehension/main.py", "Python", 23, 0, 0, 0, 0, 0, 0, 0, 8, 31
+"/Users/wik/Desktop/Developer/python/PROJECTS/unv/main.py", "Python", 24, 0, 0, 0, 0, 0, 0, 5, 10, 39
+"/Users/wik/Desktop/Developer/python/PROJECTS/words_in_songs_counter/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 0, 7, 21
+"/Users/wik/Desktop/Developer/python/PROJECTS/yt_downloader/main.py", "Python", 25, 0, 0, 0, 0, 0, 0, 0, 7, 32
+"/Users/wik/Desktop/Developer/python/PYGAME/README.md", "Markdown", 0, 2, 0, 0, 0, 0, 0, 0, 1, 3
+"/Users/wik/Desktop/Developer/python/PYGAME/game_ninja/bullets.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 6, 21
+"/Users/wik/Desktop/Developer/python/PYGAME/game_ninja/enemy.py", "Python", 87, 0, 0, 0, 0, 0, 0, 1, 10, 98
+"/Users/wik/Desktop/Developer/python/PYGAME/game_ninja/game.py", "Python", 104, 0, 0, 0, 0, 0, 0, 4, 27, 135
+"/Users/wik/Desktop/Developer/python/PYGAME/game_ninja/player.py", "Python", 85, 0, 0, 0, 0, 0, 0, 1, 8, 94
+"/Users/wik/Desktop/Developer/python/PYGAME/game_ninja/sounds.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 6, 21
+"/Users/wik/Desktop/Developer/python/PYGAME/game_of_life/main.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 11, 32
+"/Users/wik/Desktop/Developer/python/PYGAME/game_of_life/matrix.py", "Python", 49, 0, 0, 0, 0, 0, 0, 0, 8, 57
+"/Users/wik/Desktop/Developer/python/PYGAME/game_shooter_2d/main.py", "Python", 98, 0, 0, 0, 0, 0, 0, 0, 29, 127
+"/Users/wik/Desktop/Developer/python/PYGAME/game_shooter_2d/tempCodeRunnerFile.py", "Python", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/PYGAME/game_with_random_levels/main.py", "Python", 271, 0, 0, 0, 0, 0, 0, 16, 75, 362
+"/Users/wik/Desktop/Developer/python/PYGAME/maze_generator/main.py", "Python", 77, 0, 0, 0, 0, 0, 0, 0, 24, 101
+"/Users/wik/Desktop/Developer/python/README.md", "Markdown", 0, 16, 0, 0, 0, 0, 0, 0, 6, 22
+"/Users/wik/Desktop/Developer/python/SELENIUM/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/SELENIUM/cookie_clicker/main.py", "Python", 25, 0, 0, 0, 0, 0, 0, 4, 8, 37
+"/Users/wik/Desktop/Developer/python/SQL/test/main.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 10, 26
+"/Users/wik/Desktop/Developer/python/URSINA/1_mincruft/fajne_rzeczy.py", "Python", 36, 0, 0, 0, 0, 0, 0, 0, 13, 49
+"/Users/wik/Desktop/Developer/python/URSINA/1_mincruft/main.py", "Python", 84, 0, 0, 0, 0, 0, 0, 0, 25, 109
+"/Users/wik/Desktop/Developer/python/URSINA/2_beat_saber/main.py", "Python", 100, 0, 0, 0, 0, 0, 0, 6, 32, 138
+"/Users/wik/Desktop/Developer/python/URSINA/README.md", "Markdown", 0, 2, 0, 0, 0, 0, 0, 0, 1, 3
+"/Users/wik/Desktop/Developer/python/z_old/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/wik/Desktop/Developer/python/z_old/delete_non_python_things.py", "Python", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/0_czyli_moje_laboratorium/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 6, 9, 28
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/10_błędy/main.py", "Python", 24, 0, 0, 0, 0, 0, 0, 2, 12, 38
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/11_pliki_tekstowe/main.py", "Python", 27, 0, 0, 0, 0, 0, 0, 4, 12, 43
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/12_dictionary/main.py", "Python", 21, 0, 0, 0, 0, 0, 0, 2, 20, 43
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/13_tuple_i_wycinki_list/main.py", "Python", 22, 0, 0, 0, 0, 0, 0, 4, 21, 47
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/14_edycja_stringow/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 5, 17, 35
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/15_edycje_strinow/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 15, 32
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/16_czytanie_plikow_tekstowych_liczenie_znakow/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 2, 10, 29
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/17_funkcja_anonimowa/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 17, 30
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/18_map_filter/main.py", "Python", 9, 0, 0, 0, 0, 0, 0, 8, 14, 31
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/19_yield/main.py", "Python", 19, 0, 0, 0, 0, 0, 0, 3, 11, 33
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/1_operacja_matematyczne/main.py", "Python", 26, 0, 0, 0, 0, 0, 0, 0, 9, 35
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/20_decorator/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 9, 14, 37
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/21_set/main.py", "Python", 20, 0, 0, 0, 0, 0, 0, 17, 27, 64
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/22_oop/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 9, 12, 35
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/23_dziedziczenie_klas/main.py", "Python", 19, 0, 0, 0, 0, 0, 0, 4, 14, 37
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/24_metody_magiczne/main.py", "Python", 34, 0, 0, 0, 0, 0, 0, 25, 17, 76
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/25_destrukcja_obiektu/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 12, 9, 34
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/26_ukrywanie_zmiennych_i_metod/main.py", "Python", 34, 0, 0, 0, 0, 0, 0, 14, 23, 71
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/27_metoda_klasy_i_statyczna/main.py", "Python", 16, 0, 0, 0, 0, 0, 0, 7, 11, 34
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/28_właściwości_klasy/main.py", "Python", 15, 0, 0, 0, 0, 0, 0, 8, 8, 31
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/29_wyrażenia_regularne/main.py", "Python", 18, 0, 0, 0, 0, 0, 0, 13, 15, 46
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/2_if/main.py", "Python", 15, 0, 0, 0, 0, 0, 0, 1, 9, 25
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/30_wyrażenia_regularne2/main.py", "Python", 21, 0, 0, 0, 0, 0, 0, 11, 5, 37
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/31_wyrażenia_regularne3/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 9, 7, 33
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/32_wyrażenia_regularne4/main.py", "Python", 10, 0, 0, 0, 0, 0, 0, 7, 3, 20
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/33_walidacja_emaila/main.py", "Python", 6, 0, 0, 0, 0, 0, 0, 1, 4, 11
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/34_nielimitowana_ilość_argumentów_funkcji/main.py", "Python", 13, 0, 0, 0, 0, 0, 0, 2, 5, 20
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/35_rozpakowanie_krotki_zamiana_zmiennych/main.py", "Python", 14, 0, 0, 0, 0, 0, 0, 3, 9, 26
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/36_if_w_jednej_linii_inne_znaczenie_else/main.py", "Python", 16, 0, 0, 0, 0, 0, 0, 5, 9, 30
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/3_operatory_logiczne/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 13, 7, 37
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/4_while/main.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/5_gra_zgadywanie_liczby/main.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 7, 24
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/6_lista_slesh_tablica/main.py", "Python", 38, 0, 0, 0, 0, 0, 0, 3, 43, 84
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/7_for/main.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 7, 17
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/8_funkcje/main.py", "Python", 23, 0, 0, 0, 0, 0, 0, 0, 21, 44
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/9_biblioteki/main.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 6, 12
+"/Users/wik/Desktop/Developer/python/z_old/learning_python/trial/main.py", "Python", 4, 0, 0, 0, 0, 0, 0, 6, 7, 17
+"Total", "-", 7341, 39, 20, 222, 33559, 247, 6, 1186, 3120, 45740
